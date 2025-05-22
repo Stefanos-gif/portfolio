@@ -3,13 +3,14 @@ import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  // enable svelte-preprocess (e.g. PostCSS, SCSS, etc.)
+  // enable svelte-preprocess (PostCSS, SCSS, etc.)
   preprocess: preprocess(),
 
   kit: {
     adapter: adapter({
-      // explicitly target a supported Node.js runtime
-      runtime: 'nodejs18.x'
+      // Vercel supports nodejs16.x, nodejs18.x, and nodejs20.x—
+      // pin to Node 20 to avoid the “invalid runtime” error
+      runtime: 'nodejs20.x'
     })
   }
 };
