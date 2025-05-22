@@ -1,0 +1,33 @@
+{
+	"/": [
+		"src/routes/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/about": [
+		"src/routes/+layout.js"
+	],
+	"/background": [
+		"src/routes/+layout.js"
+	],
+	"/projects/ai-pro": [
+		"src/routes/+layout.js"
+	],
+	"/projects/barbershop-website": [
+		"src/routes/+layout.js"
+	],
+	"/projects/cpp-games": [
+		"src/routes/+layout.js"
+	],
+	"/projects/cpp-lvl3": [
+		"src/routes/+layout.js"
+	],
+	"/projects/data-analysis-with-pandas": [
+		"src/routes/+layout.js"
+	],
+	"/projects/flask-web-app": [
+		"src/routes/+layout.js"
+	],
+	"/projects/python-web-scraper": [
+		"src/routes/+layout.js"
+	]
+}

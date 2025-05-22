@@ -18,12 +18,12 @@
 			for (let i = 0; i < $settings.particleCount; i++) {
 				particles.push(p5.createVector(Math.random() * p5.width, Math.random() * p5.height));
 			}
-			p5.stroke('lightseagreen');
+			p5.stroke('#5e0a80');
 		};
 
 		p5.draw = () => {
 			p5.strokeWeight($settings.strokeWeight);
-			p5.background(35, 30, 50, 10);
+			p5.background(30, 15, 30, 10);
 
 			for (let i = 0; i < $settings.particleCount; i++) {
 				if (i >= particles.length) {

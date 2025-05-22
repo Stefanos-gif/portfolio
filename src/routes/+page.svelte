@@ -1,8 +1,8 @@
 <script>
 	import { onDestroy, onMount } from 'svelte';
 
-	const words = ['software engineer', 'student', 'developer', 'musician'];
-	const baseText = ['Hi, my name is', 'Ryan Kilpadi', "I'm a", words[0]];
+	const words = ['software engineer', 'student', 'developer','upcoming  stem Ambassador'];
+	const baseText = ['Hi, my name is', 'Stefanos Siathas', "I'm a", words[0]];
 	const text = ['', '', '', ''];
 	const cycleIdx = baseText.length - 1;
 	const typeMillis = 100;
@@ -79,6 +79,11 @@
 			<span class="cursor">&nbsp;</span>
 		{/if}
 	</p>
+	<div id="img-hover">
+		<img src="/stefs_profesionaly_photographed_picture_by_michalis_chhatzittofi.jpg" id="portrait-dark2"/>
+		<img src="/stefs_profesionaly_photographed_picture_by_michalis_chhatzittofi.jpg" id="portrait-dark"/>
+		<img src="/stefs_profesionaly_photographed_picture_by_michalis_chhatzittofi.jpg" id="portrait"/>
+	</div>
 </div>
 
 <style>
@@ -137,6 +142,30 @@
 		#sub-name-text {
 			font-size: 3em;
 		}
+	}
+
+	#portrait, #portrait-dark, #portrait-dark2 {
+		position: fixed;
+		left: 65vw;
+		top: 20vh;
+		width: 25vw;
+		border-radius: 7px;
+		border: solid 5px var(--color-primary);
+		transition: all 0.08s ease-in-out;
+	}
+
+	#img-hover:hover #portrait {
+		transform: scale(1.05) rotate(10deg);
+	}
+
+	#img-hover:hover #portrait-dark {
+		transform: scale(1.05);
+		filter: brightness(0.5);
+	}
+
+	#img-hover:hover #portrait-dark2 {
+		transform: scale(1.05) rotate(-10deg);
+		filter: brightness(0.25);
 	}
 </style>
 

@@ -7,13 +7,10 @@
 
 	<div class="card">
         <p>
-            I'm a student software engineer studying mathematics and computer science at Vassar College.
-            I also work at Amazon Web Services in High Performance Computing.
-            I love building all sorts of things, including <a href="https://github.com/rkilpadi/sveltekit-portfolio">this website</a> made with Svelte.
+            I'm an upcoming stem ambassador studying computer science and physics.
+            I love building all sorts of things,
         </p>
         <p>
-            The background of this website is a <a href="https://en.wikipedia.org/wiki/Perlin_noise">Perlin noise</a> simulation built in p5.js.
-            <br>It inspired <a href="https://flowplane.vercel.app/?dx=cos(x)&dy=y">Flowplane</a>, an interactive web app I made that plots 2D dynamical systems.
             <br>Feel free to tinker with the settings below or click to <span class="refresh-button" on:click={() => sketchKey.set(Date.now())}>refresh</span> the animation.
         </p>
 

@@ -2,10 +2,10 @@ import { writable } from 'svelte/store';
 
 export const settings = writable({
 	playing: true,
-	repelDistance: 0,
-	particleCount: 2000,
-	noiseScale: 0.005,
-	strokeWeight: 1
+	repelDistance: 100,
+	particleCount: 7000,
+	noiseScale: 0.01,
+	strokeWeight: 2
 });
 
 export const sketchKey = writable(Date.now());
