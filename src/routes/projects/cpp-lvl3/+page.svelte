@@ -3,12 +3,21 @@
     // Removed FontAwesome imports
 
     let showFullscreen = false;
+    // Add a new state variable for Prog1 fullscreen
+    let showFullscreenProg1 = false;
 
     function openFullscreen() {
         showFullscreen = true;
     }
     function closeFullscreen() {
         showFullscreen = false;
+    }
+    // Add open/close functions for Prog1
+    function openFullscreenProg1() {
+        showFullscreenProg1 = true;
+    }
+    function closeFullscreenProg1() {
+        showFullscreenProg1 = false;
     }
 </script>
 
@@ -71,7 +80,8 @@
   </div>
 </div>
 
-<div id="img-hover">
+<!-- Add on:click to Prog1 image container -->
+<div id="img-hover" on:click={openFullscreenProg1} style="cursor: pointer;">
     <TripleImage
     img_url1={"/Prog1.png"}
     img_url2={"/Prog1.png"}
@@ -80,6 +90,14 @@
     aspect_ratio={"17/11"}
     />
 </div>
+<!-- Fullscreen overlay for Prog1 -->
+{#if showFullscreenProg1}
+    <div class="fullscreen-overlay" on:click|self={closeFullscreenProg1}>
+        <img src="/Prog1.png" alt="prog1" class="fullscreen-img" />
+        <button class="close-btn" on:click={closeFullscreenProg1} aria-label="Close fullscreen">&times;</button>
+    </div>
+{/if}
+
 <div id="container">
     <p id="second-p">K</p>
     <p id="second-p">e</p>
