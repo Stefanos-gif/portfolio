@@ -1,0 +1,149 @@
+{
+	"version": 3,
+	"routes": [
+		{
+			"src": "/about",
+			"dest": "/about/"
+		},
+		{
+			"src": "/about/",
+			"status": 308,
+			"headers": {
+				"Location": "/about"
+			}
+		},
+		{
+			"src": "/background",
+			"dest": "/background/"
+		},
+		{
+			"src": "/background/",
+			"status": 308,
+			"headers": {
+				"Location": "/background"
+			}
+		},
+		{
+			"src": "/projects/ai-pro",
+			"dest": "/projects/ai-pro/"
+		},
+		{
+			"src": "/projects/ai-pro/",
+			"status": 308,
+			"headers": {
+				"Location": "/projects/ai-pro"
+			}
+		},
+		{
+			"src": "/projects/barbershop-website",
+			"dest": "/projects/barbershop-website/"
+		},
+		{
+			"src": "/projects/barbershop-website/",
+			"status": 308,
+			"headers": {
+				"Location": "/projects/barbershop-website"
+			}
+		},
+		{
+			"src": "/projects/cpp-games",
+			"dest": "/projects/cpp-games/"
+		},
+		{
+			"src": "/projects/cpp-games/",
+			"status": 308,
+			"headers": {
+				"Location": "/projects/cpp-games"
+			}
+		},
+		{
+			"src": "/projects/cpp-lvl3",
+			"dest": "/projects/cpp-lvl3/"
+		},
+		{
+			"src": "/projects/cpp-lvl3/",
+			"status": 308,
+			"headers": {
+				"Location": "/projects/cpp-lvl3"
+			}
+		},
+		{
+			"src": "/projects/data-analysis-with-pandas",
+			"dest": "/projects/data-analysis-with-pandas/"
+		},
+		{
+			"src": "/projects/data-analysis-with-pandas/",
+			"status": 308,
+			"headers": {
+				"Location": "/projects/data-analysis-with-pandas"
+			}
+		},
+		{
+			"src": "/projects/flask-web-app",
+			"dest": "/projects/flask-web-app/"
+		},
+		{
+			"src": "/projects/flask-web-app/",
+			"status": 308,
+			"headers": {
+				"Location": "/projects/flask-web-app"
+			}
+		},
+		{
+			"src": "/projects/python-web-scraper",
+			"dest": "/projects/python-web-scraper/"
+		},
+		{
+			"src": "/projects/python-web-scraper/",
+			"status": 308,
+			"headers": {
+				"Location": "/projects/python-web-scraper"
+			}
+		},
+		{
+			"src": "/_app/immutable/.+",
+			"headers": {
+				"cache-control": "public, immutable, max-age=31536000"
+			}
+		},
+		{
+			"handle": "filesystem"
+		},
+		{
+			"src": "/.*",
+			"dest": "/fn"
+		}
+	],
+	"overrides": {
+		"index.html": {
+			"path": ""
+		},
+		"about.html": {
+			"path": "about"
+		},
+		"background.html": {
+			"path": "background"
+		},
+		"projects/ai-pro.html": {
+			"path": "projects/ai-pro"
+		},
+		"projects/barbershop-website.html": {
+			"path": "projects/barbershop-website"
+		},
+		"projects/cpp-games.html": {
+			"path": "projects/cpp-games"
+		},
+		"projects/cpp-lvl3.html": {
+			"path": "projects/cpp-lvl3"
+		},
+		"projects/data-analysis-with-pandas.html": {
+			"path": "projects/data-analysis-with-pandas"
+		},
+		"projects/flask-web-app.html": {
+			"path": "projects/flask-web-app"
+		},
+		"projects/python-web-scraper.html": {
+			"path": "projects/python-web-scraper"
+		}
+	}
+}

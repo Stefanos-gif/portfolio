@@ -1,0 +1,25 @@
+import { c as create_ssr_component, v as validate_component } from "../../../../chunks/ssr.js";
+import { T as TripleImage } from "../../../../chunks/TripleImage.js";
+const _page_svelte_svelte_type_style_lang = "";
+const css = {
+  code: "#container.svelte-1gix4lf.svelte-1gix4lf{display:flex;flex-direction:column;align-items:center;text-align:center}#container.svelte-1gix4lf h1.svelte-1gix4lf{margin:2.2vw;transition:all 0.3s ease-in-out}#container.svelte-1gix4lf h1.svelte-1gix4lf:hover{transform:scale(1.2);text-decoration:underline solid #ff00ff;text-shadow:4px 4px 2px var(--color-primary)}#container.svelte-1gix4lf #first-p.svelte-1gix4lf{position:flex;margin:0.01vw;background-color:rgba(97, 20, 128, 0.5);padding:0.5vw;border-radius:7px;border:solid 5px var(--color-primary);transition:all 0.3s ease-in-out;font-size:2vh;width:40vw}#container.svelte-1gix4lf #first-p.svelte-1gix4lf:hover{transform:scale(1.05);background-color:rgb(97, 20, 128, 0.7);color:var(--color-secondary);left:10rem}#features.svelte-1gix4lf.svelte-1gix4lf{position:absolute;flex-direction:column;align-items:center;text-align:center;border:solid 5px var(--color-primary);border-radius:7px;right:60rem;top:35vh;width:42vw;height:45vh;transition:all 0.3s ease-in-out}#features.svelte-1gix4lf.svelte-1gix4lf:hover{transform:scale(1.05);text-decoration:underline solid #ff00ff;text-shadow:4px 4px 2px var(--color-primary)}#features.svelte-1gix4lf h2.svelte-1gix4lf{position:absolute;margin:0;right:0rem;top:0vh;font-size:4vh;background-color:rgba(97, 20, 128, 0.5);padding:1vw;transition:all 0.3s ease-in-out;width:40vw}#features.svelte-1gix4lf h3.svelte-1gix4lf{position:absolute;margin:0;right:0rem;top:20vh;font-size:4vh;background-color:rgba(97, 20, 128, 0.5);padding:1vw;transition:all 0.3s ease-in-out;width:40vw}#features.svelte-1gix4lf p.svelte-1gix4lf{font-size:3vh;position:absolute;margin:0;right:0rem;top:8.5vh;font-size:2.5vh;background-color:rgba(97, 20, 128, 0.5);padding:1vw;transition:all 0.3s ease-in-out;width:40vw}#features.svelte-1gix4lf ul.svelte-1gix4lf{position:absolute;margin:0;right:0rem;top:30vh;font-size:2.5vh;background-color:rgba(97, 20, 128, 0.5);padding:1vw;transition:all 0.3s ease-in-out;width:40vw;text-align:left;font-size:2vh}#img-container.svelte-1gix4lf.svelte-1gix4lf{position:absolute;top:59.6vh;left:73vw;transform:translate(-50%, -50%);height:50vh}.fullscreen-overlay.svelte-1gix4lf.svelte-1gix4lf{position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(20, 10, 30, 0.95);display:flex;align-items:center;justify-content:center;z-index:9999;animation:svelte-1gix4lf-fadeIn 0.2s}.fullscreen-img.svelte-1gix4lf.svelte-1gix4lf{max-width:90vw;max-height:90vh;border-radius:1rem;box-shadow:0 0 40px #ff47f0cc;background:#222}.close-btn.svelte-1gix4lf.svelte-1gix4lf{position:absolute;top:2rem;right:2rem;font-size:3rem;background:rgba(0,0,0,0.5);color:#fff;border:none;border-radius:50%;width:3.5rem;height:3.5rem;cursor:pointer;z-index:10000;transition:background 0.2s}.close-btn.svelte-1gix4lf.svelte-1gix4lf:hover{background:#ff47f0;color:#fff}@keyframes svelte-1gix4lf-fadeIn{from{opacity:0}to{opacity:1}}",
+  map: null
+};
+const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  $$result.css.add(css);
+  return `<div id="container" class="svelte-1gix4lf" data-svelte-h="svelte-1dqqgc8"><h1 class="svelte-1gix4lf">Flask Web Application</h1> <p id="first-p" class="svelte-1gix4lf">This is a python <a href="https://github.com/Stefanos-gif/Flask-Web-Application?tab=readme-ov-file#flask-web-application" target="_blank" rel="noopener noreferrer" style="color: #2eff23;">flask web app</a> for managing tasks.</p></div> <div id="features" class="svelte-1gix4lf" data-svelte-h="svelte-19cf80v"><h2 class="svelte-1gix4lf">Description</h2> <p class="svelte-1gix4lf">This project is a simple Flask web application for managing tasks. Users can add, <strong>edit</strong>, and manage their tasks through a web interface.</p> <h3 class="svelte-1gix4lf">Technologies Used</h3> <ul class="svelte-1gix4lf"><li><strong>Flask</strong> - A lightweight WSGI web application framework in Python.</li> <li><strong>Python</strong> - A versatile programming language used for backend development.</li> <li><strong>HTML</strong> - The standard markup language for creating web pages.</li> <li><strong>CSS</strong> - For structuring and styling the web application.</li></ul></div> <div id="img-container" style="cursor: pointer;" class="svelte-1gix4lf">${validate_component(TripleImage, "TripleImage").$$render(
+    $$result,
+    {
+      img_url1: "/flaskshow.png",
+      img_url2: "/flaskshow.png",
+      img_url3: "/flaskshow.png",
+      img_height: "53vh",
+      aspect_ratio: "1202/908"
+    },
+    {},
+    {}
+  )}</div> ${``}`;
+});
+export {
+  Page as default
+};
