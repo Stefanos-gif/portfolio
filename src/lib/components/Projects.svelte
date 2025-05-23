@@ -11,7 +11,7 @@
     
     // Python projects
     { title: "Python Data Visualizer", img1: "/prog3.png", img2: "/cppgback.png", img3: "/flaskwe.png", imgHeight: "45vh", category: "python", url: "/projects/flask-web-app" },
-    { title: "Web Scraper", img1: "/prog3.png", img2: "/cppgback.png", img3: "/dataan.png", imgHeight: "45vh", category: "python", url: "/projects/data-analysis-with-pandas" },
+    { title: "Python Data analysis with pandas", img1: "/prog3.png", img2: "/cppgback.png", img3: "/dataan.png", imgHeight: "45vh", category: "python", url: "/projects/data-analysis-with-pandas" },
     { title: "Python Web Scraper", img1: "/prog3.png", img2: "/cppgback.png", img3: "/webscrap.png", imgHeight: "45vh", category: "python", url: "/projects/python-web-scraper" },
     { title: "AI(pro)", img1: "/prog3.png", img2: "/cppgback.png", img3: "/ai.png", imgHeight: "45vh", category: "debates", url: "/projects/ai-pro" },
 
