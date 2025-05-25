@@ -106,7 +106,7 @@ const options = {
   root: Root,
   service_worker: false,
   templates: {
-    app: ({ head, body, assets: assets2, nonce, env }) => '<!DOCTYPE html>\r\n<html lang="en">\r\n	<head>\r\n		<meta charset="utf-8" />\r\n		<link rel="icon" href="' + assets2 + '/favicon.png" />\r\n		<meta name="viewport" content="width=device-width" />\r\n        <meta name="google-site-verification" content="B4dd6H4NzRS10DNb3q7ikM1kZosudTIItHDd4FP2chc" />\r\n        <base target="_blank" />\r\n		' + head + '\r\n	</head>\r\n	<body data-sveltekit-preload-data="hover">\r\n		<div style="display: contents">' + body + "</div>\r\n	</body>\r\n</html>\r\n",
+    app: ({ head, body, assets: assets2, nonce, env }) => '<link rel="icon" href="/favicon.ico" />\r\n<head>\r\n  <!-- Chrome/Safari/Firefox OS -->\r\n  <link rel="icon" href="/favicon.ico" />\r\n  <!-- iOS Safari -->\r\n  <link rel="apple-touch-icon" href="/favicon.png" />\r\n  <!-- Windows tile -->\r\n  <meta name="msapplication-TileImage" content="/favicon.png" />\r\n  <!-- optional: set tile color -->\r\n  <meta name="msapplication-TileColor" content="#611480" />\r\n</head>\r\n<!DOCTYPE html>\r\n<html lang="en">\r\n	<head>\r\n		<meta charset="utf-8" />\r\n		<link rel="icon" href="' + assets2 + '/favicon.png" />\r\n		<meta name="viewport" content="width=device-width" />\r\n        <meta name="google-site-verification" content="B4dd6H4NzRS10DNb3q7ikM1kZosudTIItHDd4FP2chc" />\r\n        <base target="_blank" />\r\n		' + head + '\r\n	</head>\r\n	<body data-sveltekit-preload-data="hover">\r\n		<div style="display: contents">' + body + "</div>\r\n	</body>\r\n</html>\r\n",
     error: ({ status, message }) => '<!doctype html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<title>' + message + `</title>
 
 		<style>
@@ -178,7 +178,7 @@ const options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "115wgz8"
+  version_hash: "1qbqxx6"
 };
 function get_hooks() {
   return {};
