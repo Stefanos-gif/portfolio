@@ -101,6 +101,17 @@
 			}
 		},
 		{
+			"src": "/projects/thalasat",
+			"dest": "/projects/thalasat/"
+		},
+		{
+			"src": "/projects/thalasat/",
+			"status": 308,
+			"headers": {
+				"Location": "/projects/thalasat"
+			}
+		},
+		{
 			"src": "/_app/immutable/.+",
 			"headers": {
 				"cache-control": "public, immutable, max-age=31536000"
@@ -144,6 +155,9 @@
 		},
 		"projects/python-web-scraper.html": {
 			"path": "projects/python-web-scraper"
+		},
+		"projects/thalasat.html": {
+			"path": "projects/thalasat"
 		}
 	}
 }

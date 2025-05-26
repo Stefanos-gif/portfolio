@@ -12,7 +12,8 @@ export const nodes = [
 	() => import('./nodes/8'),
 	() => import('./nodes/9'),
 	() => import('./nodes/10'),
-	() => import('./nodes/11')
+	() => import('./nodes/11'),
+	() => import('./nodes/12')
 ];
 
 export const server_loads = [];
@@ -27,7 +28,8 @@ export const dictionary = {
 		"/projects/cpp-lvl3": [8],
 		"/projects/data-analysis-with-pandas": [9],
 		"/projects/flask-web-app": [10],
-		"/projects/python-web-scraper": [11]
+		"/projects/python-web-scraper": [11],
+		"/projects/thalasat": [12]
 	};
 
 export const hooks = {

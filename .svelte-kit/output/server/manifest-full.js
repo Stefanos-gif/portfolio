@@ -7,10 +7,10 @@ function __memo(fn) {
 return {
 	appDir: "_app",
 	appPath: "_app",
-	assets: new Set(["ai.png","barbs.png","barbw.png","comp.png","cppGames.png","cppgback.png","cpplvl3.png","dataan.png","dataanshow.png","favicon.ico","favicon.png","flaskshow.png","flaskwe.png","paint.jpg","Prog1.png","prog2.png","prog3.png","PsychologicalWarfare.docx","ResearchandPreparation.docx","scgame.png","stefs_profesionaly_photographed_picture_by_michalis_chhatzittofi.jpg","Teammate.docx","tic.png","web.png","webscrap.png","write.png","YourRole.docx"]),
+	assets: new Set(["1stpage.png","2nd.png","3rd.png","4th.png","ai.png","barbs.png","barbw.png","comp.png","cppGames.png","cppgback.png","cpplvl3.png","dataan.png","dataanshow.png","favicon.ico","favicon.png","flaskshow.png","flaskwe.png","l1.png","l2.png","l3.png","L4.png","l5.png","namet.png","paint.jpg","Prog1.png","prog2.png","prog3.png","PsychologicalWarfare.docx","ResearchandPreparation.docx","scgame.png","stefs_profesionaly_photographed_picture_by_michalis_chhatzittofi.jpg","Teammate.docx","tic.png","ven1.jpg","ven10.jpg","ven11.jpg","ven12.jpg","ven13.jpg","ven14.jpg","ven2.jpg","ven3.jpg","ven4.jpg","ven5.jpg","ven6.jpg","ven7.jpg","ven8.jpg","ven9.jpg","web.png","webscrap.png","write.png","YourRole.docx"]),
 	mimeTypes: {".png":"image/png",".jpg":"image/jpeg"},
 	_: {
-		client: {"start":"_app/immutable/entry/start.75fa1ed7.js","app":"_app/immutable/entry/app.30584c89.js","imports":["_app/immutable/entry/start.75fa1ed7.js","_app/immutable/chunks/scheduler.522a12a4.js","_app/immutable/chunks/singletons.39dac941.js","_app/immutable/chunks/index.c90c51eb.js","_app/immutable/entry/app.30584c89.js","_app/immutable/chunks/preload-helper.a4192956.js","_app/immutable/chunks/scheduler.522a12a4.js","_app/immutable/chunks/index.5405a8ee.js"],"stylesheets":[],"fonts":[]},
+		client: {"start":"_app/immutable/entry/start.a5b9357f.js","app":"_app/immutable/entry/app.1f8049a7.js","imports":["_app/immutable/entry/start.a5b9357f.js","_app/immutable/chunks/scheduler.db26a3c5.js","_app/immutable/chunks/singletons.9f36a23c.js","_app/immutable/chunks/index.655c5ab4.js","_app/immutable/entry/app.1f8049a7.js","_app/immutable/chunks/preload-helper.a4192956.js","_app/immutable/chunks/scheduler.db26a3c5.js","_app/immutable/chunks/index.8c25f7e9.js"],"stylesheets":[],"fonts":[]},
 		nodes: [
 			__memo(() => import('./nodes/0.js')),
 			__memo(() => import('./nodes/1.js')),
@@ -23,7 +23,8 @@ return {
 			__memo(() => import('./nodes/8.js')),
 			__memo(() => import('./nodes/9.js')),
 			__memo(() => import('./nodes/10.js')),
-			__memo(() => import('./nodes/11.js'))
+			__memo(() => import('./nodes/11.js')),
+			__memo(() => import('./nodes/12.js'))
 		],
 		routes: [
 			{
@@ -94,6 +95,13 @@ return {
 				pattern: /^\/projects\/python-web-scraper\/?$/,
 				params: [],
 				page: { layouts: [0,], errors: [1,], leaf: 11 },
+				endpoint: null
+			},
+			{
+				id: "/projects/thalasat",
+				pattern: /^\/projects\/thalasat\/?$/,
+				params: [],
+				page: { layouts: [0,], errors: [1,], leaf: 12 },
 				endpoint: null
 			}
 		],

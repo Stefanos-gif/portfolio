@@ -3,7 +3,7 @@
 	import { goto } from '$app/navigation';
   
     const projects = [
-    { title: "Veneto stars(not working)", img1: "/paint.jpg", img2: "/write.png", img3: "/comp.png", imgHeight: "45vh", category: "industry", url: "/projects/veneto-stars" },
+    { title: "Thalasat", img1: "/paint.jpg", img2: "/prog3.png", img3: "/l5.png", imgHeight: "45vh", category: "industry", url: "/projects/thalasat" },
     { title: "Project 2(not working)", img1: "/paint.jpg", img2: "/write.png", img3: "/comp.png", imgHeight: "45vh", category: "industry", url: "/projects/veneto-stars" },
     { title: "Barbershop Website", img1: "/cppgback.png", img2: "/cppgback.png", img3: "/barbw.png", imgHeight: "45vh", category: "industry", url: "/projects/barbershop-website" },
     { title: "C++ Level 3", img1: "/prog3.png", img2: "/prog3.png", img3: "/cpplvl3.png", imgHeight: "45vh", category: "cpp", url: "/projects/cpp-lvl3" },
