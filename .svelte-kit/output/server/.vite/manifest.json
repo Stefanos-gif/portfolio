@@ -252,12 +252,12 @@
     "src": "src/routes/projects/python-web-scraper/+page.svelte"
   },
   "src/routes/projects/thalasat/+page.css": {
-    "file": "_app/immutable/assets/_page.09693684.css",
+    "file": "_app/immutable/assets/_page.0dd969d3.css",
     "src": "src/routes/projects/thalasat/+page.css"
   },
   "src/routes/projects/thalasat/+page.svelte": {
     "css": [
-      "_app/immutable/assets/_page.09693684.css"
+      "_app/immutable/assets/_page.0dd969d3.css"
     ],
     "file": "entries/pages/projects/thalasat/_page.svelte.js",
     "imports": [

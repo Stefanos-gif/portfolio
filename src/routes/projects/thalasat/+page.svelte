@@ -53,6 +53,8 @@
   ];
   let currentSolutionIndex = 0;
   let showSolutionFullscreen = false;
+  let solutionTransitioning = false;
+  let solutionDirection = 'right'; // or 'left'
   function openSolutionFullscreen() {
     showSolutionFullscreen = true;
     document.body.style.overflow = 'hidden';
@@ -60,6 +62,24 @@
   function closeSolutionFullscreen() {
     showSolutionFullscreen = false;
     document.body.style.overflow = '';
+  }
+  function goToNextSolution() {
+    if (solutionTransitioning || currentSolutionIndex === solutionImages.length - 1) return;
+    solutionDirection = 'right';
+    solutionTransitioning = true;
+    setTimeout(() => {
+      currentSolutionIndex = Math.min(currentSolutionIndex + 1, solutionImages.length - 1);
+      solutionTransitioning = false;
+    }, 500);
+  }
+  function goToPrevSolution() {
+    if (solutionTransitioning || currentSolutionIndex === 0) return;
+    solutionDirection = 'left';
+    solutionTransitioning = true;
+    setTimeout(() => {
+      currentSolutionIndex = Math.max(currentSolutionIndex - 1, 0);
+      solutionTransitioning = false;
+    }, 500);
   }
 
   let venetoImages = [
@@ -200,11 +220,11 @@
 
 <!-- Solution section moved directly under the solution arrow -->
 <div class="solution-section">
-  <div class="solution-box">
+  <div class="solution-box solution-3d-anim {solutionTransitioning ? (solutionDirection === 'right' ? 'slide-out-left' : 'slide-out-right') : ''}">
     <h2>{solutionBoxes[currentSolutionIndex].title}</h2>
     <p>{solutionBoxes[currentSolutionIndex].p}</p>
   </div>
-  <div class="solution-gallery">
+  <div class="solution-gallery solution-3d-anim {solutionTransitioning ? (solutionDirection === 'right' ? 'slide-out-left' : 'slide-out-right') : ''}">
     <img
       src={solutionImages[currentSolutionIndex]}
       alt={`Solution image ${currentSolutionIndex+1}`}
@@ -214,8 +234,8 @@
       role="button"
       aria-label="Open solution image fullscreen"
     />
-    <button class="solution-arrow-btn left" on:click={() => currentSolutionIndex = Math.max(currentSolutionIndex - 1, 0)} aria-label="Previous solution" disabled={currentSolutionIndex === 0}>&larr;</button>
-    <button class="solution-arrow-btn right" on:click={() => currentSolutionIndex = Math.min(currentSolutionIndex + 1, solutionImages.length - 1)} aria-label="Next solution" disabled={currentSolutionIndex === solutionImages.length - 1}>&rarr;</button>
+    <button class="solution-arrow-btn left" on:click={goToPrevSolution} aria-label="Previous solution" disabled={currentSolutionIndex === 0 || solutionTransitioning}>&larr;</button>
+    <button class="solution-arrow-btn right" on:click={goToNextSolution} aria-label="Next solution" disabled={currentSolutionIndex === solutionImages.length - 1 || solutionTransitioning}>&rarr;</button>
   </div>
 </div>
 {#if showSolutionFullscreen}
@@ -1040,5 +1060,21 @@ To top it all off, we had the honor of meeting the President and the Minister of
   border: 8px solid #ff47f0;
   animation: pop-in-img 0.3s;
   margin-bottom: 2.5rem;
+}
+
+.solution-3d-anim {
+  transition: transform 0.5s cubic-bezier(0.4,0.2,0.2,1), opacity 0.5s cubic-bezier(0.4,0.2,0.2,1);
+}
+.slide-out-left {
+  transform: perspective(800px) translateX(-120px) rotateY(-60deg) scale(0.92);
+  opacity: 0;
+}
+.slide-out-right {
+  transform: perspective(800px) translateX(120px) rotateY(60deg) scale(0.92);
+  opacity: 0;
+}
+.solution-3d-anim:not(.slide-out-left):not(.slide-out-right) {
+  transform: perspective(800px) translateX(0) rotateY(0deg) scale(1);
+  opacity: 1;
 }
 </style>
