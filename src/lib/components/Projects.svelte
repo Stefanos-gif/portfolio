@@ -4,8 +4,9 @@
   
     const projects = [
     { title: "Thalasat", img1: "/paint.jpg", img2: "/prog3.png", img3: "/l5.png", imgHeight: "45vh", category: "industry", url: "/projects/thalasat" },
-    { title: "Project 2(not working)", img1: "/paint.jpg", img2: "/write.png", img3: "/comp.png", imgHeight: "45vh", category: "industry", url: "/projects/veneto-stars" },
+    { title: "Satfire", img1: "/paint.jpg", img2: "/write.png", img3: "/satfire.png", imgHeight: "45vh", category: "industry", url: "/projects/satfire" },
     { title: "Barbershop Website", img1: "/cppgback.png", img2: "/cppgback.png", img3: "/barbw.png", imgHeight: "45vh", category: "industry", url: "/projects/barbershop-website" },
+    { title: "WasteManagement App (in Progress)", img1: "/paint.jpg", img2: "/prog3.png", img3: "/prog3.png", imgHeight: "45vh", category: "industry", url: "/projects/wma" },
     { title: "C++ Level 3", img1: "/prog3.png", img2: "/prog3.png", img3: "/cpplvl3.png", imgHeight: "45vh", category: "cpp", url: "/projects/cpp-lvl3" },
     { title: "C++ Games", img1: "/cppgback.png", img2: "/cppgback.png", img3: "/cppGames.png", imgHeight: "45vh", category: "cpp", url: "/projects/cpp-games" },
     

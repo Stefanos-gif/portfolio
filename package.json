@@ -25,9 +25,10 @@
 		"@fortawesome/free-brands-svg-icons": "^6.7.2",
 		"@fortawesome/free-solid-svg-icons": "^6.7.2",
 		"@vercel/analytics": "^1.0.2",
-		"p5-svelte": "^3.1.2"
+		"p5-svelte": "^3.1.2",
+		"perfect-arrows": "^0.3.7"
 	},
 	"engines": {
-    "node": "18.x"
-  }
+		"node": "18.x"
+	}
 }

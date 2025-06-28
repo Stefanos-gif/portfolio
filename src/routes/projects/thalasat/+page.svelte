@@ -46,9 +46,9 @@
     '/L4.png'
   ];
   let solutionBoxes = [
-    { title: 'Smart Data Collection', p: 'Our system uses IoT sensors and satellite data to monitor marine conditions in real time, providing actionable insights for local communities.' },
-    { title: 'Community Engagement', p: 'We empower citizens and schools to participate in data collection and environmental stewardship through interactive apps and educational programs.' },
-    { title: 'Open Access Platform', p: 'All collected data is visualized and made freely available through an intuitive web platform, supporting research and local decision-making.' },
+    { title: 'The solution', p: 'We created a website that will allow people to track the sea surface temperature, chlorofil type a concentration etc.' },
+    { title: 'Cooperate', p: 'We talked with a lot of buissnesses about helping us and improving our knowledge about the sea and improving our kowledge and capability of out-reach.' },
+    { title: 'Open Access Platform', p: 'All collected data is visualized and made freely available through an intuitive web platform, supporting research and local decision-making except of custom tracking abilities that will be priced accordingly.' },
     { title: 'AI-Driven Alerts', p: 'Our AI models detect anomalies and send early warnings about pollution, algal blooms, or other threats, helping to protect the Mediterranean Sea.' }
   ];
   let currentSolutionIndex = 0;
@@ -146,7 +146,7 @@
 </div>
 
 <div id="start">
-  <p>Thalasat is a youth-led initiative born in cyprus,the name, Thalasat comes from the greek word "θαλασσα" (thalassa), meaning "sea".</p>
+  <p>Thalasat is a youth-led initiative born in cyprus. I'm happy to be able to work with the team that i've met and take up the challenge of venetostars,the name, Thalasat comes from the greek word "θαλασσα" (thalassa), meaning "sea".</p>
   
 </div>
 <!-- Purple fire animated border image under #start -->
@@ -290,6 +290,19 @@ To top it all off, we had the honor of meeting the President and the Minister of
   </div>
 {/if}
 
+
+<div id="thal">
+    <p1>Thalasat has its own website <a
+    href="https://github.com/Stefanos-gif/Programming/tree/main"target="_blank"
+    rel="noopener noreferrer"
+    style="color: #2eff23;"
+  >here</a>, and its instagram is <a
+    href="https://github.com/Stefanos-gif/Programming/tree/main"target="_blank"
+    rel="noopener noreferrer"
+    style="color: #2eff23;"
+  >here</a></p1> 
+</div>
+
 <style>
     :root {
       overflow-x: hidden;
@@ -391,7 +404,30 @@ To top it all off, we had the honor of meeting the President and the Minister of
         transform: scale(1.05);
         text-decoration: underline solid #ff00ff;
         text-shadow: 4px 4px 2px var(--color-primary);
-    }     
+    } 
+
+    #thal {
+    position:absolute;
+    /* vertical margin stays 0.1rem, horizontal margins auto-center */
+    left:5rem;
+    top: 20rem;
+    margin: 0.1rem auto;
+    padding: 1rem;
+    width: 10vw;
+    max-width: 1000px;
+    border: 4px solid var(--color-primary);
+    border-radius: 8px;
+    background: rgba(97,20,128,0.7);
+    text-align: center;
+    transition:ease-in-out 0.3s;
+    
+    }
+    
+    #thal:hover {
+        transform: scale(1.05);
+        text-decoration: underline solid #ff00ff;
+        text-shadow: 4px 4px 2px var(--color-primary);
+    }         
 
   #start p {
     font-size: 1.25rem;
@@ -922,6 +958,7 @@ To top it all off, we had the honor of meeting the President and the Minister of
   top: 2rem;
   left: 0rem;
   right:1.3rem;
+  
 
 }
 .veneto-title {
@@ -941,6 +978,8 @@ To top it all off, we had the honor of meeting the President and the Minister of
   align-items: center;
   justify-content: center;
   background: none;
+  
+  border-radius: 40px;
 }
 .veneto-img-3d {
   position: absolute;
@@ -964,21 +1003,31 @@ To top it all off, we had the honor of meeting the President and the Minister of
   z-index: 2;
   pointer-events: auto;
   border-image: linear-gradient(135deg, #ff47f0 10%, #c77dff 50%, #7b2ff2 90%) 1;
+  
   animation: veneto-border-glow 1.2s infinite alternate;
+  
+  border-radius: 40px;
+  
 }
 .veneto-img-3d.left {
   opacity: 0.3;
   transform: scale(0.85) rotateY(-60deg) translateX(-120px);
   z-index: 1;
+  
+  border-radius: 40px;
+  
 }
 .veneto-img-3d.right {
   opacity: 0.3;
   transform: scale(0.85) rotateY(60deg) translateX(120px);
   z-index: 1;
+  
+  border-radius: 40px;
 }
 @keyframes veneto-border-glow {
   0% { box-shadow: 0 0 80px #c77dffcc, 0 0 32px #ff47f0cc; border-color: #ff47f0; }
   100% { box-shadow: 0 0 120px #ff47f0cc, 0 0 64px #c77dffcc; border-color: #c77dff; }
+  
 }
 .veneto-arrow-btn {
   position: absolute;

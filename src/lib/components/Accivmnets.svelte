@@ -6,26 +6,42 @@
 
 <div id="achivment-container">  
     <div>
-        <h2>Achievements </h2>
-        <img src="/paint.jpg"/>
-        <ul>
-            <li><b>Completed Over 50 Programming Projects:</b> Successfully developed and completed more than 50 projects in various programming languages</li>
-            <li><b>Contributed to Open Source Projects:</b> Actively contributed to 24 open-source projects on GitHub, improving my collaborative skills and gaining valuable experience.</li>
-            <li><b>Successfully Completed Online Courses:</b> Completed numerous online courses on platforms like Coursera and Udemy, furthering my knowledge in areas like ethical hacking, web development, and data analysis.</li>
-            <li><b>Tutored Junior Programmers</b>: Provided mentorship to junior programmers, helping them improve their coding skills and complete their projects successfully.</li>
-        
-        
-            </ul>
-    </div>
+    <h2>Achievements</h2>
+    <img src="/paint.jpg" alt="Painting achievement illustration"/>
+    <ul>
+        <li>
+            <b>Completed 43 Programming Projects:</b> Built and maintained 23 public GitHub repositories and over 20 additional small-scale applications and scripts across multiple languages and frameworks.
+        </li>
+        <li>
+            <b>Hackathon Winner – Cassini Camp (Cyprus):</b> As a core member of <em>SSATfire</em>, won 1st place by architecting and demoing an innovative solution under a 48-hour deadline.
+        </li>
+        <li>
+            <b>Champion – Venetostars 2025 Challenge:</b> Collaborated with <em>Team Thalassat</em> to secure top honors in Venetostars 2025, showcasing rapid prototyping and seamless teamwork.
+        </li>
+        <li>
+            <b>STEM & Robotics Mentor:</b> Tutored junior programmers in C++ and robotics engineering fundamentals, guiding them through hands-on projects and reinforcing core STEM concepts.
+        </li>
+    </ul>
+</div>
     <div>
         <h2>Strengths</h2>
-        <img src="/write.png"/>
+        <img src="/write.png" />
         <ul>
-            <li><b>Proficient in Multiple Programming Languages:</b> I know many languages like <Fa icon={faPython} /> Python, <Fa icon={faJs}/>Js, <Fa icon={faC}/> C++, <Fa icon={faHashtag}/> C#, <Fa icon={faL}/>  Lua</li>      
-            <li><b>Ethical Hacking Expertise:</b> Deep knowledge and hands-on experience in ethical hacking, vulnerability assessment, and penetration testing.</li>
-            <li><b>Strong Problem-Solving Skills:</b> Ability to analyze complex problems, devise innovative solutions, and implement them effectively.</li>
-            <li><b>Excellent Communication Skills:</b> Skilled in explaining technical concepts clearly and effectively to students, peers, and non-technical stakeholders.</li>
-            <li><b>Adaptability and Quick Learner:</b> Able to quickly grasp new technologies and tools, staying updated with the latest industry trends.</li>  
+            <li>
+                <b>Polyglot & Full-Stack Developer:</b> Fluent in <Fa icon={faPython}/> Python, <Fa icon={faJs}/> JavaScript,  TypeScript, <Fa icon={faC}/> C++, <Fa icon={faHashtag}/> C#, <Fa icon={faL}/> Lua, with hands-on experience in Node.js, React, and SvelteKit.
+            </li>
+            <li>
+                <b>Ethical Hacking Expertise:</b> Deep knowledge and practical skills in vulnerability assessment, penetration testing, and security best practices.
+            </li>
+            <li>
+                <b>Analytical Problem-Solving:</b> Strong ability to break down complex issues, craft innovative solutions, and execute them effectively.
+            </li>
+            <li>
+                <b>Clear Communication:</b> Excel at conveying technical concepts clearly to students, peers, and non-technical stakeholders.
+            </li>
+            <li>
+                <b>Adaptability & Continuous Learning:</b> Quick to master new tools and technologies, staying current with evolving industry trends.
+            </li>
         </ul>
     </div>
     <div>

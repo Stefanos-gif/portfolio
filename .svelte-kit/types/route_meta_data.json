@@ -30,6 +30,9 @@
 	"/projects/python-web-scraper": [
 		"src/routes/+layout.js"
 	],
+	"/projects/satfire": [
+		"src/routes/+layout.js"
+	],
 	"/projects/thalasat": [
 		"src/routes/+layout.js"
 	]
