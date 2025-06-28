@@ -300,3 +300,11 @@ import ArrowDown from '$lib/ArrowDown.svelte';
         left: 34rem;    /* moved much more to the left */
     }
 </style>
+
+<head>
+  <meta property="og:title"       content="Satfire Project - Stefanos Siathas" />
+  <meta property="og:description" content="Satfire: 1st place winner in the Cassini Camp Hackathon. Learn about our project to protect Cyprus and beyond!" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://stefanossiathas.com/projects/satfire" />
+  <meta property="og:image"       content="/pres1.png" />
+</head>

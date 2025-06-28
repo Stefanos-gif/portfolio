@@ -1,7 +1,9 @@
 <head>
-  <!-- Basic page info -->
-  <title>Stefanos Siathas</title>
-  <meta name="description" content="The homepage to my portfolio">
+  <meta property="og:title"       content="Stefanos Siathas" />
+  <meta property="og:description" content="My portfolio!!!" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://stefanossiathas.com" />
+  <meta property="og:image"       content="/favicon.ico" />
 
 
 

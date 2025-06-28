@@ -1,3 +1,10 @@
+<head>
+  <meta property="og:title"       content="C++ Level 3 Project - Stefanos Siathas" />
+  <meta property="og:description" content="Explore my C++ Level 3 project, featuring advanced code, libraries, and interactive demos. See the code and results!" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://stefanossiathas.com/projects/cpp-lvl3" />
+  <meta property="og:image"       content="/Prog1.png" />
+</head>
 <script>
     import TripleImage from "../../../lib/components/TripleImage.svelte";
     // Removed FontAwesome imports

@@ -1,3 +1,10 @@
+<head>
+  <meta property="og:title"       content="Thalasat Project - Stefanos Siathas" />
+  <meta property="og:description" content="Thalasat: Youth-led initiative for marine monitoring and environmental protection. Discover our award-winning project!" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://stefanossiathas.com/projects/thalasat" />
+  <meta property="og:image"       content="/namet.png" />
+</head>
 <script>
   // Pure CSS animation; no JS required
   let galleryImages = [

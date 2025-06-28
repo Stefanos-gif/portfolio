@@ -1,3 +1,11 @@
+<head>
+  <meta property="og:title"       content="Background - Stefanos Siathas" />
+  <meta property="og:description" content="Learn about Stefanos Siathas: STEM ambassador, computer science and physics student, and builder of creative projects." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://stefanossiathas.com/background" />
+  <meta property="og:image"       content="/stefs_profesionaly_photographed_picture_by_michalis_chhatzittofi.jpg" />
+</head>
+
 <script>
 	import { settings, sketchKey } from '$lib/stores.js';
 </script>

@@ -84,7 +84,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     },
     {},
     {}
-  )}</div> <div id="pres6" class="svelte-1163y80" data-svelte-h="svelte-1yvnxcz"><img src="/pres6.png" alt="Presentation page 6" class="svelte-1163y80"></div>`;
+  )}</div> <div id="pres6" class="svelte-1163y80" data-svelte-h="svelte-1yvnxcz"><img src="/pres6.png" alt="Presentation page 6" class="svelte-1163y80"></div>  <head data-svelte-h="svelte-14ku6lh"><meta property="og:title" content="Satfire Project - Stefanos Siathas"> <meta property="og:description" content="Satfire: 1st place winner in the Cassini Camp Hackathon. Learn about our project to protect Cyprus and beyond!"> <meta property="og:type" content="website"> <meta property="og:url" content="https://stefanossiathas.com/projects/satfire"> <meta property="og:image" content="/pres1.png"></head>`;
 });
 export {
   Page as default
