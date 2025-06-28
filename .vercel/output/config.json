@@ -101,6 +101,17 @@
 			}
 		},
 		{
+			"src": "/projects/satfire",
+			"dest": "/projects/satfire/"
+		},
+		{
+			"src": "/projects/satfire/",
+			"status": 308,
+			"headers": {
+				"Location": "/projects/satfire"
+			}
+		},
+		{
 			"src": "/projects/thalasat",
 			"dest": "/projects/thalasat/"
 		},
@@ -155,6 +166,9 @@
 		},
 		"projects/python-web-scraper.html": {
 			"path": "projects/python-web-scraper"
+		},
+		"projects/satfire.html": {
+			"path": "projects/satfire"
 		},
 		"projects/thalasat.html": {
 			"path": "projects/thalasat"

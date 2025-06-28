@@ -251,13 +251,28 @@
     "isEntry": true,
     "src": "src/routes/projects/python-web-scraper/+page.svelte"
   },
+  "src/routes/projects/satfire/+page.css": {
+    "file": "_app/immutable/assets/_page.d6766ecd.css",
+    "src": "src/routes/projects/satfire/+page.css"
+  },
+  "src/routes/projects/satfire/+page.svelte": {
+    "css": [
+      "_app/immutable/assets/_page.d6766ecd.css"
+    ],
+    "file": "entries/pages/projects/satfire/_page.svelte.js",
+    "imports": [
+      "_ssr.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/projects/satfire/+page.svelte"
+  },
   "src/routes/projects/thalasat/+page.css": {
-    "file": "_app/immutable/assets/_page.0dd969d3.css",
+    "file": "_app/immutable/assets/_page.c0806a40.css",
     "src": "src/routes/projects/thalasat/+page.css"
   },
   "src/routes/projects/thalasat/+page.svelte": {
     "css": [
-      "_app/immutable/assets/_page.0dd969d3.css"
+      "_app/immutable/assets/_page.c0806a40.css"
     ],
     "file": "entries/pages/projects/thalasat/_page.svelte.js",
     "imports": [
