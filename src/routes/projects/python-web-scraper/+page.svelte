@@ -8,6 +8,15 @@
         showFullscreen = false;
     }
 </script>
+<svelte:head>
+  <title>Python Web Scraper | Stefanos Portfolio</title>
+  <meta name="description" content="A simple Python script that scrapes all links from a webpage and exports them to CSV. Uses BeautifulSoup, Requests, and Python for fast web data extraction." />
+  <meta property="og:title" content="Python Web Scraper | Stefanos Portfolio" />
+  <meta property="og:description" content="A simple Python script that scrapes all links from a webpage and exports them to CSV. Uses BeautifulSoup, Requests, and Python for fast web data extraction." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-portfolio-domain.com/projects/python-web-scraper" />
+  <meta property="og:image" content="https://your-portfolio-domain.com/web.png" />
+</svelte:head>
 <div id ="container">
     <h1>Python Web Scraper</h1>
     <p id="first-p">This project is a straightforward <a

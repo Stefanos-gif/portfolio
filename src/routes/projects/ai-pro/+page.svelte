@@ -1,3 +1,10 @@
+<head>
+  <meta property="og:title"       content="AI (Pro) Debate - Stefanos Siathas" />
+  <meta property="og:description" content="Debate leadership, strategy, and psychological tactics: How I led a team to victory arguing in favor of AI. Download research and planning docs!" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://stefanossiathas.com/projects/ai-pro" />
+  <meta property="og:image"       content="/ai.png" />
+</head>
 <div id="container">
     <h1>AI (Pro)</h1>
     <p>This portfolio entry highlights the strategic planning, execution, and outcomes of a debate in which I led a team to argue in favor of AI. It outlines my role as team leader, the preparation process, the use of psychological tactics, and how these strategies can be applied to future debates or discussions. The attached files provide additional insights into the research, teamwork, and methodologies employed to achieve success.</p>

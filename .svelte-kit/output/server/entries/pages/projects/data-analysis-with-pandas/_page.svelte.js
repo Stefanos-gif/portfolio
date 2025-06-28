@@ -18,7 +18,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     },
     {},
     {}
-  )}</div> ${``}`;
+  )}</div> ${``} ${$$result.head += `<!-- HEAD_svelte-1056ckw_START -->${$$result.title = `<title>Data Analysis with Pandas | Stefanos Portfolio</title>`, ""}<meta name="description" content="A project that uses Python, Pandas, and Matplotlib to analyze datasets and visualize data with histograms. Explore the code and see data science in action!"><meta property="og:title" content="Data Analysis with Pandas | Stefanos Portfolio"><meta property="og:description" content="A project that uses Python, Pandas, and Matplotlib to analyze datasets and visualize data with histograms. Explore the code and see data science in action!"><meta property="og:type" content="website"><meta property="og:url" content="https://your-portfolio-domain.com/projects/data-analysis-with-pandas"><meta property="og:image" content="https://your-portfolio-domain.com/dataanshow.png"><!-- HEAD_svelte-1056ckw_END -->`, ""}`;
 });
 export {
   Page as default

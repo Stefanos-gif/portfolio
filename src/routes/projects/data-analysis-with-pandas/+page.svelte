@@ -47,6 +47,16 @@
     </div>
 {/if}
 
+<svelte:head>
+  <title>Data Analysis with Pandas | Stefanos Portfolio</title>
+  <meta name="description" content="A project that uses Python, Pandas, and Matplotlib to analyze datasets and visualize data with histograms. Explore the code and see data science in action!" />
+  <meta property="og:title" content="Data Analysis with Pandas | Stefanos Portfolio" />
+  <meta property="og:description" content="A project that uses Python, Pandas, and Matplotlib to analyze datasets and visualize data with histograms. Explore the code and see data science in action!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-portfolio-domain.com/projects/data-analysis-with-pandas" />
+  <meta property="og:image" content="https://your-portfolio-domain.com/dataanshow.png" />
+</svelte:head>
+
 <style>
   #container{
         display: flex;

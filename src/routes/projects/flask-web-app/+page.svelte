@@ -8,6 +8,15 @@
         showFullscreen = false;
     }
 </script>
+<svelte:head>
+  <title>Flask Web Application | Stefanos Portfolio</title>
+  <meta name="description" content="A simple Flask web app for managing tasks. Add, edit, and organize your to-dos with a clean Python backend and modern web interface." />
+  <meta property="og:title" content="Flask Web Application | Stefanos Portfolio" />
+  <meta property="og:description" content="A simple Flask web app for managing tasks. Add, edit, and organize your to-dos with a clean Python backend and modern web interface." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-portfolio-domain.com/projects/flask-web-app" />
+  <meta property="og:image" content="https://your-portfolio-domain.com/flaskshow.png" />
+</svelte:head>
 <div id ="container">
     <h1>Flask Web Application</h1>
     <p id="first-p">This is a python <a
