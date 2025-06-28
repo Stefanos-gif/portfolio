@@ -8,7 +8,8 @@
 	import { fade } from 'svelte/transition';
 	import { cubicIn } from 'svelte/easing';
 	import { page } from '$app/stores';
-
+	import { injectAnalytics } from '@vercel/analytics/sveltekit'
+	injectAnalytics();
 
 	export let data;
 
