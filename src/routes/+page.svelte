@@ -1,3 +1,11 @@
+<head>
+  <!-- Basic page info -->
+  <title>Stefanos Siathas</title>
+  <meta name="description" content="The homepage to my portfolio">
+
+
+
+</head>
 <script>
 	import { onDestroy, onMount } from 'svelte';
 
