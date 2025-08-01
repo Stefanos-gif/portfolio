@@ -37,7 +37,7 @@
     <p id="third-p">An interactive, text-based maze navigation program demonstrating structured data, user input handling, and simple collision detection:
 
 Maze Representation
-The maze is a 10×10 grid stored as a vector<vector<char>>, where '#' denotes walls and ' ' open paths.
+The maze is a 10×10 grid stored as a vector&lt;vector&lt;char&gt;&gt;, where '#' denotes walls and ' ' open paths.
 
 Player Struct
 A Player struct holds x and y coordinates, initialized at (1,1).
