@@ -5,7 +5,7 @@ const app = "";
 const Projects_svelte_svelte_type_style_lang = "";
 const Header_svelte_svelte_type_style_lang = "";
 const css$1 = {
-  code: "header.svelte-ibimq6.svelte-ibimq6{position:fixed;top:0;display:flex;justify-content:space-between;z-index:10}.opened.svelte-ibimq6.svelte-ibimq6{top:70vh}#project-screen.svelte-ibimq6.svelte-ibimq6{position:fixed;top:0;left:0;width:100vw;height:70vh;background-color:var(--color-primary);z-index:1;transform-origin:top center}nav.svelte-ibimq6.svelte-ibimq6{position:absolute;top:0;transition:top 300ms cubic-bezier(0.215, 0.61, 0.355, 1);display:flex;justify-content:center;align-items:flex-start;width:100vw;--background:var(--color-primary);position:fixed}svg.svelte-ibimq6.svelte-ibimq6{width:2em;height:5em;display:block;transition:all 0.3s}path.svelte-ibimq6.svelte-ibimq6{fill:var(--color-primary)}ul.svelte-ibimq6.svelte-ibimq6{position:relative;padding:0;margin:0;height:3em;display:flex;justify-content:center;align-items:center;list-style:none;background:var(--color-primary);background-size:contain}li.svelte-ibimq6.svelte-ibimq6{position:relative;height:100%}nav.svelte-ibimq6 button.svelte-ibimq6{display:flex;height:100%;align-items:center;padding:0 0.5rem;color:var(--color-secondary);font-weight:700;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;text-decoration:none;transition:color 0.2s linear;cursor:pointer;border:none;background-color:transparent}.current-section.svelte-ibimq6 button.svelte-ibimq6{color:var(--background-color)}button.svelte-ibimq6.svelte-ibimq6:hover{color:var(--background-color)}.arrow{margin-top:0.25rem}#arrow-container.svelte-ibimq6.svelte-ibimq6{display:flex;justify-content:center;align-items:center;width:100%;height:100%;background-color:var(--color-primary);padding-bottom:0.75rem}",
+  code: ":root{--color-primary:#7b2ff2;--color-secondary:#e9d8ff;--background-color:#0b0710}header.svelte-amhpom.svelte-amhpom{position:fixed;top:0;left:0;right:0;display:contents;z-index:9999}#project-screen.svelte-amhpom.svelte-amhpom{position:fixed;top:0;left:0;width:100vw;height:70vh;background-color:var(--color-primary);z-index:9998;transform-origin:top center;overflow:auto}nav.svelte-amhpom.svelte-amhpom{position:fixed;top:0;left:0;right:0;display:flex;justify-content:center;align-items:flex-start;width:100vw;transition:top 300ms cubic-bezier(0.215, 0.61, 0.355, 1);pointer-events:auto;z-index:9999}.opened.svelte-amhpom.svelte-amhpom{top:70vh}.wing.svelte-amhpom.svelte-amhpom,svg.svelte-amhpom.svelte-amhpom{width:2em;height:5em;display:block;transition:all 0.3s}path.svelte-amhpom.svelte-amhpom{fill:var(--color-primary)}.links-container.svelte-amhpom.svelte-amhpom{display:flex;flex-direction:column;align-items:center;max-width:100%}ul.svelte-amhpom.svelte-amhpom{position:relative;padding:0;margin:0;height:3em;display:flex;justify-content:center;align-items:center;list-style:none;background:var(--color-primary);background-size:contain;overflow-x:auto;overflow-y:hidden;gap:0.25rem;-webkit-overflow-scrolling:touch;scrollbar-width:thin}ul.svelte-amhpom.svelte-amhpom::-webkit-scrollbar{height:6px}ul.svelte-amhpom.svelte-amhpom::-webkit-scrollbar-thumb{background:#ffffff33;border-radius:10px}li.svelte-amhpom.svelte-amhpom{position:relative;height:100%;flex:0 0 auto}nav.svelte-amhpom button.svelte-amhpom{display:flex;height:100%;align-items:center;padding:0 0.5rem;color:var(--color-secondary);font-weight:700;font-size:clamp(0.7rem, 2vw, 0.8rem);text-transform:uppercase;letter-spacing:0.1em;text-decoration:none;transition:color 0.2s linear;cursor:pointer;border:none;background-color:transparent;min-width:2.75rem}.current-section.svelte-amhpom button.svelte-amhpom{color:var(--background-color)}button.svelte-amhpom.svelte-amhpom:hover{color:var(--background-color)}.arrow{margin-top:0.25rem}#arrow-container.svelte-amhpom.svelte-amhpom{display:flex;justify-content:center;align-items:center;width:100%;height:calc(100% + 0.5rem);background-color:var(--color-primary);padding-bottom:0.75rem;cursor:pointer;user-select:none}@media(max-width: 768px){#project-screen.svelte-amhpom.svelte-amhpom{height:60vh}.opened.svelte-amhpom.svelte-amhpom{top:60vh}.wing.svelte-amhpom.svelte-amhpom,svg.svelte-amhpom.svelte-amhpom{width:1.5em;height:4em}ul.svelte-amhpom.svelte-amhpom{height:2.5em;gap:0.15rem;padding-inline:0.25rem}nav.svelte-amhpom button.svelte-amhpom{padding:0 0.35rem;font-size:0.7rem;letter-spacing:0.09em;min-width:2.5rem}}@media(max-width: 480px){.wing.svelte-amhpom.svelte-amhpom,svg.svelte-amhpom.svelte-amhpom{width:1.2em;height:3.5em}ul.svelte-amhpom.svelte-amhpom{height:2.2em}nav.svelte-amhpom button.svelte-amhpom{padding:0 0.25rem;font-size:0.62rem;letter-spacing:0.06em;min-width:2.25rem}}",
   map: null
 };
 const Header = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -16,7 +16,7 @@ const Header = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     $$bindings.opened(opened);
   $$result.css.add(css$1);
   $$unsubscribe_page();
-  return ` ${$$result.head += `<!-- HEAD_svelte-152mlal_START --><meta charset="UTF-8">${$$result.title = `<title>Stefanos Siathas</title>`, ""}<!-- HEAD_svelte-152mlal_END -->`, ""} <header class="svelte-ibimq6">${``} </header>`;
+  return `   ${$$result.head += `<!-- HEAD_svelte-1w5sd33_START --><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">${$$result.title = `<title>Stefanos Siathas</title>`, ""}<!-- HEAD_svelte-1w5sd33_END -->`, ""} <header class="svelte-amhpom">${``} </header>`;
 });
 const P5 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { target = void 0 } = $$props;
@@ -103,7 +103,7 @@ const Sketch = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 });
 const _layout_svelte_svelte_type_style_lang = "";
 const css = {
-  code: ".app.svelte-19hge7r{display:flex;flex-direction:column;min-height:100vh}main.svelte-19hge7r{flex:1;display:flex;flex-direction:column;padding:1rem;padding-top:10vh;width:100%;max-width:80rem;margin:0 auto;box-sizing:border-box}#sketch.svelte-19hge7r{position:fixed !important;top:0;left:0;z-index:-1;animation:svelte-19hge7r-fadein 2s}@keyframes svelte-19hge7r-fadein{from{opacity:0}to{opacity:1}}",
+  code: ".app.svelte-1ebsv34{display:flex;flex-direction:column;min-height:100vh}main.svelte-1ebsv34{flex:1;display:flex;flex-direction:column;padding:1rem;padding-top:10vh;width:100%;max-width:80rem;margin:0 auto;box-sizing:border-box}#sketch.svelte-1ebsv34{position:fixed !important;top:0;left:0;z-index:-1;animation:svelte-1ebsv34-fadein 2s}@keyframes svelte-1ebsv34-fadein{from{opacity:0}to{opacity:1}}@media(max-width: 768px){main.svelte-1ebsv34{padding:0.5rem;padding-top:8vh;max-width:100%}}@media(max-width: 480px){main.svelte-1ebsv34{padding:0.25rem;padding-top:7vh}}",
   map: null
 };
 const Layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -124,7 +124,7 @@ const Layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   do {
     $$settled = true;
     $$result.head = previous_head;
-    $$rendered = ` <div class="app svelte-19hge7r"><div id="sketch" class="svelte-19hge7r">${validate_component(Sketch, "Sketch").$$render($$result, {}, {}, {})}</div> ${validate_component(Header, "Header").$$render(
+    $$rendered = ` <div class="app svelte-1ebsv34"><div id="sketch" class="svelte-1ebsv34">${validate_component(Sketch, "Sketch").$$render($$result, {}, {}, {})}</div> ${validate_component(Header, "Header").$$render(
       $$result,
       { opened },
       {
@@ -134,7 +134,7 @@ const Layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         }
       },
       {}
-    )} <main class="svelte-19hge7r"><div>${slots.default ? slots.default({}) : ``}</div></main> </div>`;
+    )} <main class="svelte-1ebsv34"><div>${slots.default ? slots.default({}) : ``}</div></main> </div>`;
   } while (!$$settled);
   $$unsubscribe_sketchKey();
   return $$rendered;

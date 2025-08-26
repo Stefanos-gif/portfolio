@@ -90,6 +90,17 @@
 			}
 		},
 		{
+			"src": "/projects/meteor",
+			"dest": "/projects/meteor/"
+		},
+		{
+			"src": "/projects/meteor/",
+			"status": 308,
+			"headers": {
+				"Location": "/projects/meteor"
+			}
+		},
+		{
 			"src": "/projects/python-web-scraper",
 			"dest": "/projects/python-web-scraper/"
 		},
@@ -112,6 +123,17 @@
 			}
 		},
 		{
+			"src": "/projects/taskmanager",
+			"dest": "/projects/taskmanager/"
+		},
+		{
+			"src": "/projects/taskmanager/",
+			"status": 308,
+			"headers": {
+				"Location": "/projects/taskmanager"
+			}
+		},
+		{
 			"src": "/projects/thalasat",
 			"dest": "/projects/thalasat/"
 		},
@@ -120,6 +142,17 @@
 			"status": 308,
 			"headers": {
 				"Location": "/projects/thalasat"
+			}
+		},
+		{
+			"src": "/projects/watchlist-app",
+			"dest": "/projects/watchlist-app/"
+		},
+		{
+			"src": "/projects/watchlist-app/",
+			"status": 308,
+			"headers": {
+				"Location": "/projects/watchlist-app"
 			}
 		},
 		{
@@ -164,14 +197,23 @@
 		"projects/flask-web-app.html": {
 			"path": "projects/flask-web-app"
 		},
+		"projects/meteor.html": {
+			"path": "projects/meteor"
+		},
 		"projects/python-web-scraper.html": {
 			"path": "projects/python-web-scraper"
 		},
 		"projects/satfire.html": {
 			"path": "projects/satfire"
 		},
+		"projects/taskmanager.html": {
+			"path": "projects/taskmanager"
+		},
 		"projects/thalasat.html": {
 			"path": "projects/thalasat"
+		},
+		"projects/watchlist-app.html": {
+			"path": "projects/watchlist-app"
 		}
 	}
 }
