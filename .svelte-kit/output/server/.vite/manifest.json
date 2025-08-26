@@ -70,7 +70,7 @@
     "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js"
   },
   "src/routes/+layout.css": {
-    "file": "_app/immutable/assets/_layout.29f51433.css",
+    "file": "_app/immutable/assets/_layout.3164f14e.css",
     "src": "src/routes/+layout.css"
   },
   "src/routes/+layout.js": {
@@ -80,7 +80,7 @@
   },
   "src/routes/+layout.svelte": {
     "css": [
-      "_app/immutable/assets/_layout.29f51433.css",
+      "_app/immutable/assets/_layout.3164f14e.css",
       "_app/immutable/assets/fa-layers-text.587e8de8.css",
       "_app/immutable/assets/TripleImage.fb417689.css"
     ],
@@ -94,12 +94,12 @@
     "src": "src/routes/+layout.svelte"
   },
   "src/routes/+page.css": {
-    "file": "_app/immutable/assets/_page.3a35ee69.css",
+    "file": "_app/immutable/assets/_page.369b1999.css",
     "src": "src/routes/+page.css"
   },
   "src/routes/+page.svelte": {
     "css": [
-      "_app/immutable/assets/_page.3a35ee69.css"
+      "_app/immutable/assets/_page.369b1999.css"
     ],
     "file": "entries/pages/_page.svelte.js",
     "imports": [
@@ -109,12 +109,12 @@
     "src": "src/routes/+page.svelte"
   },
   "src/routes/about/+page.css": {
-    "file": "_app/immutable/assets/_page.bb804db8.css",
+    "file": "_app/immutable/assets/_page.01968db6.css",
     "src": "src/routes/about/+page.css"
   },
   "src/routes/about/+page.svelte": {
     "css": [
-      "_app/immutable/assets/_page.bb804db8.css",
+      "_app/immutable/assets/_page.01968db6.css",
       "_app/immutable/assets/fa-layers-text.587e8de8.css"
     ],
     "file": "entries/pages/about/_page.svelte.js",
@@ -141,12 +141,12 @@
     "src": "src/routes/background/+page.svelte"
   },
   "src/routes/projects/ai-pro/+page.css": {
-    "file": "_app/immutable/assets/_page.df949efa.css",
+    "file": "_app/immutable/assets/_page.08b85258.css",
     "src": "src/routes/projects/ai-pro/+page.css"
   },
   "src/routes/projects/ai-pro/+page.svelte": {
     "css": [
-      "_app/immutable/assets/_page.df949efa.css"
+      "_app/immutable/assets/_page.08b85258.css"
     ],
     "file": "entries/pages/projects/ai-pro/_page.svelte.js",
     "imports": [
@@ -156,12 +156,12 @@
     "src": "src/routes/projects/ai-pro/+page.svelte"
   },
   "src/routes/projects/barbershop-website/+page.css": {
-    "file": "_app/immutable/assets/_page.9d74034c.css",
+    "file": "_app/immutable/assets/_page.29d23f7d.css",
     "src": "src/routes/projects/barbershop-website/+page.css"
   },
   "src/routes/projects/barbershop-website/+page.svelte": {
     "css": [
-      "_app/immutable/assets/_page.9d74034c.css"
+      "_app/immutable/assets/_page.29d23f7d.css"
     ],
     "file": "entries/pages/projects/barbershop-website/_page.svelte.js",
     "imports": [
@@ -172,12 +172,12 @@
     "src": "src/routes/projects/barbershop-website/+page.svelte"
   },
   "src/routes/projects/cpp-games/+page.css": {
-    "file": "_app/immutable/assets/_page.ce7a278e.css",
+    "file": "_app/immutable/assets/_page.a48b6bba.css",
     "src": "src/routes/projects/cpp-games/+page.css"
   },
   "src/routes/projects/cpp-games/+page.svelte": {
     "css": [
-      "_app/immutable/assets/_page.ce7a278e.css"
+      "_app/immutable/assets/_page.a48b6bba.css"
     ],
     "file": "entries/pages/projects/cpp-games/_page.svelte.js",
     "imports": [
@@ -188,12 +188,12 @@
     "src": "src/routes/projects/cpp-games/+page.svelte"
   },
   "src/routes/projects/cpp-lvl3/+page.css": {
-    "file": "_app/immutable/assets/_page.f462cee1.css",
+    "file": "_app/immutable/assets/_page.fe1d0904.css",
     "src": "src/routes/projects/cpp-lvl3/+page.css"
   },
   "src/routes/projects/cpp-lvl3/+page.svelte": {
     "css": [
-      "_app/immutable/assets/_page.f462cee1.css"
+      "_app/immutable/assets/_page.fe1d0904.css"
     ],
     "file": "entries/pages/projects/cpp-lvl3/_page.svelte.js",
     "imports": [
@@ -204,12 +204,12 @@
     "src": "src/routes/projects/cpp-lvl3/+page.svelte"
   },
   "src/routes/projects/data-analysis-with-pandas/+page.css": {
-    "file": "_app/immutable/assets/_page.67d24a80.css",
+    "file": "_app/immutable/assets/_page.f7a0e4ad.css",
     "src": "src/routes/projects/python-web-scraper/+page.css"
   },
   "src/routes/projects/data-analysis-with-pandas/+page.svelte": {
     "css": [
-      "_app/immutable/assets/_page.67d24a80.css"
+      "_app/immutable/assets/_page.f7a0e4ad.css"
     ],
     "file": "entries/pages/projects/data-analysis-with-pandas/_page.svelte.js",
     "imports": [
@@ -220,12 +220,12 @@
     "src": "src/routes/projects/data-analysis-with-pandas/+page.svelte"
   },
   "src/routes/projects/flask-web-app/+page.css": {
-    "file": "_app/immutable/assets/_page.67d24a80.css",
+    "file": "_app/immutable/assets/_page.f7a0e4ad.css",
     "src": "src/routes/projects/python-web-scraper/+page.css"
   },
   "src/routes/projects/flask-web-app/+page.svelte": {
     "css": [
-      "_app/immutable/assets/_page.67d24a80.css"
+      "_app/immutable/assets/_page.f7a0e4ad.css"
     ],
     "file": "entries/pages/projects/flask-web-app/_page.svelte.js",
     "imports": [
@@ -235,13 +235,28 @@
     "isEntry": true,
     "src": "src/routes/projects/flask-web-app/+page.svelte"
   },
+  "src/routes/projects/meteor/+page.css": {
+    "file": "_app/immutable/assets/_page.c8c42c9c.css",
+    "src": "src/routes/projects/meteor/+page.css"
+  },
+  "src/routes/projects/meteor/+page.svelte": {
+    "css": [
+      "_app/immutable/assets/_page.c8c42c9c.css"
+    ],
+    "file": "entries/pages/projects/meteor/_page.svelte.js",
+    "imports": [
+      "_ssr.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/projects/meteor/+page.svelte"
+  },
   "src/routes/projects/python-web-scraper/+page.css": {
-    "file": "_app/immutable/assets/_page.67d24a80.css",
+    "file": "_app/immutable/assets/_page.f7a0e4ad.css",
     "src": "src/routes/projects/python-web-scraper/+page.css"
   },
   "src/routes/projects/python-web-scraper/+page.svelte": {
     "css": [
-      "_app/immutable/assets/_page.67d24a80.css"
+      "_app/immutable/assets/_page.f7a0e4ad.css"
     ],
     "file": "entries/pages/projects/python-web-scraper/_page.svelte.js",
     "imports": [
@@ -252,12 +267,12 @@
     "src": "src/routes/projects/python-web-scraper/+page.svelte"
   },
   "src/routes/projects/satfire/+page.css": {
-    "file": "_app/immutable/assets/_page.d6766ecd.css",
+    "file": "_app/immutable/assets/_page.5e48b669.css",
     "src": "src/routes/projects/satfire/+page.css"
   },
   "src/routes/projects/satfire/+page.svelte": {
     "css": [
-      "_app/immutable/assets/_page.d6766ecd.css"
+      "_app/immutable/assets/_page.5e48b669.css"
     ],
     "file": "entries/pages/projects/satfire/_page.svelte.js",
     "imports": [
@@ -266,13 +281,28 @@
     "isEntry": true,
     "src": "src/routes/projects/satfire/+page.svelte"
   },
+  "src/routes/projects/taskmanager/+page.css": {
+    "file": "_app/immutable/assets/_page.bc3a55a1.css",
+    "src": "src/routes/projects/taskmanager/+page.css"
+  },
+  "src/routes/projects/taskmanager/+page.svelte": {
+    "css": [
+      "_app/immutable/assets/_page.bc3a55a1.css"
+    ],
+    "file": "entries/pages/projects/taskmanager/_page.svelte.js",
+    "imports": [
+      "_ssr.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/projects/taskmanager/+page.svelte"
+  },
   "src/routes/projects/thalasat/+page.css": {
-    "file": "_app/immutable/assets/_page.c0806a40.css",
+    "file": "_app/immutable/assets/_page.574ec039.css",
     "src": "src/routes/projects/thalasat/+page.css"
   },
   "src/routes/projects/thalasat/+page.svelte": {
     "css": [
-      "_app/immutable/assets/_page.c0806a40.css"
+      "_app/immutable/assets/_page.574ec039.css"
     ],
     "file": "entries/pages/projects/thalasat/_page.svelte.js",
     "imports": [
@@ -280,5 +310,20 @@
     ],
     "isEntry": true,
     "src": "src/routes/projects/thalasat/+page.svelte"
+  },
+  "src/routes/projects/watchlist-app/+page.css": {
+    "file": "_app/immutable/assets/_page.e6024306.css",
+    "src": "src/routes/projects/watchlist-app/+page.css"
+  },
+  "src/routes/projects/watchlist-app/+page.svelte": {
+    "css": [
+      "_app/immutable/assets/_page.e6024306.css"
+    ],
+    "file": "entries/pages/projects/watchlist-app/_page.svelte.js",
+    "imports": [
+      "_ssr.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/projects/watchlist-app/+page.svelte"
   }
 }

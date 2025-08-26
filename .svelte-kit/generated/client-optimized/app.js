@@ -14,7 +14,10 @@ export const nodes = [
 	() => import('./nodes/10'),
 	() => import('./nodes/11'),
 	() => import('./nodes/12'),
-	() => import('./nodes/13')
+	() => import('./nodes/13'),
+	() => import('./nodes/14'),
+	() => import('./nodes/15'),
+	() => import('./nodes/16')
 ];
 
 export const server_loads = [];
@@ -29,9 +32,12 @@ export const dictionary = {
 		"/projects/cpp-lvl3": [8],
 		"/projects/data-analysis-with-pandas": [9],
 		"/projects/flask-web-app": [10],
-		"/projects/python-web-scraper": [11],
-		"/projects/satfire": [12],
-		"/projects/thalasat": [13]
+		"/projects/meteor": [11],
+		"/projects/python-web-scraper": [12],
+		"/projects/satfire": [13],
+		"/projects/taskmanager": [14],
+		"/projects/thalasat": [15],
+		"/projects/watchlist-app": [16]
 	};
 
 export const hooks = {
