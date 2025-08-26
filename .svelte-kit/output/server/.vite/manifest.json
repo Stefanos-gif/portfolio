@@ -94,12 +94,12 @@
     "src": "src/routes/+layout.svelte"
   },
   "src/routes/+page.css": {
-    "file": "_app/immutable/assets/_page.369b1999.css",
+    "file": "_app/immutable/assets/_page.4a535aab.css",
     "src": "src/routes/+page.css"
   },
   "src/routes/+page.svelte": {
     "css": [
-      "_app/immutable/assets/_page.369b1999.css"
+      "_app/immutable/assets/_page.4a535aab.css"
     ],
     "file": "entries/pages/_page.svelte.js",
     "imports": [
