@@ -127,36 +127,35 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+        margin-bottom: 2rem;
     }
     #container h1 {
-        margin: 2.2vw;
+        margin: 2rem 1rem;
         transition: all 0.3s ease-in-out;
+        font-size: clamp(2rem, 5vw, 3.5rem);
     }
 
     #container h1:hover {
-        transform: scale(1.2);
+        transform: scale(1.1);
         text-decoration: underline solid #ff00ff;
         text-shadow: 4px 4px 2px var(--color-primary);
     }
     #container p {
-        position: flex;       /*pin relative to the viewport*/
-        margin: 0.01vw;
-        
+        margin: 1rem;
         background-color: rgba(97, 20, 128, 0.5);
-        padding: 0.5vw;
+        padding: 1.5rem;
         border-radius: 7px;
         border: solid 5px var(--color-primary);
         transition: all 0.3s ease-in-out;
-        font-size: 2vh;
-        width: 40vw;
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+        width: 90%;
+        max-width: 600px;
+        line-height: 1.6;
     }
     #container p:hover {
-        /* position: fixed;       pin relative to the viewport */
-        
-        transform: scale(1.05);
+        transform: scale(1.02);
         background-color: rgb(97, 20, 128, 0.7);
         color: var(--color-secondary);
-        left: 10rem;    /* moved much more to the left */
     }
     /* download */
     #download{
@@ -164,97 +163,93 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        
+        margin: 1rem 0;
     }
     
-    #download p {
-        position: absolute;       /*pin relative to the viewport*/
+    #download p, #download #teammate, #download #psych, #download #research {
+        margin: 0.5rem;
         background-color: rgba(97, 20, 128, 0.5);
-        right: 100rem;
         border-radius: 7px;
         border: solid 5px var(--color-primary);
         transition: all 0.3s ease-in-out;
-        font-size: 2vh;
-        width: auto;
+        font-size: clamp(1rem, 2.5vw, 1.1rem);
+        width: 90%;
+        max-width: 300px;
+        padding: 1rem;
+        position: relative;
     }
-    #download #teammate {
-        position: absolute;       /*pin relative to the viewport*/
-        background-color: rgba(97, 20, 128, 0.5);
-        right: 99.4rem;
-        border-radius: 7px;
-        border: solid 5px var(--color-primary);
-        transition: all 0.3s ease-in-out;
-        font-size: 2vh;
-        width: auto;
-        top:46vh;
-    }
-    #download #psych {
-        position: absolute;       /*pin relative to the viewport*/
-        background-color: rgba(97, 20, 128, 0.5);
-        right: 93rem;
-        border-radius: 7px;
-        border: solid 5px var(--color-primary);
-        transition: all 0.3s ease-in-out;
-        font-size: 2vh;
-        width: auto;
-        top:50vh;
-    }
-    #download #research {
-        position: absolute;       /*pin relative to the viewport*/
-        background-color: rgba(97, 20, 128, 0.5);
-        right: 91rem;
-        border-radius: 7px;
-        border: solid 5px var(--color-primary);
-        transition: all 0.3s ease-in-out;
-        font-size: 2vh;
-        width: auto;
-        top:54vh;
+    #download p:hover, #download #teammate:hover, #download #psych:hover, #download #research:hover {
+        transform: scale(1.02);
+        background-color: rgb(97, 20, 128, 0.7);
     }
     #details{
-        position: absolute;
-        left: 28.3vw;
+        margin: 2rem auto;
+        display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
         border: solid 5px var(--color-primary);
         border-radius: 7px;
-        top: 45vh;
-        width:42vw;
-        height: 175vh;
+        width: 90%;
+        max-width: 800px;
+        padding: 2rem;
         transition: all 0.3s ease-in-out;
-        
         background-color: rgba(97, 20, 128, 0.5);
     }
     #details section {
-    margin-bottom: 2rem;
-
-  }
-  #details:hover {
-
-        transform: scale(1.05);
+        margin-bottom: 2rem;
+        width: 100%;
+    }
+    #details:hover {
+        transform: scale(1.01);
         text-decoration: underline solid #ff00ff;
         text-shadow: 4px 4px 2px var(--color-primary);
     }
-  #details h2 {
-    font-size: 1.75rem;
-    margin-bottom: 0.5rem;
-    border-bottom: 2px solid var(--color-primary);
-    padding-bottom: 0.25rem;
-  }
-  #details h3 {
-    font-size: 1.25rem;
-    margin-top: 1rem;
-  }
-  #details p {
-    line-height: 1.6;
-    margin: 0.5rem 0 1rem;
-  }
-  #details ul {
-    list-style: disc inside;
-    margin: 0.5rem 0 1rem 1rem;
-  }
-  #details ul li {
-    margin-bottom: 0.75rem;
-    line-height: 1.5;
-  }
+    #details h2 {
+        font-size: clamp(1.2rem, 3vw, 1.75rem);
+        margin-bottom: 0.5rem;
+        border-bottom: 2px solid var(--color-primary);
+        padding-bottom: 0.25rem;
+    }
+    #details h3 {
+        font-size: clamp(1rem, 2.5vw, 1.25rem);
+        margin-top: 1rem;
+    }
+    #details p {
+        line-height: 1.6;
+        margin: 0.5rem 0 1rem;
+        font-size: clamp(0.9rem, 2.2vw, 1rem);
+    }
+    #details ul {
+        list-style: disc inside;
+        margin: 0.5rem 0 1rem 1rem;
+        text-align: left;
+    }
+    #details ul li {
+        margin-bottom: 0.75rem;
+        line-height: 1.5;
+        font-size: clamp(0.9rem, 2.2vw, 1rem);
+    }
+
+    /* Media queries for larger screens */
+    @media (min-width: 768px) {
+        #container p {
+            width: 80%;
+        }
+        #download p, #download #teammate, #download #psych, #download #research {
+            max-width: 250px;
+        }
+        #details {
+            width: 80%;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        #container p {
+            width: 70%;
+        }
+        #details {
+            width: 70%;
+        }
+    }
 </style>

@@ -1,20 +1,10 @@
 <script>
-    import TripleImage from "../../../lib/components/TripleImage.svelte";
-    let showTicFullscreen = false;
-    function openTicFullscreen() {
-        showTicFullscreen = true;
-    }
-    function closeTicFullscreen() {
-        showTicFullscreen = false;
-    }
-
-    let showScgameFullscreen = false;
-    function openScgameFullscreen() {
-        showScgameFullscreen = true;
-    }
-    function closeScgameFullscreen() {
-        showScgameFullscreen = false;
-    }
+  import TripleImage from "../../../lib/components/TripleImage.svelte";
+  const IMG_TIC_H = "clamp(220px, 51vh, 560px)";
+  const IMG_SCGAME_H = "clamp(220px, 51vh, 560px)";
+  let overlaySrc = null;
+  function openFullscreen(src) { overlaySrc = src; document.body.style.overflow = "hidden"; }
+  function closeFullscreen() { overlaySrc = null; document.body.style.overflow = ""; }
 </script>
 
 <svelte:head>
@@ -27,547 +17,334 @@
   <meta name="description" content="Explore Stefanos' collection of C++ games, including a text-based maze and a two-player Tic-Tac-Toe. Each project demonstrates dynamic data structures, user input, and classic game logic in C++." />
 </svelte:head>
 
-<div id ="container">
-    <h1>Welcome to my C++ Games</h1>
-    <p id="first-p">This contains my C++ Games, which I’ll continue to expand as I improve.I love making simple little games so, feel free to explore the code on the links that i will share for each one.</p>
-</div>
+<section class="wrap title">
+  <h1>Welcome to my C++ Games</h1>
+  <p class="lead">
+    This contains my C++ Games, which I’ll continue to expand as I improve. I love making simple little games, so feel free to explore the code on the links that I will share for each one.
+  </p>
+</section>
 
-<div id="container2">
-    <p id="second-p">Tic Tac Toe</p>
-    <p id="third-p">An interactive, text-based maze navigation program demonstrating structured data, user input handling, and simple collision detection:
-
-Maze Representation
-The maze is a 10×10 grid stored as a vector&lt;vector&lt;char&gt;&gt;, where '#' denotes walls and ' ' open paths.
-
-Player Struct
-A Player struct holds x and y coordinates, initialized at (1,1).
-
-Rendering Function
-displayMaze() iterates over the grid, drawing either the maze cell or a 'P' at the player’s current position.
-
-Movement Logic
-movePlayer(direction) computes tentative coordinates based on w/a/s/d input, checks for open space, and updates the player’s position if the target cell isn’t a wall.
-
-Main Loop
-Continuously renders the maze, prompts for direction, applies movement, and clears the console for real-time navigation.
-
-This project highlights dynamic data structures, control flow, and basic game-loop architecture in C++. Find <a
-    href="https://github.com/Stefanos-gif/tic-tac-toe-game/tree/main"target="_blank"
-    rel="noopener noreferrer"
-    style="color: #2eff23;"
-  >Here</a>!</p>
-</div>
-
-<div id="container3">
-    <p id="second-p">Simple Console Game</p>
-    <p id="third-p">A compact, two-player Tic-Tac-Toe game implemented with clear, modular functions and robust input handling:
-
-Board Representation
-A 3×3 char array labeled ‘1’–‘9’ lets players pick moves by slot number. Each turn redraws the grid via drawBoard().
-
-Core Logic
-
-placeMarker(slot): Converts a slot to row/column indices, checks occupancy, and places the current marker.
-
-winner(): Scans rows, columns, and diagonals for three identical markers, returning the winning player or 0.
-
-swapPlayerAndMarker(): Toggles between Player 1 and Player 2 along with their markers (X/O).
-
-Game Flow
-In game(), Player 1 first selects X or O. The loop runs up to nine moves, prompting for valid slots, rejecting invalid or occupied entries, and ending early on a win. Finally, it declares the winner or a tie.
-
-This project showcases procedural design, input validation, and user interaction in C++. Find <a
-    href="https://github.com/Stefanos-gif/simple-console-game"target="_blank"
-    rel="noopener noreferrer"
-    style="color: #2eff23;"
-  >Here</a>!</p>
-</div>
-
-
-
-<div id="img-hover" on:click={openTicFullscreen} style="cursor: pointer;">
+<section class="wrap game">
+  <div class="badge">
+    <span class="num">1</span>
+    <div class="fire">
+      <span class="flame f1"></span><span class="flame f2"></span><span class="flame f3"></span><span class="flame f4"></span><span class="flame f5"></span>
+    </div>
+  </div>
+  <div class="osc">
+    <div class="osc-body"></div><div class="osc-head"></div>
+  </div>
+  <h2 class="game-title">Tic Tac Toe</h2>
+  <p class="desc">
+    An interactive, text-based maze navigation program demonstrating structured data, user input handling, and simple collision detection:
+    <br /><br />
+    <strong>Maze Representation</strong><br />
+    The maze is a 10×10 grid stored as a vector&lt;vector&lt;char&gt;&gt;, where '#' denotes walls and ' ' open paths.
+    <br /><br />
+    <strong>Player Struct</strong><br />
+    A Player struct holds x and y coordinates, initialized at (1,1).
+    <br /><br />
+    <strong>Rendering Function</strong><br />
+    displayMaze() iterates over the grid, drawing either the maze cell or a 'P' at the player’s current position.
+    <br /><br />
+    <strong>Movement Logic</strong><br />
+    movePlayer(direction) computes tentative coordinates based on w/a/s/d input, checks for open space, and updates the player’s position if the target cell isn’t a wall.
+    <br /><br />
+    <strong>Main Loop</strong><br />
+    Continuously renders the maze, prompts for direction, applies movement, and clears the console for real-time navigation.
+    <br /><br />
+    This project highlights dynamic data structures, control flow, and basic game-loop architecture in C++. Find
+    <a href="https://github.com/Stefanos-gif/tic-tac-toe-game/tree/main" target="_blank" rel="noopener noreferrer">Here</a>!
+  </p>
+  <figure class="img-card" on:click={() => openFullscreen('/tic.png')}>
     <TripleImage
-    img_url1={"/tic.png"}
-    img_url2={"/tic.png"}
-    img_url3={"/tic.png"}
-    img_height={"51vh"}
-    aspect_ratio={"994/859"}
+      img_url1={"/tic.png"}
+      img_url2={"/tic.png"}
+      img_url3={"/tic.png"}
+      img_height={IMG_TIC_H}
+      aspect_ratio={"994/859"}
+      alt={"Tic Tac Toe"}
     />
-</div>
+  </figure>
+</section>
 
-{#if showTicFullscreen}
-    <div class="fullscreen-overlay" on:click|self={closeTicFullscreen}>
-        <img src="/tic.png" alt="tic" class="fullscreen-img" />
-        <button class="close-btn" on:click={closeTicFullscreen} aria-label="Close fullscreen">&times;</button>
+<section class="wrap game">
+  <div class="badge">
+    <span class="num">2</span>
+    <div class="fire">
+      <span class="flame f1"></span><span class="flame f2"></span><span class="flame f3"></span><span class="flame f4"></span><span class="flame f5"></span>
     </div>
-{/if}
-
-<!-- Cool Number 1 Icon with Purple Fire Animation -->
-<div class="number-one-fire-container">
-    <span class="number-one">1</span>
-    <div class="number-fire">
-        <span class="nflame nflame1"></span>
-        <span class="nflame nflame2"></span>
-        <span class="nflame nflame3"></span>
-        <span class="nflame nflame4"></span>
-        <span class="nflame nflame5"></span>
-    </div>
-</div>
-
-<!-- Cool Number 2 Icon with Purple Fire Animation -->
-<div class="number-two-fire-container">
-    <span class="number-two">2</span>
-    <div class="number-fire">
-        <span class="nflame nflame1"></span>
-        <span class="nflame nflame2"></span>
-        <span class="nflame nflame3"></span>
-        <span class="nflame nflame4"></span>
-        <span class="nflame nflame5"></span>
-    </div>
-</div>
-
-<!-- Animated Oscillating Short Arrow -->
-<div class="osc-arrow-container">
-    <div class="osc-arrow-body"></div>
-    <div class="osc-arrow-head"></div>
-</div>
-
-<!-- Second Animated Oscillating Short Arrow -->
-<div class="osc-arrow-container osc-arrow-container-2">
-    <div class="osc-arrow-body"></div>
-    <div class="osc-arrow-head"></div>
-</div>
-
-<!-- Third Shorter Arrow -->
-<div class="osc-arrow-container osc-arrow-container-short osc-arrow-container-3">
-    <div class="osc-arrow-body osc-arrow-body-short"></div>
-    <div class="osc-arrow-head osc-arrow-head-short"></div>
-</div>
-
-<!-- Fourth Shorter Arrow -->
-<div class="osc-arrow-container osc-arrow-container-short osc-arrow-container-4">
-    <div class="osc-arrow-body osc-arrow-body-short"></div>
-    <div class="osc-arrow-head osc-arrow-head-short"></div>
-</div>
-
-<div id="img-hover2" on:click={openScgameFullscreen} style="cursor: pointer;">
+  </div>
+  <div class="osc osc-2">
+    <div class="osc-body"></div><div class="osc-head"></div>
+  </div>
+  <h2 class="game-title">Simple Console Game</h2>
+  <p class="desc">
+    A compact, two-player Tic-Tac-Toe game implemented with clear, modular functions and robust input handling:
+    <br /><br />
+    <strong>Board Representation</strong><br />
+    A 3×3 char array labeled ‘1’–‘9’ lets players pick moves by slot number. Each turn redraws the grid via drawBoard().
+    <br /><br />
+    <strong>Core Logic</strong><br />
+    placeMarker(slot): Converts a slot to row/column indices, checks occupancy, and places the current marker.
+    <br />
+    winner(): Scans rows, columns, and diagonals for three identical markers, returning the winning player or 0.
+    <br />
+    swapPlayerAndMarker(): Toggles between Player 1 and Player 2 along with their markers (X/O).
+    <br /><br />
+    <strong>Game Flow</strong><br />
+    In game(), Player 1 first selects X or O. The loop runs up to nine moves, prompting for valid slots, rejecting invalid or occupied entries, and ending early on a win. Finally, it declares the winner or a tie.
+    <br /><br />
+    This project showcases procedural design, input validation, and user interaction in C++. Find
+    <a href="https://github.com/Stefanos-gif/simple-console-game" target="_blank" rel="noopener noreferrer">Here</a>!
+  </p>
+  <figure class="img-card" on:click={() => openFullscreen('/scgame.png')}>
     <TripleImage
-        img_url1={"/scgame.png"}
-        img_url2={"/scgame.png"}
-        img_url3={"/scgame.png"}
-        img_height={"51vh"}
-        aspect_ratio={"988/910"}
+      img_url1={"/scgame.png"}
+      img_url2={"/scgame.png"}
+      img_url3={"/scgame.png"}
+      img_height={IMG_SCGAME_H}
+      aspect_ratio={"988/910"}
+      alt={"Simple Console Game"}
     />
-</div>
+  </figure>
+</section>
 
-{#if showScgameFullscreen}
-    <div class="fullscreen-overlay" on:click|self={closeScgameFullscreen}>
-        <img src="/scgame.png" alt="scgame" class="fullscreen-img" />
-        <button class="close-btn" on:click={closeScgameFullscreen} aria-label="Close fullscreen">&times;</button>
-    </div>
+{#if overlaySrc}
+  <div class="fullscreen-overlay" on:click|self={closeFullscreen}>
+    <img src={overlaySrc} alt="Fullscreen" class="fullscreen-img" />
+    <button class="close-btn" on:click={closeFullscreen} aria-label="Close fullscreen">&times;</button>
+  </div>
 {/if}
 
 <style>
-    .osc-arrow-body-short {
-        
-        position:absolute;
-        left:23vw;
-    }
-    .osc-arrow-head-short {
-        position:absolute;
-        left:30vw;
-        
-    }
-    #container{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    #container2{
-        position: absolute;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        border: solid 5px var(--color-primary);
-        border-radius: 7px;
-        right: 60rem;
-        top: 43vh;
-        width:42vw;
-        height: 42vh;
-        transition: all 0.3s ease-in-out;
+  :root{
+    --color-primary:#7b2ff2;
+    --color-secondary:#e9d8ff;
+    --neon-pink:#ff00ff;
+  }
+  .wrap{
+    width:min(100%,1100px);
+    margin-inline:auto;
+    padding-inline:clamp(12px,4vw,24px);
+  }
+  .title{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    gap:clamp(8px,1.8vw,16px);
+    padding-top:clamp(12px,3vw,24px);
+  }
+  .title h1{
+    margin:clamp(12px,2.5vw,24px);
+    font-size:clamp(2rem,6vw,3rem);
+    transition:transform .3s ease, text-shadow .3s ease;
+  }
+  .title h1:hover{
+    transform:scale(1.1);
+    text-decoration:underline solid var(--neon-pink);
+    text-shadow:4px 4px 2px var(--color-primary);
+  }
+  .lead{
+    margin:1rem;
+    background-color:rgba(97,20,128,.5);
+    padding:1.5rem;
+    border-radius:7px;
+    border:5px solid var(--color-primary);
+    font-size:clamp(1rem,2.5vw,1.2rem);
+    width:90%;
+    max-width:900px;
+    line-height:1.6;
+    transition:transform .25s ease, background-color .25s ease, color .25s ease, box-shadow .25s ease;
+    text-align:center;
+  }
+  .lead:hover{
+    transform:translateY(-2px) scale(1.02);
+    background-color:rgba(97,18,128,.7);
+    color:var(--color-secondary);
+    box-shadow:0 0 24px #ff00ff55;
+  }
 
-        
-    }
-    #container2:hover {
-        transform: scale(1.05);
-        text-decoration: underline solid #ff00ff;
-        text-shadow: 4px 4px 2px var(--color-primary);
-    }
-    #container3{
-        position: absolute;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        border: solid 5px var(--color-primary);
-        border-radius: 7px;
-        right: 60rem;
-        top: 113vh;
-        width:42vw;
-        height: 42vh;
-        transition: all 0.3s ease-in-out;
+  .game{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:clamp(14px,3vw,22px);
+    padding-block:clamp(18px,4vw,28px);
+  }
+  .game-title{
+    margin:0 0 .25rem 0;
+    font-size:clamp(1.5rem,4vw,2rem);
+    background-color:rgba(97,20,128,.5);
+    padding:1rem;
+    border-radius:7px;
+  }
+  .desc{
+    margin:0;
+    font-size:clamp(.95rem,2.5vw,1.05rem);
+    background-color:rgba(97,20,128,.5);
+    padding:1rem;
+    border-radius:7px;
+    line-height:1.6;
+    width:90%;
+    max-width:900px;
+    transition:transform .25s ease, background-color .25s ease, color .25s ease;
+  }
+  .desc a{ color:#2eff23; text-decoration:underline; }
+  .desc:hover{ transform:translateY(-1px); background-color:rgba(97,18,128,.6); color:var(--color-secondary); }
 
-        
-    }
-    #container3:hover {
-        transform: scale(1.05);
-        text-decoration: underline solid #ff00ff;
-        text-shadow: 4px 4px 2px var(--color-primary);
-    }
-    #container h1 {
-        margin: 2.2vw;
-        transition: all 0.3s ease-in-out;
-    }
+  .img-card{
+    margin:0;
+    display:flex;
+    justify-content:center;
+    width:90%;
+    max-width:980px;
+    cursor:pointer;
+  }
+  .img-card :global(img){
+    width:100%;
+    height:auto;
+    border-radius:1rem;
+    border:6px solid var(--neon-pink);
+    box-shadow:0 0 28px 6px #ff00ff88, 0 0 64px 12px #ff47f155;
+    background:#111;
+    transition:transform 1s ease, box-shadow .7s cubic-bezier(.4,.2,.2,1), border-color .7s cubic-bezier(.4,.2,.2,1);
+  }
+  .img-card :global(img):hover{
+    transform:scale(1.02);
+    box-shadow:0 0 48px 12px #ff00ffcc, 0 0 96px 24px #fa43f1aa;
+    border-color:var(--neon-pink);
+  }
 
-    #container h1:hover {
-        transform: scale(1.2);
-        text-decoration: underline solid #ff00ff;
-        text-shadow: 4px 4px 2px var(--color-primary);
-    }
+  .badge{
+    position:absolute;
+    left:clamp(-8px, -3vw, -24px);
+    top:clamp(8px,2vw,18px);
+    width:4rem;
+    height:6rem;
+    display:none;
+    align-items:flex-end;
+    justify-content:center;
+    pointer-events:none;
+  }
+  .num{
+    font-size:5rem;
+    font-weight:800;
+    color:#fff0ff;
+    text-shadow:0 0 18px #ff47f0, 0 0 8px #7b2ff2, 2px 2px 0 #5f1a8a;
+    filter:drop-shadow(0 0 10px #ff47f0cc);
+    letter-spacing:-.2rem;
+    position:relative;
+    z-index:2;
+    font-family:system-ui,Segoe UI,Arial,sans-serif;
+    line-height:1;
+  }
+  .fire{
+    position:absolute;
+    bottom:.5rem;
+    left:50%;
+    transform:translateX(-50%);
+    width:3.2rem;
+    height:2.2rem;
+    pointer-events:none;
+    z-index:1;
+  }
+  .flame{
+    position:absolute;
+    border-radius:50% 50% 50% 50%/60% 60% 40% 40%;
+    opacity:.7;
+    filter:blur(1.1px);
+    background:radial-gradient(ellipse at center,#fff0ff 0%,#c77dff 40%,#7b2ff2 80%,#5f1a8a 100%);
+    animation:nflame 1.1s infinite alternate;
+  }
+  .f1{ left:10%; bottom:0; width:.7rem; height:1.5rem; animation-delay:0s; }
+  .f2{ left:40%; bottom:.2rem; width:.8rem; height:1.7rem; animation-delay:.2s; }
+  .f3{ left:70%; bottom:.1rem; width:.7rem; height:1.4rem; animation-delay:.4s; }
+  .f4{ left:25%; bottom:.5rem; width:.5rem; height:1.1rem; animation-delay:.3s; }
+  .f5{ left:60%; bottom:.6rem; width:.6rem; height:1.2rem; animation-delay:.5s; }
+  @keyframes nflame{
+    0%{ transform:scaleY(1) scaleX(1) translateY(0); opacity:.85; }
+    30%{ transform:scaleY(1.1) scaleX(1.05) translateY(-.1rem); opacity:1; }
+    60%{ transform:scaleY(.95) scaleX(.95) translateY(-.2rem); opacity:.7; }
+    100%{ transform:scaleY(1.08) scaleX(1.1) translateY(-.3rem); opacity:.8; }
+  }
 
-    #container #first-p {
-        position: flex;       /*pin relative to the viewport*/
-        margin: 0;
-        
-        background-color: rgba(97, 20, 128, 0.5);
-        padding: 1vw;
-        border-radius: 7px;
-        border: solid 5px var(--color-primary);
-        transition: all 0.3s ease-in-out;
-        font-size: 2vh;
-        width: 40vw;
-    }
-    #container #first-p:hover {
-        /* position: fixed;       pin relative to the viewport */
+  .osc{
+    position:absolute;
+    left:clamp(-4px, -1.5vw, -12px);
+    top:50%;
+    transform:translate(-100%,-50%);
+    display:none;
+    align-items:center;
+    gap:.2rem;
+    animation:osc1 1.2s ease-in-out infinite alternate;
+    pointer-events:none;
+  }
+  .osc-body{
+    height:.6rem;
+    width:11vw;
+    min-width:80px;
+    max-width:160px;
+    background:linear-gradient(90deg,var(--color-primary),#ff47f0,#2eff23,var(--color-secondary));
+    border-radius:.3rem;
+    box-shadow:0 0 8px #ff47f088;
+  }
+  .osc-head{
+    width:0; height:0;
+    border-top:1.2rem solid transparent;
+    border-bottom:1.2rem solid transparent;
+    border-left:2.2rem solid var(--color-primary);
+    margin-left:-.36rem;
+    filter:drop-shadow(0 0 6px #47ff50cc);
+  }
+  .osc-2{ animation:osc2 1.2s ease-in-out infinite alternate; }
+  @keyframes osc1{ from{ transform:translate(-100%,-50%) } to{ transform:translate(calc(-100% - 12px),-50%) } }
+  @keyframes osc2{ from{ transform:translate(-100%,-50%) } to{ transform:translate(calc(-100% - 16px),-50%) } }
 
-        transform: scale(1.05);
-        background-color: rgb(97, 20, 128, 0.7);
-        color: var(--color-secondary);
-        left: 10rem;    /* moved much more to the left */
-    }
-    #container2 #second-p {
-        position: absolute;       /*pin relative to the viewport*/
-        margin: 0;
-        right:0rem;
-        top: 0vh;
-        font-size: 3vh;
-        background-color: rgba(97, 20, 128, 0.5);
-        padding: 1vw;
-        transition: all 0.3s ease-in-out;
-        width: 40vw;
-    }
-    #container3 #second-p {
-        position: absolute;       /*pin relative to the viewport*/
-        margin: 0;
-        right:0rem;
-        top: 0vh;
-        font-size: 3vh;
-        background-color: rgba(97, 20, 128, 0.5);
-        padding: 1vw;
-        transition: all 0.3s ease-in-out;
-        width: 40vw;
-    }
-    #container2 #third-p {
-        
-        position: absolute;       /*pin relative to the viewport*/
-        margin: 0;
-        right:0rem;
-        top: 8.5vh;
-        font-size: 2vh;
-        background-color: rgba(97, 20, 128, 0.5);
-        padding: 1vw;
-        transition: all 0.3s ease-in-out;
-        width: 40vw;
-    }
-    #container3 #third-p {
-        
-        position: absolute;       /*pin relative to the viewport*/
-        margin: 0;
-        right:0rem;
-        top: 8.5vh;
-        font-size: 2vh;
-        background-color: rgba(97, 20, 128, 0.5);
-        padding: 1vw;
-        transition: all 0.3s ease-in-out;
-        width: 40vw;
-    }
-    #container #fourth-p {
-        font-size: 2vh;
-        color:  #ffc2ff;
-        margin: 0;
-        padding: 0;
-        top: -101.8vh;
-        left: -25.11rem;    /* moved much more to the left */
-        position: relative;       /*pin relative to the viewport*/
-        transform: rotate(80deg);
+  @media (min-width: 900px){
+    .badge{ display:flex; }
+    .osc{ display:flex; }
+  }
 
-        animation: bounce 1s ease-in-out infinite;
-    }
-    #container #other-p {
-        position: absolute;       /*pin relative to the viewport*/
-        top:  100vh;             /* vertical center of the screen */
-        left: 10rem;            /* moved much more to the left */
-        /* margin: 0; */
-        
-        background-color: rgba(97, 20, 128, 0.5);
-        padding: 1vw;
-        border-radius: 7px;
-        border: solid 5px var(--color-primary);
-        transition: all 0.3s ease-in-out;
-        font-size: 2vh;
-        width: 40vw;
-    }
-    #container #other-p:hover {
-        /* position: fixed;       pin relative to the viewport */
-        
-
-        transform: scale(1.05);
-        background-color: rgb(97, 20, 128, 0.7);
-        color: var(--color-secondary);
-        left: 10rem;    /* moved much more to the left */
-    }
-    #img-hover {
-        position: absolute;
-        top: 68vh;
-        left: 75vw;            /* halfway into the right-half (50vw + 50vw/2) */
-        transform: translate(-50%, -50%);
-        
-        /* your existing styles */
-        height: 50vh;
-        aspect-ratio: 11/11;
-    }
-    #img-hover2 {
-        position: absolute;
-        top: 136vh;
-        left: 75vw;            /* halfway into the right-half (50vw + 50vw/2) */
-        transform: translate(-50%, -50%);
-        
-        /* your existing styles */
-        height: 50vh;
-        aspect-ratio: 11/11;
-    }
-
-    /* Cool Number 1 Icon with Purple Fire Animation */
-    .number-one-fire-container {
-        position: absolute;
-        top: 43vh;
-        left: 7.3vw;
-        width: 4rem;
-        height: 6rem;
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        z-index: 5;
-        pointer-events: none;
-    }
-    .number-one {
-        font-size: 5rem;
-        font-weight: bold;
-        color: #fff0ff;
-        text-shadow: 0 0 18px #ff47f0, 0 0 8px #7b2ff2, 2px 2px 0 #5f1a8a;
-        position: relative;
-        z-index: 2;
-        font-family: 'Segoe UI', 'Arial', sans-serif;
-        filter: drop-shadow(0 0 10px #ff47f0cc);
-        letter-spacing: -0.2rem;
-    }
-
-    /* Number 2, same style, different position */
-    .number-two-fire-container {
-        position: absolute;
-        top: 113vh;
-        left: 7.3vw;
-        width: 4rem;
-        height: 6rem;
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        z-index: 5;
-        pointer-events: none;
-    }
-    .number-two {
-        font-size: 5rem;
-        font-weight: bold;
-        color: #fff0ff;
-        text-shadow: 0 0 18px #ff47f0, 0 0 8px #7b2ff2, 2px 2px 0 #5f1a8a;
-        position: relative;
-        z-index: 2;
-        font-family: 'Segoe UI', 'Arial', sans-serif;
-        filter: drop-shadow(0 0 10px #ff47f0cc);
-        letter-spacing: -0.2rem;
-    }
-
-    /* Number Fire Animation */
-    .number-fire {
-        position: absolute;
-        bottom: 0.5rem;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 3.2rem;
-        height: 2.2rem;
-        pointer-events: none;
-        z-index: 1;
-    }
-    .nflame {
-        position: absolute;
-        border-radius: 50% 50% 50% 50%/60% 60% 40% 40%;
-        opacity: 0.7;
-        filter: blur(1.1px);
-        background: radial-gradient(ellipse at center, #fff0ff 0%, #c77dff 40%, #7b2ff2 80%, #5f1a8a 100%);
-        animation: nflame-flicker 1.1s infinite alternate;
-        pointer-events: none;
-    }
-    .nflame1 { left: 10%; bottom: 0; width: 0.7rem; height: 1.5rem; animation-delay: 0s; }
-    .nflame2 { left: 40%; bottom: 0.2rem; width: 0.8rem; height: 1.7rem; animation-delay: 0.2s; }
-    .nflame3 { left: 70%; bottom: 0.1rem; width: 0.7rem; height: 1.4rem; animation-delay: 0.4s; }
-    .nflame4 { left: 25%; bottom: 0.5rem; width: 0.5rem; height: 1.1rem; animation-delay: 0.3s; }
-    .nflame5 { left: 60%; bottom: 0.6rem; width: 0.6rem; height: 1.2rem; animation-delay: 0.5s; }
-
-    @keyframes nflame-flicker {
-        0% { transform: scaleY(1) scaleX(1) translateY(0); opacity: 0.85; }
-        30% { transform: scaleY(1.1) scaleX(1.05) translateY(-0.1rem); opacity: 1; }
-        60% { transform: scaleY(0.95) scaleX(0.95) translateY(-0.2rem); opacity: 0.7; }
-        100% { transform: scaleY(1.08) scaleX(1.1) translateY(-0.3rem); opacity: 0.8; }
-    }
-
-    /* Animated Oscillating Short Arrow */
-    .osc-arrow-container {
-        position: absolute;
-        top: 90vh;
-        left: 20vw;
-        width: 14vw;
-        height: 2rem;
-        display: flex;
-        align-items: center;
-        z-index: 5;
-        animation: osc-arrow-move 1.2s ease-in-out infinite alternate;
-        pointer-events: none;
-    }
-    .osc-arrow-container-2 {
-        top: 160vh;
-        left: 22vw;
-        animation: osc-arrow-move-2 1.2s ease-in-out infinite alternate;
-    }
-    /* Shorter arrow containers */
-    .osc-arrow-container-short {
-        width: 9.33vw; /* 1/3 shorter than 14vw */
-        height: 2rem;
-        display: flex;
-        align-items: center;
-        z-index: 5;
-        pointer-events: none;
-    }
-    .osc-arrow-container-3 {
-        top: 70vh;
-        left: 50vw;
-        animation: osc-arrow-move-short-1 1.2s ease-in-out infinite alternate;
-    }
-    .osc-arrow-container-4 {
-        top: 140vh;
-        left: 27vw;
-        animation: osc-arrow-move-short-2 1.2s ease-in-out infinite alternate;
-    }
-    .osc-arrow-body {
-        height: 0.6rem;
-        width: 11vw;
-        background: linear-gradient(90deg, var(--color-primary), #ff47f0, #2eff23, var(--color-secondary));
-        border-radius: 0.3rem;
-        box-shadow: 0 0 8px #ff47f088;
-    }
-    .osc-arrow-head {
-        width: 0;
-        height: 0;
-        border-top: 1.2rem solid transparent;
-        border-bottom: 1.2rem solid transparent;
-        border-left: 2.2rem solid var(--color-primary);
-        margin-left: -0.36rem;
-        filter: drop-shadow(0 0 6px #47ff50cc);
-    }
-    /* Shorter arrow body and head with opposite colors */
-    .osc-arrow-body-short {
-        width: 7.33vw;
-        background: linear-gradient(90deg, var(--color-secondary), #2eff23, #ff47f0, var(--color-primary));
-        /* reversed order */
-        box-shadow: 0 0 8px #2eff2388;
-        border-radius: 0.3rem;
-    }
-    .osc-arrow-head-short {
-        border-top: 1.2rem solid transparent;
-        border-bottom: 1.2rem solid transparent;
-        border-left: 1.47rem solid var(--color-secondary);
-        /* opposite color */
-        margin-left: -0.24rem;
-        filter: drop-shadow(0 0 6px #2eff23cc);
-    }
-    @keyframes osc-arrow-move {
-        0%   { left: 22vw; }
-        100% { left: 28vw; }
-    }
-    @keyframes osc-arrow-move-2 {
-        0%   { left: 24vw; }
-        100% { left: 30vw; }
-    }
-    @keyframes osc-arrow-move-short-1 {
-        0%   { left: 25vw; }
-        100% { left: 29vw; }
-    }
-    @keyframes osc-arrow-move-short-2 {
-        0%   { left: 27vw; }
-        100% { left: 31vw; }
-    }
-
-    /* Fullscreen Styles for Tic Image */
-    .fullscreen-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: rgba(20, 10, 30, 0.95);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 9999;
-        animation: fadeIn 0.2s;
-    }
-    .fullscreen-img {
-        max-width: 90vw;
-        max-height: 90vh;
-        border-radius: 1rem;
-        box-shadow: 0 0 40px #ff47f0cc;
-        background: #222;
-    }
-    .close-btn {
-        position: absolute;
-        top: 2rem;
-        right: 2rem;
-        font-size: 3rem;
-        background: rgba(0,0,0,0.5);
-        color: #fff;
-        border: none;
-        border-radius: 50%;
-        width: 3.5rem;
-        height: 3.5rem;
-        cursor: pointer;
-        z-index: 10000;
-        transition: background 0.2s;
-    }
-    .close-btn:hover {
-        background: #ff47f0;
-        color: #fff;
-    }
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
+  .fullscreen-overlay{
+    position:fixed;
+    inset:0;
+    width:100vw;
+    height:100vh;
+    background:rgba(20,10,30,.95);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+    animation:fadeIn .2s;
+  }
+  .fullscreen-img{
+    max-width:90vw;
+    max-height:90vh;
+    border-radius:1rem;
+    box-shadow:0 0 40px #ff47f0cc;
+    background:#222;
+  }
+  .close-btn{
+    position:absolute;
+    top:2rem;
+    right:2rem;
+    font-size:3rem;
+    background:rgba(0,0,0,.5);
+    color:#fff;
+    border:none;
+    border-radius:50%;
+    width:3.5rem;
+    height:3.5rem;
+    cursor:pointer;
+    z-index:10000;
+    transition:background .2s;
+  }
+  .close-btn:hover{ background:#ff47f0; color:#fff; }
+  @keyframes fadeIn{ from{opacity:0} to{opacity:1} }
+  @media (prefers-reduced-motion: reduce){
+    *{ animation:none !important; transition:none !important; }
+  }
 </style>

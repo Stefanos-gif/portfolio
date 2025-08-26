@@ -57,130 +57,122 @@
 {/if}
 
 <style>
-  #container{
+    #container{
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
+        margin-bottom: 2rem;
     }
     #container h1 {
-        margin: 2.2vw;
+        margin: 2rem 1rem;
         transition: all 0.3s ease-in-out;
+        font-size: clamp(2rem, 5vw, 3.5rem);
     }
 
     #container h1:hover {
-        transform: scale(1.2);
+        transform: scale(1.1);
         text-decoration: underline solid #ff00ff;
         text-shadow: 4px 4px 2px var(--color-primary);
     }
     #container #first-p {
-        position: flex;       /*pin relative to the viewport*/
-        margin: 0.01vw;
-        
+        margin: 1rem;
         background-color: rgba(97, 20, 128, 0.5);
-        padding: 0.5vw;
+        padding: 1.5rem;
         border-radius: 7px;
         border: solid 5px var(--color-primary);
         transition: all 0.3s ease-in-out;
-        font-size: 2vh;
-        width: 40vw;
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+        width: 90%;
+        max-width: 600px;
+        line-height: 1.6;
     }
     #container #first-p:hover {
-        /* position: fixed;       pin relative to the viewport */
-        
-        transform: scale(1.05);
+        transform: scale(1.02);
         background-color: rgb(97, 20, 128, 0.7);
         color: var(--color-secondary);
-        left: 10rem;    /* moved much more to the left */
     }
-        #features{
-        position: absolute;
+    #features{
+        display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
         border: solid 5px var(--color-primary);
         border-radius: 7px;
-        right: 60rem;
-        top: 35vh;
-        width:42vw;
-        height: 45vh;
+        margin: 2rem auto;
+        width: 90%;
+        max-width: 600px;
+        padding: 1.5rem;
         transition: all 0.3s ease-in-out;
-
-        
+        background-color: rgba(97, 20, 128, 0.3);
     }
     #features:hover {
-        transform: scale(1.05);
+        transform: scale(1.02);
         text-decoration: underline solid #ff00ff;
         text-shadow: 4px 4px 2px var(--color-primary);
     }
     #features h2 {
-        position: absolute;       /*pin relative to the viewport*/
-        margin: 0;
-        right:0rem;
-        top: 0vh;
-        font-size: 4vh;
+        margin: 0 0 1rem 0;
+        font-size: clamp(1.5rem, 4vw, 2rem);
         background-color: rgba(97, 20, 128, 0.5);
-        padding: 1vw;
+        padding: 1rem;
         transition: all 0.3s ease-in-out;
-        width: 40vw;
+        border-radius: 5px;
     }
     #features h3 {
-        position: absolute;       /*pin relative to the viewport*/
-        margin: 0;
-        right:0rem;
-        top: 20vh;
-        font-size: 4vh;
+        margin: 1rem 0;
+        font-size: clamp(1.2rem, 3.5vw, 1.5rem);
         background-color: rgba(97, 20, 128, 0.5);
-        padding: 1vw;
+        padding: 1rem;
         transition: all 0.3s ease-in-out;
-        width: 40vw;
+        border-radius: 5px;
     }
     #features p {
-        font-size:3vh;
-        position: absolute;       /*pin relative to the viewport*/
-        margin: 0;
-        right:0rem;
-        top: 8.5vh;
-        font-size: 2.5vh;
+        font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+        margin: 1rem 0;
         background-color: rgba(97, 20, 128, 0.5);
-        padding: 1vw;
+        padding: 1rem;
         transition: all 0.3s ease-in-out;
-        width: 40vw;
-    }
-    #features #sec-p {
-        font-size:3vh;
-        position: absolute;       /*pin relative to the viewport*/
-        margin: 0;
-        right:0rem;
-        top: 49vh;
-        font-size: 2.5vh;
-        background-color: rgba(97, 20, 128, 0.5);
-        padding: 1vw;
-        transition: all 0.3s ease-in-out;
-        width: 40vw;
+        border-radius: 5px;
+        line-height: 1.6;
     }
     #features ul {
-        position: absolute;       /*pin relative to the viewport*/
-        margin: 0;
-        right:0rem;
-        top: 30vh;
-        font-size: 2.5vh;
+        margin: 1rem 0;
         background-color: rgba(97, 20, 128, 0.5);
-        padding: 1vw;
+        padding: 1rem;
         transition: all 0.3s ease-in-out;
-        width: 40vw;
+        border-radius: 5px;
         text-align: left;
-        font-size: 2vh;
+        font-size: clamp(0.9rem, 2.2vw, 1rem);
+        line-height: 1.5;
     }
     #img-container {
-        position: absolute;
-        top: 59.6vh;
-        left: 73vw;            /* halfway into the right-half (50vw + 50vw/2) */
-        transform: translate(-50%, -50%);
-        
-        /* your existing styles */
-        height: 50vh;
+        margin: 2rem auto;
+        display: flex;
+        justify-content: center;
+        width: 90%;
+        max-width: 600px;
+        height: auto;
     }
+
+    /* Media queries for better responsiveness */
+    @media (min-width: 768px) {
+        #img-container {
+            margin: 3rem auto;
+        }
+        #features {
+            width: 80%;
+            max-width: 800px;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        #features {
+            width: 70%;
+            max-width: 900px;
+        }
+    }
+
     .fullscreen-overlay {
         position: fixed;
         top: 0;

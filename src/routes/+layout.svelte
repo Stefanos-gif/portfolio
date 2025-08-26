@@ -79,4 +79,20 @@
 			opacity: 1;
 		}
 	}
+
+	/* Mobile responsiveness */
+	@media (max-width: 768px) {
+		main {
+			padding: 0.5rem;
+			padding-top: 8vh;
+			max-width: 100%;
+		}
+	}
+
+	@media (max-width: 480px) {
+		main {
+			padding: 0.25rem;
+			padding-top: 7vh;
+		}
+	}
 </style>

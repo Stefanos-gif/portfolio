@@ -101,28 +101,33 @@
 		text-align: left;
 		position: fixed;
 		top: 30%;
+		left: 5%;
 		text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+		max-width: 90%;
+		z-index: 2;
 	}
 
 	#hi-text {
-		font-size: 2em;
+		font-size: clamp(1.5rem, 4vw, 2rem);
 		font-weight: bold;
 		color: var(--color-primary);
 		margin: 0;
 	}
 
 	#name-text {
-		font-size: 6em;
+		font-size: clamp(3rem, 12vw, 6rem);
 		font-weight: bold;
 		color: var(--color-secondary);
 		margin: 0;
+		line-height: 1.1;
 	}
 
 	#sub-name-text {
-		font-size: 3em;
+		font-size: clamp(1.5rem, 6vw, 3rem);
 		font-weight: bold;
 		color: var(--color-secondary);
 		margin: 0;
+		line-height: 1.2;
 	}
 
 	#type-text {
@@ -140,25 +145,12 @@
 		background-color: var(--color-primary);
 	}
 
-	@media only screen and (max-width: 768px) {
-		#title-block {
-			font-size: 0.5em;
-		}
-
-		#hi-text {
-			font-size: 2.5em;
-		}
-
-		#sub-name-text {
-			font-size: 3em;
-		}
-	}
-
 	#portrait, #portrait-dark, #portrait-dark2 {
 		position: fixed;
-		left: 65vw;
+		right: 5%;
 		top: 20vh;
-		width: 25vw;
+		width: clamp(200px, 25vw, 400px);
+		max-width: 40%;
 		border-radius: 7px;
 		border: solid 5px var(--color-primary);
 		transition: all 0.08s ease-in-out;
@@ -176,6 +168,79 @@
 	#img-hover:hover #portrait-dark2 {
 		transform: scale(1.05) rotate(-10deg);
 		filter: brightness(0.25);
+	}
+
+	/* Mobile-specific adjustments */
+	@media (max-width: 768px) {
+		#title-block {
+			position: relative;
+			top: 10%;
+			left: 0;
+			text-align: center;
+			padding: 1rem;
+			max-width: 100%;
+		}
+
+		#portrait, #portrait-dark, #portrait-dark2 {
+			position: relative;
+			right: auto;
+			top: 2rem;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 60%;
+			max-width: 300px;
+			margin: 2rem auto;
+		}
+
+		#img-hover {
+			display: flex;
+			justify-content: center;
+			margin-top: 2rem;
+		}
+
+		#img-hover:hover #portrait {
+			transform: translateX(-50%) scale(1.05) rotate(5deg);
+		}
+
+		#img-hover:hover #portrait-dark {
+			transform: translateX(-50%) scale(1.05);
+			filter: brightness(0.5);
+		}
+
+		#img-hover:hover #portrait-dark2 {
+			transform: translateX(-50%) scale(1.05) rotate(-5deg);
+			filter: brightness(0.25);
+		}
+	}
+
+	@media (max-width: 480px) {
+		#title-block {
+			top: 5%;
+			padding: 0.5rem;
+		}
+
+		#portrait, #portrait-dark, #portrait-dark2 {
+			width: 70%;
+			max-width: 250px;
+		}
+
+		.cursor {
+			width: 2px;
+		}
+	}
+
+	/* Landscape mobile adjustments */
+	@media (max-height: 600px) and (orientation: landscape) {
+		#title-block {
+			top: 10%;
+			font-size: 0.8em;
+		}
+
+		#portrait, #portrait-dark, #portrait-dark2 {
+			width: 30%;
+			max-width: 200px;
+			top: 10vh;
+		}
 	}
 </style>
 

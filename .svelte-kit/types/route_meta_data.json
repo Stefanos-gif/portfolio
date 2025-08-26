@@ -27,13 +27,22 @@
 	"/projects/flask-web-app": [
 		"src/routes/+layout.js"
 	],
+	"/projects/meteor": [
+		"src/routes/+layout.js"
+	],
 	"/projects/python-web-scraper": [
 		"src/routes/+layout.js"
 	],
 	"/projects/satfire": [
 		"src/routes/+layout.js"
 	],
+	"/projects/taskmanager": [
+		"src/routes/+layout.js"
+	],
 	"/projects/thalasat": [
+		"src/routes/+layout.js"
+	],
+	"/projects/watchlist-app": [
 		"src/routes/+layout.js"
 	]
 }

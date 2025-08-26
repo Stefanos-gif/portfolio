@@ -67,199 +67,144 @@
   >Github</a>!</p>
 </div>
 
-<!-- Curved Arrow SVG (colorful and animated, arrowhead rotated 90deg) -->
-<div class="curved-arrow-anim">
-  <svg viewBox="0 0 200 200" width="180" height="180" class="curved-arrow-svg">
-    <defs>
-      <linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="#2eff23"/>
-        <stop offset="40%" stop-color="#ff47f0"/>
-        <stop offset="80%" stop-color="#00eaff"/>
-        <stop offset="100%" stop-color="#ffc2ff"/>
-      </linearGradient>
-      <filter id="arrowGlow" x="-20%" y="-20%" width="140%" height="140%">
-        <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
-        <feMerge>
-          <feMergeNode in="coloredBlur"/>
-          <feMergeNode in="SourceGraphic"/>
-        </feMerge>
-      </filter>
-    </defs>
-    <path
-      d="M30 140 Q70 180 130 120 Q170 80 170 40"
-      fill="none"
-      stroke="url(#arrowGradient)"
-      stroke-width="10"
-      stroke-linecap="round"
-      filter="url(#arrowGlow)"
-    />
-    <!-- Arrowhead rotated 230deg (points right instead of up) -->
-    <g transform="rotate(230, 172, 40)">
-      <polygon
-        points="175,28 185,40 172,52 167,40"
-        fill="url(#arrowGradient)"
-        filter="url(#arrowGlow)"
-      />
-    </g>
-  </svg>
-</div>
-
 <style>
     #container{
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
+        margin-bottom: 2rem;
     }
     #container2{
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
+        margin: 2rem 0;
     }
     #features{
-        position: absolute;
+        display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
         border: solid 5px var(--color-primary);
         border-radius: 7px;
-        right: 60rem;
-        top: 43vh;
-        width:42vw;
-        height: 60vh;
+        margin: 2rem auto;
+        width: 90%;
+        max-width: 600px;
+        padding: 1.5rem;
         transition: all 0.3s ease-in-out;
-
-        
+        background-color: rgba(97, 20, 128, 0.3);
     }
     #features:hover {
-        transform: scale(1.05);
+        transform: scale(1.02);
         text-decoration: underline solid #ff00ff;
         text-shadow: 4px 4px 2px var(--color-primary);
     }
     #container h1 {
-        margin: 2.2vw;
+        margin: 2rem 1rem;
         transition: all 0.3s ease-in-out;
+        font-size: clamp(2rem, 5vw, 3.5rem);
     }
 
     #container h1:hover {
-        transform: scale(1.2);
+        transform: scale(1.1);
         text-decoration: underline solid #ff00ff;
         text-shadow: 4px 4px 2px var(--color-primary);
     }
     #container #first-p {
-        position: flex;       /*pin relative to the viewport*/
-        margin: 0;
-        
+        margin: 1rem;
         background-color: rgba(97, 20, 128, 0.5);
-        padding: 1vw;
+        padding: 1.5rem;
         border-radius: 7px;
         border: solid 5px var(--color-primary);
         transition: all 0.3s ease-in-out;
-        font-size: 2vh;
-        width: 40vw;
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+        width: 90%;
+        max-width: 600px;
     }
     #container #first-p:hover {
-        /* position: fixed;       pin relative to the viewport */
-
-        transform: scale(1.05);
+        transform: scale(1.02);
         background-color: rgb(97, 20, 128, 0.7);
         color: var(--color-secondary);
-        left: 10rem;    /* moved much more to the left */
     }
     #container2 p {
-        position: absolute;       /*pin relative to the viewport*/
-        margin: 0;
-        
+        margin: 1rem;
         background-color: rgba(97, 20, 128, 0.5);
-        padding: 1vw;
+        padding: 1.5rem;
         border-radius: 7px;
         border: solid 5px var(--color-primary);
         transition: all 0.3s ease-in-out;
-        font-size: 2vh;
-        width: 40vw;
-        top: 115vh;
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+        width: 90%;
+        max-width: 600px;
     }
     #container2 p:hover {
-        /* position: fixed;       pin relative to the viewport */
-
-        transform: scale(1.05);
+        transform: scale(1.02);
         background-color: rgb(97, 20, 128, 0.7);
         color: var(--color-secondary);
     }
     #features h2 {
-        position: absolute;       /*pin relative to the viewport*/
-        margin: 0;
-        right:0rem;
-        top: 0vh;
-        font-size: 4vh;
+        margin: 0 0 1rem 0;
+        font-size: clamp(1.5rem, 4vw, 2rem);
         background-color: rgba(97, 20, 128, 0.5);
-        padding: 1vw;
+        padding: 1rem;
         transition: all 0.3s ease-in-out;
-        width: 40vw;
+        border-radius: 5px;
     }
     #features p {
-        font-size:3vh;
-        position: absolute;       /*pin relative to the viewport*/
-        margin: 0;
-        right:0rem;
-        top: 8.5vh;
-        font-size: 2.5vh;
+        font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+        margin: 1rem 0;
         background-color: rgba(97, 20, 128, 0.5);
-        padding: 1vw;
+        padding: 1rem;
         transition: all 0.3s ease-in-out;
-        width: 40vw;
+        border-radius: 5px;
+        line-height: 1.6;
     }
     #features #sec-p {
-        font-size:3vh;
-        position: absolute;       /*pin relative to the viewport*/
-        margin: 0;
-        right:0rem;
-        top: 49vh;
-        font-size: 2.5vh;
+        font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+        margin: 1rem 0;
         background-color: rgba(97, 20, 128, 0.5);
-        padding: 1vw;
+        padding: 1rem;
         transition: all 0.3s ease-in-out;
-        width: 40vw;
+        border-radius: 5px;
+        line-height: 1.6;
     }
     #features ul {
-        position: absolute;       /*pin relative to the viewport*/
-        margin: 0;
-        right:0rem;
-        top: 20vh;
-        font-size: 2.5vh;
+        margin: 1rem 0;
         background-color: rgba(97, 20, 128, 0.5);
-        padding: 1vw;
+        padding: 1rem;
         transition: all 0.3s ease-in-out;
-        width: 40vw;
+        border-radius: 5px;
         text-align: left;
-        font-size: 2vh;
+        font-size: clamp(0.9rem, 2.2vw, 1rem);
+        line-height: 1.5;
     }
     #img-container {
-        position: absolute;
-        top: 68vh;
-        left: 75vw;            /* halfway into the right-half (50vw + 50vw/2) */
-        transform: translate(-50%, -50%);
-        
-        /* your existing styles */
-        height: 50vh;
-        aspect-ratio: 11/11;
+        margin: 2rem auto;
+        display: flex;
+        justify-content: center;
+        width: 90%;
+        max-width: 600px;
+        height: auto;
     }
-    .curved-arrow-anim {
-        position: absolute;
-        top: 89vh;
-        left: 48vw;
-        z-index: 5;
-        width: 180px;
-        height: 180px;
-        pointer-events: none;
-        animation: curved-arrow-rotate 2.8s ease-in-out infinite alternate;
-        transform-origin: 60px 140px;
+
+    /* Media queries for better responsiveness */
+    @media (min-width: 768px) {
+        #img-container {
+            margin: 3rem auto;
+        }
+        #features {
+            width: 80%;
+            max-width: 800px;
+        }
     }
-    .curved-arrow-svg {
-        width: 100%;
-        height: 100%;
-        display: block;
+
+    @media (min-width: 1024px) {
+        #features {
+            width: 70%;
+            max-width: 900px;
+        }
     }
     .fullscreen-overlay {
         position: fixed;
@@ -303,10 +248,5 @@
     @keyframes fadeIn {
         from { opacity: 0; }
         to { opacity: 1; }
-    }
-    @keyframes curved-arrow-rotate {
-        0%   { transform: rotate(-18deg);}
-        80%  { transform: rotate(18deg);}
-        100% { transform: rotate(18deg);}
     }
 </style>
