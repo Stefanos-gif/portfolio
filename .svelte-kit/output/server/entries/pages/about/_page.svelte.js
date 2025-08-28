@@ -128,10 +128,11 @@ function _page($$payload) {
     $$payload2.title = `<title>About — Stefanos Siathas</title>`;
     $$payload2.out.push(`<meta property="og:title" content="About - Stefanos Siathas"/> <meta property="og:description" content="Learn about Stefanos Siathas: STEM ambassador, computer science and physics student, and builder of creative projects."/> <meta property="og:type" content="website"/> <meta property="og:url" content="https://stefanossiathas.com/background"/> <meta property="og:image" content="/stefs_profesionaly_photographed_picture_by_michalis_chhatzittofi.jpg"/>`);
   });
-  $$payload.out.push(`<section id="container" class="svelte-2bl0qe"><div id="about" class="svelte-2bl0qe"><h1 class="svelte-2bl0qe">About Me</h1> <p class="svelte-2bl0qe">Hi, I'm Stefanos Siathas, a passionate computer scientist with a strong background in various programming languages,
-      including Python, C++, JavaScript, C#, and Lua. I have experience in ethical hacking and enjoy tutoring others in
-      computer science concepts. My goal is to leverage my skills to build creative, useful projects and help more people
-      learn and grow in tech.</p></div> `);
+  $$payload.out.push(`<section id="container" class="svelte-2bl0qe"><div id="about" class="svelte-2bl0qe"><h1 class="svelte-2bl0qe">About Me</h1> <p class="svelte-2bl0qe">Hi, I'm Stefanos Siathas—a computer scientist working in the planetarium's science department and tutoring at Stemfreak. I enjoy the gym, martial arts, and helping others grow in tech. I work with Python, C++, JavaScript, C#, Lua, TypeScript, and SvelteKit. <br/><br/> <b>Check me out:</b> <a href="https://github.com/Stefanos-gif" target="_blank" rel="noopener" style="color:#a782ff;">GitHub</a>  |  <span style="font-weight:600;">Contact me:</span> <button type="button" class="email-link" style="background:none;border:none;padding:0;margin:0;cursor:pointer;color:#a782ff;font:inherit;" title="Click to copy email" aria-label="Copy email to clipboard">stefanossiathas@gmail.com</button> `);
+  {
+    $$payload.out.push("<!--[!-->");
+  }
+  $$payload.out.push(`<!--]--></p></div> `);
   Accivmnets($$payload);
   $$payload.out.push(`<!----></section>`);
 }
