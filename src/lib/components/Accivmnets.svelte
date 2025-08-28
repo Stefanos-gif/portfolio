@@ -56,7 +56,7 @@
   }
 
   .card {
-    background: linear-gradient(180deg, rgba(22,11,34,0.93), rgba(15,6,25,0.98));
+    background: linear-gradient(180deg, rgba(97,20,128,.5));
     border: 4px solid #7b2ff2;
     border-radius: 14px;
     padding: clamp(18px, 3vw, 28px);

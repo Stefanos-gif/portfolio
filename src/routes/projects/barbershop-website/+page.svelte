@@ -8,13 +8,13 @@
         showBarbFullscreen = false;
     }
 </script>
-<head>
+<svelte:head>
   <meta property="og:title"       content="Barbershop Website Project - Stefanos Siathas" />
   <meta property="og:description" content="A premium, responsive barbershop website template built with Svelte and Tailwind CSS. Explore features, code, and live demo!" />
   <meta property="og:type"        content="website" />
   <meta property="og:url"         content="https://stefanossiathas.com/projects/barbershop-website" />
   <meta property="og:image"       content="/barbs.png" />
-</head>
+</svelte:head>
 <div id ="container">
     <h1>The Barbershop Website</h1>
     <p id="first-p">This contains a barbershop website template wich will be sold to barbershops and will have its layout changed as they like, if you are interested in this kind of website feel free to contact me on stefanossiathas@gmail.com! Check the website <a

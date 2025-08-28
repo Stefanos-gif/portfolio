@@ -1,10 +1,10 @@
-<head>
-  <meta property="og:title"       content="Background - Stefanos Siathas" />
-  <meta property="og:description" content="Play with the interactive backround  " />
-  <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://stefanossiathas.com/background" />
-  <meta property="og:image"       content="/stefs_profesionaly_photographed_picture_by_michalis_chhatzittofi.jpg" />
-</head>
+<svelte:head>
+    <meta property="og:title"       content="Background - Stefanos Siathas" />
+    <meta property="og:description" content="Play with the interactive backround  " />
+    <meta property="og:type"        content="website" />
+    <meta property="og:url"         content="https://stefanossiathas.com/background" />
+    <meta property="og:image"       content="/stefs_profesionaly_photographed_picture_by_michalis_chhatzittofi.jpg" />
+</svelte:head>
 
 <script>
 	import { settings, sketchKey } from '$lib/stores.js';

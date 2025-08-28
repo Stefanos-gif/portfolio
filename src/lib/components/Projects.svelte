@@ -9,8 +9,8 @@
     { title: "Thalasat", img1: "/paint.jpg", img2: "/prog3.png", img3: "/l5.png", imgHeight: IMG_H, category: "industry", url: "/projects/thalasat" },
     { title: "Satfire", img1: "/paint.jpg", img2: "/write.png", img3: "/satfire.png", imgHeight: IMG_H, category: "industry", url: "/projects/satfire" },
     { title: "Barbershop Website", img1: "/cppgback.png", img2: "/cppgback.png", img3: "/barbw.png", imgHeight: IMG_H, category: "industry", url: "/projects/barbershop-website" },
-    { title: "Stemfreak Taskmanager", img1: "/paint.jpg", img2: "/prog3.png", img3: "/taskmanager1.png", imgHeight: IMG_H, category: "industry", url: "/projects/taskmanager" },
-    { title: "Watchlist app", img1: "/paint.jpg", img2: "/prog3.png", img3: "/watchlist1.png", imgHeight: IMG_H, category: "industry", url: "/projects/watchlist-app" },
+    { title: "Stemfreak Taskmanager", img1: "/paint.jpg", img2: "/prog3.png", img3: "/taskmanager20.png", imgHeight: IMG_H, category: "industry", url: "/projects/taskmanager" },
+    { title: "Watchlist app", img1: "/paint.jpg", img2: "/prog3.png", img3: "/watchlistss.png", imgHeight: IMG_H, category: "industry", url: "/projects/watchlist-app" },
 
     { title: "C++ Level 3", img1: "/prog3.png", img2: "/prog3.png", img3: "/cpplvl3.png", imgHeight: IMG_H, category: "cpp", url: "/projects/cpp-lvl3" },
     { title: "C++ Games", img1: "/cppgback.png", img2: "/cppgback.png", img3: "/cppGames.png", imgHeight: IMG_H, category: "cpp", url: "/projects/cpp-games" },
