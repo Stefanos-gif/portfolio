@@ -166,7 +166,7 @@
 		},
 		{
 			"src": "/.*",
-			"dest": "/fn"
+			"dest": "/![-]/catchall"
 		}
 	],
 	"overrides": {

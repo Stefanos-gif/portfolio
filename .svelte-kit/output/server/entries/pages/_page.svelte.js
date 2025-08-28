@@ -1,16 +1,34 @@
-import { c as create_ssr_component, o as onDestroy, f as escape } from "../../chunks/ssr.js";
-const _page_svelte_svelte_type_style_lang = "";
-const css = {
-  code: ".hero.svelte-vdu2y7.svelte-vdu2y7{display:grid;grid-template-columns:minmax(28rem, 1fr) min(34vw, 320px);align-items:center;column-gap:clamp(12px,5vw,28px);width:min(100%, 1200px);margin-inline:auto;padding-inline:clamp(12px,4vw,24px);padding-top:clamp(64px, 10vh, 96px)}#title-block.svelte-vdu2y7.svelte-vdu2y7{text-align:left;max-inline-size:34ch;text-wrap:balance;text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000}#hi-text.svelte-vdu2y7.svelte-vdu2y7{font-size:clamp(1rem, 2.6vw, 1.4rem);font-weight:800;color:var(--color-primary);margin:0 0 .35rem 0}#name-text.svelte-vdu2y7.svelte-vdu2y7{font-size:clamp(2rem, 6.2vw, 3.6rem);font-weight:900;color:var(--color-secondary);margin:0 0 .25rem 0;line-height:1.05;letter-spacing:-0.01em}#sub-name-text.svelte-vdu2y7.svelte-vdu2y7{font-size:clamp(1rem, 3.6vw, 1.8rem);font-weight:800;color:var(--color-secondary);margin:.2rem 0 0 0;line-height:1.22;word-break:break-word}#type-text.svelte-vdu2y7.svelte-vdu2y7{color:var(--color-primary)}.cursor.svelte-vdu2y7.svelte-vdu2y7{display:inline-block;background:var(--color-secondary);margin-left:.1rem;width:3px}#colored-cursor.svelte-vdu2y7.svelte-vdu2y7{background:var(--color-primary)}.portrait-stack.svelte-vdu2y7.svelte-vdu2y7{position:relative;width:100%;max-width:320px;aspect-ratio:4/5;justify-self:center}.portrait.svelte-vdu2y7.svelte-vdu2y7{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:12px;border:5px solid var(--color-primary);box-shadow:0 0 18px #7b2ff244;transition:transform .25s ease, filter .25s ease, box-shadow .25s ease}.portrait.back.svelte-vdu2y7.svelte-vdu2y7{transform:rotate(-5deg) translate(-3%, -2%);filter:brightness(.5)}.portrait.mid.svelte-vdu2y7.svelte-vdu2y7{transform:translate(0,0);filter:brightness(.85)}.portrait.top.svelte-vdu2y7.svelte-vdu2y7{transform:rotate(5deg) translate(3%, 2%)}@media(hover:hover){.portrait-stack.svelte-vdu2y7:hover .portrait.svelte-vdu2y7{transform:scale(1.03)}.portrait-stack.svelte-vdu2y7:hover .portrait.back.svelte-vdu2y7{transform:scale(1.03) rotate(-7deg) translate(-5%, -3%)}.portrait-stack.svelte-vdu2y7:hover .portrait.mid.svelte-vdu2y7{transform:scale(1.05);filter:brightness(1);box-shadow:0 0 24px #ff00ff66}.portrait-stack.svelte-vdu2y7:hover .portrait.top.svelte-vdu2y7{transform:scale(1.03) rotate(7deg) translate(5%, 3%)}}@media(max-width: 1100px){.hero.svelte-vdu2y7.svelte-vdu2y7{grid-template-columns:minmax(22rem, 1fr) min(38vw, 300px)}#title-block.svelte-vdu2y7.svelte-vdu2y7{max-inline-size:32ch}}@media(max-width: 820px){.hero.svelte-vdu2y7.svelte-vdu2y7{grid-template-columns:1fr;row-gap:clamp(10px, 4vw, 20px);padding-top:clamp(40px, 8vh, 72px)}#title-block.svelte-vdu2y7.svelte-vdu2y7{text-align:center;justify-self:center;max-inline-size:28ch}.cursor.svelte-vdu2y7.svelte-vdu2y7{width:2px}.portrait-stack.svelte-vdu2y7.svelte-vdu2y7{order:2;max-width:min(68vw, 280px)}}@media(max-width: 420px){#title-block.svelte-vdu2y7.svelte-vdu2y7{max-inline-size:25ch}.portrait-stack.svelte-vdu2y7.svelte-vdu2y7{max-width:min(76vw, 240px)}}@media(prefers-reduced-motion: reduce){.svelte-vdu2y7.svelte-vdu2y7{animation:none !important;transition:none !important}}",
-  map: null
-};
-const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+import { F as head, Q as escape_html, B as pop, z as push } from "../../chunks/index2.js";
+import { o as onDestroy } from "../../chunks/index-server.js";
+function _page($$payload, $$props) {
+  push();
   const text = ["", "", "", ""];
   let timeout;
   onDestroy(() => clearTimeout(timeout));
-  $$result.css.add(css);
-  return `<div class="hero svelte-vdu2y7"><div id="title-block" class="svelte-vdu2y7"><p id="hi-text" class="svelte-vdu2y7">${escape(text[0])} ${`<span id="colored-cursor" class="cursor svelte-vdu2y7" data-svelte-h="svelte-ondwei"> </span>`}</p> <h1 id="name-text" class="svelte-vdu2y7">${escape(text[1])} ${``}</h1> <p id="sub-name-text" class="svelte-vdu2y7">${escape(text[2])} <span id="type-text" class="svelte-vdu2y7">${escape(text[3])}</span> ${`${``}`}</p></div> <div class="portrait-stack svelte-vdu2y7" aria-hidden="true" data-svelte-h="svelte-1012iqa"><img src="/stefs_profesionaly_photographed_picture_by_michalis_chhatzittofi.jpg" class="portrait back svelte-vdu2y7"> <img src="/stefs_profesionaly_photographed_picture_by_michalis_chhatzittofi.jpg" class="portrait mid svelte-vdu2y7"> <img src="/stefs_profesionaly_photographed_picture_by_michalis_chhatzittofi.jpg" class="portrait top svelte-vdu2y7"></div> </div>`;
-});
+  head($$payload, ($$payload2) => {
+    $$payload2.title = `<title>Stefanos Siathas</title>`;
+    $$payload2.out.push(`<meta property="og:title" content="Stefanos Siathas" class="svelte-l7qk6e"/> <meta property="og:description" content="My portfolio!!!" class="svelte-l7qk6e"/> <meta property="og:type" content="website" class="svelte-l7qk6e"/> <meta property="og:url" content="https://stefanossiathas.com" class="svelte-l7qk6e"/> <meta property="og:image" content="/favicon.ico" class="svelte-l7qk6e"/>`);
+  });
+  $$payload.out.push(`<div id="title-block" class="svelte-l7qk6e"><p id="hi-text" class="svelte-l7qk6e">${escape_html(text[0])} `);
+  {
+    $$payload.out.push("<!--[-->");
+    $$payload.out.push(`<span id="colored-cursor" class="cursor svelte-l7qk6e"> </span>`);
+  }
+  $$payload.out.push(`<!--]--></p> <p id="name-text" class="svelte-l7qk6e">${escape_html(text[1])} `);
+  {
+    $$payload.out.push("<!--[!-->");
+  }
+  $$payload.out.push(`<!--]--></p> <p id="sub-name-text" class="svelte-l7qk6e">${escape_html(text[2])} <span id="type-text" class="svelte-l7qk6e">${escape_html(text[3])}</span> `);
+  {
+    $$payload.out.push("<!--[!-->");
+    {
+      $$payload.out.push("<!--[!-->");
+    }
+    $$payload.out.push(`<!--]-->`);
+  }
+  $$payload.out.push(`<!--]--></p> <div id="img-hover" aria-hidden="true" class="svelte-l7qk6e"><img src="/stefs_profesionaly_photographed_picture_by_michalis_chhatzittofi.jpg" id="portrait-dark2" alt="" class="svelte-l7qk6e"/> <img src="/stefs_profesionaly_photographed_picture_by_michalis_chhatzittofi.jpg" id="portrait-dark" alt="" class="svelte-l7qk6e"/> <img src="/stefs_profesionaly_photographed_picture_by_michalis_chhatzittofi.jpg" id="portrait" alt="Portrait of Stefanos Siathas" class="svelte-l7qk6e"/></div></div>`);
+  pop();
+}
 export {
-  Page as default
+  _page as default
 };
