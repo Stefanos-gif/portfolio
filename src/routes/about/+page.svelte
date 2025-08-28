@@ -1,5 +1,11 @@
 <script lang="ts">
   import Accivmnets from "../../lib/components/Accivmnets.svelte";
+  let copied = false;
+  function copyEmail() {
+    navigator.clipboard.writeText('stefanossiathas@gmail.com');
+    copied = true;
+    setTimeout(() => copied = false, 1500);
+  }
 </script>
 
 <svelte:head>
@@ -15,10 +21,23 @@
   <div id="about">
     <h1>About Me</h1>
     <p>
-      Hi, I'm Stefanos Siathas, a passionate computer scientist with a strong background in various programming languages,
-      including Python, C++, JavaScript, C#, and Lua. I have experience in ethical hacking and enjoy tutoring others in
-      computer science concepts. My goal is to leverage my skills to build creative, useful projects and help more people
-      learn and grow in tech.
+  Hi, I'm Stefanos Siathas—a computer scientist working in the planetarium's science department and tutoring at Stemfreak. I enjoy the gym, martial arts, and helping others grow in tech. I work with Python, C++, JavaScript, C#, Lua, TypeScript, and SvelteKit.
+  <br><br>
+  <b>Check me out:</b>
+  <a href="https://github.com/Stefanos-gif" target="_blank" rel="noopener" style="color:#a782ff;">GitHub</a>
+  &nbsp;|&nbsp;
+  <span style="font-weight:600;">Contact me:</span>
+  <button type="button"
+    class="email-link"
+    on:click={copyEmail}
+    on:keydown={(e) => (e.key === 'Enter' || e.key === ' ') && copyEmail()}
+    style="background:none;border:none;padding:0;margin:0;cursor:pointer;color:#a782ff;font:inherit;"
+    title="Click to copy email"
+    aria-label="Copy email to clipboard"
+  >stefanossiathas@gmail.com</button>
+  {#if copied}
+    <span class="copied-message" style="margin-left:8px;color:#ffb3ff;font-size:0.95em;">Copied!</span>
+  {/if}
     </p>
   </div>
 

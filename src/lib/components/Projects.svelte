@@ -6,21 +6,21 @@
   const IMG_H = 'clamp(200px, 45vh, 360px)';
 
   const projects = [
-    { title: "Thalasat", img1: "/paint.jpg", img2: "/prog3.png", img3: "/l5.png", imgHeight: IMG_H, category: "industry", url: "/projects/thalasat" },
-    { title: "Satfire", img1: "/paint.jpg", img2: "/write.png", img3: "/satfire.png", imgHeight: IMG_H, category: "industry", url: "/projects/satfire" },
-    { title: "Barbershop Website", img1: "/cppgback.png", img2: "/cppgback.png", img3: "/barbw.png", imgHeight: IMG_H, category: "industry", url: "/projects/barbershop-website" },
-    { title: "Stemfreak Taskmanager", img1: "/paint.jpg", img2: "/prog3.png", img3: "/taskmanager20.png", imgHeight: IMG_H, category: "industry", url: "/projects/taskmanager" },
-    { title: "Watchlist app", img1: "/paint.jpg", img2: "/prog3.png", img3: "/watchlistss.png", imgHeight: IMG_H, category: "industry", url: "/projects/watchlist-app" },
+    { title: "Thalasat", img1: "/prog3.png", img2: "/prog3.png", img3: "/l5.png", imgHeight: IMG_H, category: "industry", url: "/projects/thalasat" },
+    { title: "Satfire", img1: "/prog3.png", img2: "/prog3.png", img3: "/satfire.png", imgHeight: IMG_H, category: "industry", url: "/projects/satfire" },
+    { title: "Barbershop Website", img1: "/prog3.png", img2: "/prog3.png", img3: "/barbw.png", imgHeight: IMG_H, category: "industry", url: "/projects/barbershop-website" },
+    { title: "Stemfreak Taskmanager", img1: "/prog3.png", img2: "/prog3.png", img3: "/taskmanager20.png", imgHeight: IMG_H, category: "industry", url: "/projects/taskmanager" },
+    { title: "Watchlist app", img1: "/prog3.png", img2: "/prog3.png", img3: "/watchlistss.png", imgHeight: IMG_H, category: "industry", url: "/projects/watchlist-app" },
 
     { title: "C++ Level 3", img1: "/prog3.png", img2: "/prog3.png", img3: "/cpplvl3.png", imgHeight: IMG_H, category: "cpp", url: "/projects/cpp-lvl3" },
-    { title: "C++ Games", img1: "/cppgback.png", img2: "/cppgback.png", img3: "/cppGames.png", imgHeight: IMG_H, category: "cpp", url: "/projects/cpp-games" },
+    { title: "C++ Games", img1: "/prog3.png", img2: "/prog3.png", img3: "/cppGames.png", imgHeight: IMG_H, category: "cpp", url: "/projects/cpp-games" },
 
-    { title: "Python Data Visualizer", img1: "/prog3.png", img2: "/cppgback.png", img3: "/flaskwe.png", imgHeight: IMG_H, category: "python", url: "/projects/flask-web-app" },
-    { title: "Python Data analysis with pandas", img1: "/prog3.png", img2: "/cppgback.png", img3: "/dataan.png", imgHeight: IMG_H, category: "python", url: "/projects/data-analysis-with-pandas" },
-    { title: "Python Web Scraper", img1: "/prog3.png", img2: "/cppgback.png", img3: "/webscrap.png", imgHeight: IMG_H, category: "python", url: "/projects/python-web-scraper" },
+    { title: "Python Data Visualizer", img1: "/prog3.png", img2: "/prog3.png", img3: "/flaskwe.png", imgHeight: IMG_H, category: "python", url: "/projects/flask-web-app" },
+    { title: "Python Data analysis with pandas", img1: "/prog3.png", img2: "/prog3.png", img3: "/dataan.png", imgHeight: IMG_H, category: "python", url: "/projects/data-analysis-with-pandas" },
+    { title: "Python Web Scraper", img1: "/prog3.png", img2: "/prog3.png", img3: "/webscrap.png", imgHeight: IMG_H, category: "python", url: "/projects/python-web-scraper" },
 
-    { title: "AI(pro)", img1: "/prog3.png", img2: "/cppgback.png", img3: "/ai.png", imgHeight: IMG_H, category: "debates", url: "/projects/ai-pro" },
-    { title: "Meteor Counter", img1: "/prog3.png", img2: "/cppgback.png", img3: "/meteor.png", imgHeight: IMG_H, category: "svelte", url: "/projects/meteor" },
+    { title: "AI(pro)", img1: "/prog3.png", img2: "/prog3.png", img3: "/ai.png", imgHeight: IMG_H, category: "debates", url: "/projects/ai-pro" },
+    { title: "Meteor Counter", img1: "/prog3.png", img2: "/prog3.png", img3: "/meteor.png", imgHeight: IMG_H, category: "svelte", url: "/projects/meteor" },
 
     
   ];

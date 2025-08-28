@@ -7,20 +7,20 @@
   const solutionImages = ['/l1.png', '/l2.png', '/l3.png', '/L4.png'];
   const solutionBoxes = [
     {
-      title: 'The solution',
-      p: 'We created a website that will allow people to track the sea surface temperature, chlorofil type a concentration etc.'
+      title: 'The Solution',
+      p: 'We fuse Copernicus satellite data with machine learning to monitor sea surface temperature, chlorophyll-a, turbidity, and coastal erosion across the Mediterranean. The platform turns raw imagery into near real-time maps, analytics, and short-term predictions that are clear and actionable.'
     },
     {
-      title: 'Cooperate',
-      p: 'We talked with a lot of buissnesses about helping us and improving our knowledge about the sea and improving our kowledge and capability of out-reach.'
+      title: 'AI-Driven Insights & Alerts',
+      p: 'Our models detect anomalies and issue early warnings for marine heatwaves, harmful algal blooms, coral-bleaching risk, and shoreline retreat. These alerts help coastal communities, policymakers, and environmental organizations respond faster and plan better.'
     },
     {
       title: 'Open Access Platform',
-      p: 'All collected data is visualized and made freely available through an intuitive web platform, supporting research and local decision-making except of custom tracking abilities that will be priced accordingly.'
+      p: 'Core layers and indicators are free for the public and researchers. Partner features add custom areas of interest, historical trend analysis, downloadable reports, and tailored alert thresholds for municipalities, NGOs, and agencies.'
     },
     {
-      title: 'AI-Driven Alerts',
-      p: 'Our AI models detect anomalies and send early warnings about pollution, algal blooms, or other threats, helping to protect the Mediterranean Sea.'
+      title: 'Collaboration & Ground Truth',
+      p: 'We work with local experts and stakeholders (e.g., research institutes and coastal authorities) to validate signals, improve datasets, and ensure the platform solves real coastal-management needs.'
     }
   ];
   let currentSolutionIndex = 0;
@@ -125,8 +125,8 @@
 
 <svelte:head>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta property="og:title"       content="Thalasat Project - Stefanos Siathas" />
-  <meta property="og:description" content="Thalasat: Youth-led initiative for marine monitoring and environmental protection. Discover our award-winning project!" />
+  <meta property="og:title"       content="Thalasat — Space & AI for the Mediterranean" />
+Cyprus  <meta property="og:description" content="From  — we use space technologies and AI to protect the Mediterranean Sea. Thalasat combines Copernicus satellite data with machine learning to monitor sea surface temperature, chlorophyll-a, turbidity, and coastal erosion, delivering near real-time insights and predictive models for faster response." />
   <meta property="og:type"        content="website" />
   <meta property="og:url"         content="https://stefanossiathas.com/projects/thalasat" />
   <meta property="og:image"       content="/namet.png" />
@@ -134,9 +134,7 @@
 </svelte:head>
 
 <!-- BACKGROUND -->
-<div id="animated-background" aria-hidden="true">
-  <!-- place your animated canvas / shader here if you have one -->
-</div>
+<div id="animated-background" aria-hidden="true"></div>
 
 <!-- TITLE -->
 <div id="animation" class="container section" aria-label="Thalasat Title">
@@ -154,13 +152,12 @@
 <section class="section container">
   <div id="start">
     <p>
-      Thalasat is a youth-led initiative born in Cyprus. I'm happy to be able to work with the team that I've met and take up the challenge of Venetostars.
-      The name “Thalasat” comes from the Greek word “θάλασσα” (thalassa), meaning “sea”.
+      Thalasat is a youth-led initiative born in Cyprus. I'm happy to be able to work with the team that I've met and take up the challenge of Venetostars. The name “Thalasat” comes from the Greek word “θάλασσα” (thalassa), meaning “sea”.
     </p>
   </div>
 
   <div class="fire-border" aria-hidden="true">
-    <img src="/namet.png" alt="Thalasat project" class="bordered-img" />
+    <img src="/namet.png" alt="Thalasat logo over water" class="bordered-img" />
   </div>
 </section>
 
@@ -180,18 +177,22 @@
   <div id="problems-left" class="animated-box">
     <h2 class="problem-title">The Problem</h2>
     <p class="problem-main">
-      The problems we are trying to combat through our system can be broken down into three main categories: marine ecological crises,
-      lack of public awareness, and limited access to useful marine-related data for smaller local communities and regions.
+      We address three connected gaps in the Mediterranean: (1) marine ecological crises, (2) lack of awareness, and (3) limited access to decision-ready data for local communities.
     </p>
-    <h3 class="problem-section-title">Marine Ecological Crises</h3>
+
+    <h3 class="problem-section-title">1) Marine Ecological Crises</h3>
     <p class="problem-section">
-      Starting off with marine ecological crises. These include issues like algal blooms, coral bleaching, declining fish populations,
-      and increasing pollution levels, all of which pose serious threats to the health of the Mediterranean Sea. The Mediterranean Sea
-      is under growing pressure from climate-related and human-driven changes. Rising temperatures aren’t just warming the water, they’re
-      disrupting entire ecosystems, leading to oxygen-depleted zones that can no longer support marine life. At the same time, nutrient
-      runoff from coastal development and agriculture fuel harmful algal blooms, which further destabilize the environment. These shifts
-      have serious consequences as seen in recent years where nearly a quarter of assessed marine species in the region are already
-      classified as threatened. It’s a complex, cascading crisis that demands proactive, data-informed solutions.
+      Warming waters and human pressure drive harmful algal blooms, coral-bleaching risk, oxygen-poor zones, pollution, and shoreline change. These cascading effects threaten biodiversity and coastal livelihoods — demanding proactive, data-informed action.
+    </p>
+
+    <h3 class="problem-section-title">2) Lack of Awareness</h3>
+    <p class="problem-section">
+      Critical ocean signals often remain invisible to the public. We translate complex satellite products into simple maps, timelines, and alerts that anyone can understand.
+    </p>
+
+    <h3 class="problem-section-title">3) Limited Access for Local Communities</h3>
+    <p class="problem-section">
+      Smaller municipalities and NGOs struggle to use raw Earth-observation data. Thalasat delivers decision-ready layers and configurable alerts so they can respond quickly on the coast.
     </p>
   </div>
 
@@ -199,7 +200,7 @@
     {#each galleryImages as img, i}
       <img
         src={img}
-        alt={`Problem gallery image ${i+1}`}
+        alt={`Problem slide ${i+1}`}
         class="gallery-img-3d {i === currentGalleryIndex ? 'active' : ''}"
         on:click={() => openGalleryFullscreen(img)}
         tabindex="0"
@@ -279,9 +280,11 @@
 
 <!-- VENETOSTARS TEXT -->
 <section class="section container" id="venetostars">
-  <h2>Triumph in Venice</h2>
+  <h2>Winner — VeneToStars Space & Blue Economy Challenge</h2>
   <p>
-    At just 15 years old, I stepped onto the stage of the VeneToStars Space &amp; Blue Economy Challenge alongside my talented teammates from @thalasat_cy, and together we took home the top prize—an outcome that still feels utterly unexpected. From brainstorming satellite-based coastal monitoring solutions to late-night rehearsals, our team’s collaboration and creativity shone through at every turn. Beyond the thrill of competition, Venice itself stole my heart: freshly made cicchetti along the canals, creamy gelato beside St. Mark’s Basilica, and unforgettable seafood risottos that fueled each day’s adventures.
+      At just 15 years old, I stepped onto the stage of the VeneToStars Space & Blue Economy Challenge alongside my talented teammates from @thalasat_cy, and together we took home the top prize—an outcome that still feels utterly unexpected. From brainstorming satellite-based coastal monitoring solutions to late-night rehearsals, our team’s collaboration and creativity shone through at every turn. Beyond the thrill of competition, Venice itself stole my heart: freshly made cicchetti along the canals, creamy gelato beside St. Mark’s Basilica, and unforgettable seafood risottos that fueled each day’s adventures.
+
+    To top it all off, we had the honor of meeting the President and the Minister of Innovation, who personally congratulated our team and posed for photos with us—moments I’ll never forget. Winning against so many brilliant entrants was an incredible rush—proof that passion and teamwork can defy all expectations. It was an amazing experience I’ll carry with me forever. Look at the pictures under.
   </p>
   <p>
     To top it all off, we had the honor of meeting the President and the Minister of Innovation, who personally congratulated our team and posed for photos with us—moments I’ll never forget. Winning against so many brilliant entrants was an incredible rush—proof that passion and teamwork can defy all expectations. It was an amazing experience I’ll carry with me forever. Look at the pictures under.
@@ -290,12 +293,12 @@
 
 <!-- VENETOSTARS GALLERY -->
 <section class="section container veneto-gallery-section">
-  <h2 class="veneto-title">VenetoStars Gallery</h2>
+  <h2 class="veneto-title">VeneToStars Gallery</h2>
   <div class="veneto-gallery-3d">
     {#each venetoImages as img, i}
       <img
         src={img}
-        alt={`Veneto photo ${i+1}`}
+        alt={`VeneToStars photo ${i+1}`}
         class="veneto-img-3d {i === venetoIndex ? 'active' : ''} {i < venetoIndex ? 'left' : ''} {i > venetoIndex ? 'right' : ''}"
         on:click={openVenetoGalleryFullscreen}
         tabindex="0"
@@ -320,16 +323,6 @@
     </div>
   </div>
 {/if}
-
-<!-- LINKS -->
-<section class="section container" id="thal">
-  <p>
-    Thalasat has its own website
-    <a href="https://github.com/Stefanos-gif/Programming/tree/main" target="_blank" rel="noopener noreferrer">here</a>,
-    and its Instagram is
-    <a href="https://github.com/Stefanos-gif/Programming/tree/main" target="_blank" rel="noopener noreferrer">here</a>.
-  </p>
-</section>
 
 <style>
   :root{
@@ -591,5 +584,4 @@
     padding: clamp(14px, 3vw, 22px); box-shadow: 0 0 24px #7b2ff244; text-align:center;
   }
   #thal a{ color: #2eff23; text-decoration: underline; }
-
 </style>
