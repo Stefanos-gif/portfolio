@@ -394,10 +394,10 @@
     background: linear-gradient(135deg, rgba(11, 7, 16, 0.95) 0%, rgba(25, 15, 35, 0.95) 100%);
     border: 3px solid var(--color-primary);
     border-radius: 24px;
-    width: 90%;
-    max-width: 320px;
-    min-height: 300px;
-    max-height: 85vh;
+    width: 95%;
+    max-width: 420px;
+    min-height: 400px;
+    max-height: 90vh;
     box-shadow: 
       0 25px 80px rgba(123, 47, 242, 0.6),
       0 0 60px rgba(255, 71, 240, 0.3),
@@ -433,7 +433,7 @@
   .mobile-menu-header h3 {
     margin: 0;
     color: var(--color-secondary);
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 700;
     text-shadow: 0 0 10px rgba(123, 47, 242, 0.8);
     background: linear-gradient(45deg, var(--color-secondary), var(--color-primary));
@@ -459,13 +459,13 @@
 
   .mobile-menu-list {
     list-style: none;
-    padding: 1.5rem 1.5rem 2rem;
+    padding: 2rem 2rem 2.5rem;
     margin: 0;
     flex: 1;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
   }
 
   .mobile-menu-list li {
@@ -477,9 +477,9 @@
     background: rgba(11, 7, 16, 0.6);
     border: 2px solid rgba(123, 47, 242, 0.4);
     color: var(--color-secondary);
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 600;
-    padding: 1rem 1.5rem;
+    padding: 1.4rem 1.5rem;
     text-align: center;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -490,7 +490,7 @@
     overflow: hidden;
     backdrop-filter: blur(10px);
     flex-shrink: 0;
-    min-height: 48px;
+    min-height: 58px;
   }
 
   .mobile-menu-list button::before {
@@ -581,17 +581,28 @@
     }
 
     .mobile-menu {
-      width: 95%;
-      max-width: 280px;
+      width: 96%;
+      max-width: 360px;
+      min-height: 450px;
     }
 
     .mobile-menu-header {
-      padding: 1.5rem 1.5rem 1rem;
+      padding: 2rem 2rem 1.5rem;
+    }
+
+    .mobile-menu-header h3 {
+      font-size: 1.8rem;
+    }
+
+    .mobile-menu-list {
+      padding: 2.5rem 2rem 3rem;
+      gap: 1.2rem;
     }
 
     .mobile-menu-list button {
-      font-size: 1rem;
-      padding: 1.25rem 1.5rem;
+      font-size: 1.3rem;
+      padding: 1.6rem 1.8rem;
+      min-height: 64px;
     }
   }
 </style>
