@@ -35,9 +35,9 @@ function Header($$payload, $$props) {
   });
   head($$payload, ($$payload2) => {
     $$payload2.title = `<title>Stefanos Siathas</title>`;
-    $$payload2.out.push(`<meta charset="UTF-8" class="svelte-1feajrt"/> <meta name="viewport" content="width=device-width, initial-scale=1" class="svelte-1feajrt"/>`);
+    $$payload2.out.push(`<meta charset="UTF-8" class="svelte-jvjsd0"/> <meta name="viewport" content="width=device-width, initial-scale=1" class="svelte-jvjsd0"/>`);
   });
-  $$payload.out.push(`<header class="svelte-1feajrt">`);
+  $$payload.out.push(`<header class="svelte-jvjsd0">`);
   {
     $$payload.out.push("<!--[!-->");
   }

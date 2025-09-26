@@ -184,13 +184,21 @@
               </button>
             </div>
             <ul class="mobile-menu-list">
-              {#each routes as route, i}
-                <li class:current-section={pageIdx === i}>
-                  <button on:click={() => navigate(i)}>
-                    {route === '/' ? 'Home' : route.slice(1).charAt(0).toUpperCase() + route.slice(2)}
-                  </button>
-                </li>
-              {/each}
+              <li class:current-section={pageIdx === 0}>
+                <button on:click={() => navigate(0)}>
+                  Home
+                </button>
+              </li>
+              <li class:current-section={pageIdx === 1}>
+                <button on:click={() => navigate(1)}>
+                  About
+                </button>
+              </li>
+              <li class:current-section={pageIdx === 2}>
+                <button on:click={() => navigate(2)}>
+                  Background
+                </button>
+              </li>
             </ul>
             
           </div>
@@ -470,6 +478,9 @@
 
   .mobile-menu-list li {
     margin: 0;
+    width: 100%;
+    flex-shrink: 0;
+    display: block;
   }
 
   .mobile-menu-list button {
