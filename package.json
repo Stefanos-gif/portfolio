@@ -30,6 +30,6 @@
 		"perfect-arrows": "^0.3.7"
 	},
 	"engines": {
-		"node": "18.x"
+		"node": "20.x"
 	}
 }
