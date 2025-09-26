@@ -21,7 +21,7 @@
   <div id="about">
     <h1>About Me</h1>
     <p>
-  Hi, I'm Stefanos Siathas—a computer scientist working in the planetarium's science department and tutoring at Stemfreak. I enjoy the gym, martial arts, and helping others grow in tech. I work with Python, C++, JavaScript, C#, Lua, TypeScript, and SvelteKit.
+  Hi, I'm Stefanos Siathas—a computer scientist working at EDU Bridge Tech Innovation LTD and tutoring at Stemfreak. I enjoy the gym, martial arts, and helping others grow in tech. I work with Python, C++, JavaScript, C#, Lua, TypeScript, and SvelteKit.
   <br><br>
   <b>Check me out:</b>
   <a href="https://github.com/Stefanos-gif" target="_blank" rel="noopener" style="color:#a782ff;">GitHub</a>

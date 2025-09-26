@@ -1,5 +1,5 @@
 <script>
-  // ---------- DATA ----------
+  
   const galleryImages = ['/1stpage.png', '/2nd.png', '/3rd.png', '/4th.png'];
   let currentGalleryIndex = 0;
   let galleryAnimating = false;
@@ -36,13 +36,11 @@
   let venetoAnimating = false;
   let showVenetoGalleryFullscreen = false;
 
-  // ---------- HELPERS ----------
   function lockScroll(lock) {
     if (typeof document === 'undefined') return;
     document.body.style.overflow = lock ? 'hidden' : '';
   }
 
-  // Problems gallery controls
   function nextGalleryImage() {
     if (galleryAnimating || currentGalleryIndex === galleryImages.length - 1) return;
     galleryAnimating = true;
@@ -56,7 +54,6 @@
     setTimeout(() => (galleryAnimating = false), 700);
   }
 
-  // Solution controls
   function goToNextSolution() {
     if (solutionTransitioning || currentSolutionIndex === solutionImages.length - 1) return;
     solutionDirection = 'right';
@@ -76,7 +73,6 @@
     }, 500);
   }
 
-  // Fullscreen toggles (Problems)
   let showGalleryFullscreen = false;
   let fullscreenImg = '';
   function openGalleryFullscreen(img) {
@@ -90,7 +86,6 @@
     lockScroll(false);
   }
 
-  // Fullscreen toggles (Solution)
   function openSolutionFullscreen() {
     showSolutionFullscreen = true;
     lockScroll(true);
@@ -100,7 +95,6 @@
     lockScroll(false);
   }
 
-  // Veneto controls
   function nextVeneto() {
     if (venetoAnimating || venetoIndex === venetoImages.length - 1) return;
     venetoAnimating = true;
@@ -133,10 +127,8 @@ Cyprus  <meta property="og:description" content="From  — we use space technolo
   <title>Thalasat</title>
 </svelte:head>
 
-<!-- BACKGROUND -->
 <div id="animated-background" aria-hidden="true"></div>
 
-<!-- TITLE -->
 <div id="animation" class="container section" aria-label="Thalasat Title">
   <span class="letter left" style="--delay: 0s">T</span>
   <span class="letter left" style="--delay: 0.15s">h</span>
@@ -148,7 +140,6 @@ Cyprus  <meta property="og:description" content="From  — we use space technolo
   <span class="letter right" style="--delay: 1.05s">t</span>
 </div>
 
-<!-- INTRO -->
 <section class="section container">
   <div id="start">
     <p>
@@ -161,7 +152,6 @@ Cyprus  <meta property="og:description" content="From  — we use space technolo
   </div>
 </section>
 
-<!-- PROBLEM ARROW -->
 <div class="arrow-animated-container container" aria-hidden="true">
   <div class="arrow-animated-with-text">
     <div class="arrow-animated">
@@ -172,7 +162,6 @@ Cyprus  <meta property="og:description" content="From  — we use space technolo
   </div>
 </div>
 
-<!-- PROBLEMS: TEXT + GALLERY -->
 <section class="section container problems-grid">
   <div id="problems-left" class="animated-box">
     <h2 class="problem-title">The Problem</h2>
@@ -232,7 +221,6 @@ Cyprus  <meta property="og:description" content="From  — we use space technolo
   </div>
 {/if}
 
-<!-- SOLUTION ARROW -->
 <div class="arrow-animated-container container" aria-hidden="true">
   <div class="arrow-animated-with-text">
     <div class="arrow-animated">
@@ -243,7 +231,6 @@ Cyprus  <meta property="og:description" content="From  — we use space technolo
   </div>
 </div>
 
-<!-- SOLUTION: TEXT + IMAGE -->
 <section class="section container solution-grid">
   <div class="solution-box solution-3d-anim {solutionTransitioning ? (solutionDirection === 'right' ? 'slide-out-left' : 'slide-out-right') : ''}">
     <h2>{solutionBoxes[currentSolutionIndex].title}</h2>
@@ -278,7 +265,6 @@ Cyprus  <meta property="og:description" content="From  — we use space technolo
   </div>
 {/if}
 
-<!-- VENETOSTARS TEXT -->
 <section class="section container" id="venetostars">
   <h2>Winner — VeneToStars Space & Blue Economy Challenge</h2>
   <p>
@@ -291,7 +277,6 @@ Cyprus  <meta property="og:description" content="From  — we use space technolo
   </p>
 </section>
 
-<!-- VENETOSTARS GALLERY -->
 <section class="section container veneto-gallery-section">
   <h2 class="veneto-title">VeneToStars Gallery</h2>
   <div class="veneto-gallery-3d">
@@ -341,14 +326,11 @@ Cyprus  <meta property="og:description" content="From  — we use space technolo
     color:#fff;
   }
 
-  /* layout helpers */
   .container{ width:min(100%, 1200px); margin-inline:auto; padding-inline:clamp(12px, 4vw, 32px); }
   .section{ padding-block: clamp(24px, 6vw, 80px); }
 
-  /* background */
   #animated-background{ position:fixed; inset:0; width:100%; height:100%; z-index:-1; }
 
-  /* title */
   #animation{ display:flex; justify-content:center; align-items:center; margin: clamp(8px, 2vw, 16px) auto; }
   .letter{
     display:inline-block; font-size: clamp(2.5rem, 12vw, 8rem); font-weight:800; color:var(--color-primary);
@@ -362,7 +344,6 @@ Cyprus  <meta property="og:description" content="From  — we use space technolo
   @keyframes fly-in-left{ from{transform:translateX(-250px);opacity:0} to{transform:translateX(0);opacity:1} }
   @keyframes fly-in-right{ from{transform:translateX(250px);opacity:0}  to{transform:translateX(0);opacity:1} }
 
-  /* intro card */
   #start{
     margin: 0 auto;
     padding: clamp(12px, 3.5vw, 24px);
@@ -377,7 +358,6 @@ Cyprus  <meta property="og:description" content="From  — we use space technolo
   #start:hover{ transform: translateY(-2px); }
   #start p{ font-size: clamp(1rem, 2.6vw, 1.25rem); background-color: var(--card-bg); padding:.5rem; border-radius:8px; margin:0; }
 
-  /* fire border image */
   .fire-border{
     display:flex; justify-content:center; align-items:center;
     margin: clamp(16px, 4vw, 32px) auto 0;
@@ -399,7 +379,6 @@ Cyprus  <meta property="og:description" content="From  — we use space technolo
     100%{filter:blur(8px) brightness(1.3) saturate(1.5);opacity:.85}
   }
 
-  /* arrow label */
   .arrow-animated-container{ display:flex; justify-content:center; align-items:center; margin: clamp(24px, 7vw, 56px) auto 0; height: clamp(120px, 22vw, 220px); }
   .arrow-animated{ display:flex; flex-direction:column; align-items:center; animation:arrow-bounce 1.3s infinite cubic-bezier(.4,.2,.2,1); }
   .arrow-shaft{
@@ -418,7 +397,6 @@ Cyprus  <meta property="og:description" content="From  — we use space technolo
   .arrow-animated-text{ font-size: clamp(1.5rem, 6vw, 3.2rem); font-weight:800; color:#ff47f0; text-shadow:0 0 24px #c77dff, 0 0 8px #ffffff22; letter-spacing:2px; display:flex; align-items:center; height: clamp(48px, 12vw, 128px); }
   @keyframes arrow-bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(10%)} }
 
-  /* problems grid */
   .problems-grid{
     display:grid; gap: clamp(16px, 4vw, 32px);
     grid-template-columns: 1fr;
@@ -466,7 +444,6 @@ Cyprus  <meta property="og:description" content="From  — we use space technolo
   .gallery-arrow-btn:disabled{ opacity:.4; cursor:not-allowed; box-shadow:none; }
   .gallery-arrow-btn:not(:disabled):hover{ transform: scale(1.1) translateY(-50%); box-shadow: 0 0 32px #ff47f0cc; }
 
-  /* fullscreen overlay (shared) */
   .fullscreen-overlay{
     position: fixed; inset:0; width:100vw; height:100vh; background: rgba(30,0,50,.97); z-index:9999;
     display:flex; align-items:center; justify-content:center; animation: fade-in-overlay .25s;
@@ -494,7 +471,6 @@ Cyprus  <meta property="og:description" content="From  — we use space technolo
   .fullscreen-arrow-btn:disabled{ opacity:.4; cursor:not-allowed; box-shadow:none; }
   .fullscreen-arrow-btn:not(:disabled):hover{ transform: scale(1.1) translateY(-50%); box-shadow: 0 0 48px #ff47f0cc; }
 
-  /* solution grid */
   .solution-grid{
     display:grid; gap: clamp(16px, 4vw, 32px);
     grid-template-columns: 1fr;
@@ -529,7 +505,6 @@ Cyprus  <meta property="og:description" content="From  — we use space technolo
   .slide-out-right{ transform: perspective(800px) translateX(120px) rotateY(60deg) scale(.92); opacity:0; }
   .solution-3d-anim:not(.slide-out-left):not(.slide-out-right){ transform: perspective(800px) translateX(0) rotateY(0deg) scale(1); opacity:1; }
 
-  /* veneto text card */
   #venetostars{
     border: 4px solid var(--color-primary); border-radius: 12px; background: var(--card-bg);
     padding: clamp(16px, 3vw, 24px); box-shadow: 0 0 24px #7b2ff244;
@@ -537,7 +512,6 @@ Cyprus  <meta property="og:description" content="From  — we use space technolo
   #venetostars h2{ font-size: clamp(1.6rem, 5.4vw, 2.4rem); color:#ff47f0; margin:0 0 .6rem; }
   #venetostars p{ font-size: clamp(1rem, 2.6vw, 1.125rem); margin:.5rem 0; }
 
-  /* veneto gallery */
   .veneto-gallery-section{ display:flex; flex-direction:column; align-items:center; gap: clamp(12px, 3vw, 24px); }
   .veneto-title{ font-size: clamp(1.6rem, 5.4vw, 2.4rem); color:#ff47f0; margin:0 0 .5rem; text-shadow:0 0 24px #c77dff, 0 0 8px #ffffff22; font-weight:800; letter-spacing:2px; text-align:center; }
   .veneto-gallery-3d{
@@ -578,7 +552,6 @@ Cyprus  <meta property="og:description" content="From  — we use space technolo
   .veneto-fullscreen-content{ display:flex; flex-direction:column; align-items:center; justify-content:center; width:100vw; height:100vh; position:relative; }
   .veneto-fullscreen-img{ max-width: 92vw; max-height: 82vh; border-radius: 24px; box-shadow: 0 0 128px #c77dffcc, 0 0 32px #ff47f0cc; background:#222; object-fit:contain; border: 6px solid #ff47f0; animation: pop-in-img .25s; margin-bottom: 1.25rem; }
 
-  /* links card */
   #thal{
     border: 4px solid var(--color-primary); border-radius: 12px; background: var(--card-bg);
     padding: clamp(14px, 3vw, 22px); box-shadow: 0 0 24px #7b2ff244; text-align:center;

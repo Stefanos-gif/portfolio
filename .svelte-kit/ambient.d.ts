@@ -27,10 +27,8 @@
  */
 declare module '$env/static/private' {
 	export const ALLUSERSPROFILE: string;
-	export const AMDRMSDKPATH: string;
-	export const ANDROID_HOME: string;
+	export const AMDRMPATH: string;
 	export const APPDATA: string;
-	export const ChocolateyInstall: string;
 	export const CHROME_CRASHPAD_PIPE_NAME: string;
 	export const COLOR: string;
 	export const COLORTERM: string;
@@ -40,20 +38,13 @@ declare module '$env/static/private' {
 	export const ComSpec: string;
 	export const DriverData: string;
 	export const EDITOR: string;
-	export const EFC_6844_1262719628: string;
-	export const EFC_6844_1592913036: string;
-	export const EFC_6844_2283032206: string;
-	export const EFC_6844_2775293581: string;
-	export const EFC_6844_3789132940: string;
-	export const FPS_BROWSER_APP_PROFILE_STRING: string;
-	export const FPS_BROWSER_USER_PROFILE_STRING: string;
+	export const EFC_7916_1592913036: string;
 	export const GIT_ASKPASS: string;
 	export const GIT_PAGER: string;
 	export const HOME: string;
 	export const HOMEDRIVE: string;
 	export const HOMEPATH: string;
 	export const INIT_CWD: string;
-	export const JAVA_HOME: string;
 	export const LANG: string;
 	export const LOCALAPPDATA: string;
 	export const LOGONSERVER: string;
@@ -80,16 +71,12 @@ declare module '$env/static/private' {
 	export const npm_package_name: string;
 	export const npm_package_version: string;
 	export const NUMBER_OF_PROCESSORS: string;
-	export const NVM_HOME: string;
-	export const NVM_SYMLINK: string;
 	export const OneDrive: string;
-	export const OnlineServices: string;
+	export const OneDriveConsumer: string;
 	export const ORIGINAL_XDG_CURRENT_DESKTOP: string;
 	export const OS: string;
 	export const Path: string;
 	export const PATHEXT: string;
-	export const platformcode: string;
-	export const POWERSHELL_TELEMETRY_OPTOUT: string;
 	export const PROCESSOR_ARCHITECTURE: string;
 	export const PROCESSOR_IDENTIFIER: string;
 	export const PROCESSOR_LEVEL: string;
@@ -100,7 +87,6 @@ declare module '$env/static/private' {
 	export const PROMPT: string;
 	export const PSModulePath: string;
 	export const PUBLIC: string;
-	export const RegionCode: string;
 	export const SESSIONNAME: string;
 	export const SystemDrive: string;
 	export const SystemRoot: string;
@@ -112,12 +98,12 @@ declare module '$env/static/private' {
 	export const USERDOMAIN_ROAMINGPROFILE: string;
 	export const USERNAME: string;
 	export const USERPROFILE: string;
-	export const VBOX_HWVIRTEX_IGNORE_SVM_IN_USE: string;
 	export const VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 	export const VSCODE_GIT_ASKPASS_MAIN: string;
 	export const VSCODE_GIT_ASKPASS_NODE: string;
 	export const VSCODE_GIT_IPC_HANDLE: string;
 	export const VSCODE_INJECTION: string;
+	export const VSCODE_PYTHON_AUTOACTIVATE_GUARD: string;
 	export const windir: string;
 }
 
@@ -151,10 +137,8 @@ declare module '$env/static/public' {
 declare module '$env/dynamic/private' {
 	export const env: {
 		ALLUSERSPROFILE: string;
-		AMDRMSDKPATH: string;
-		ANDROID_HOME: string;
+		AMDRMPATH: string;
 		APPDATA: string;
-		ChocolateyInstall: string;
 		CHROME_CRASHPAD_PIPE_NAME: string;
 		COLOR: string;
 		COLORTERM: string;
@@ -164,20 +148,13 @@ declare module '$env/dynamic/private' {
 		ComSpec: string;
 		DriverData: string;
 		EDITOR: string;
-		EFC_6844_1262719628: string;
-		EFC_6844_1592913036: string;
-		EFC_6844_2283032206: string;
-		EFC_6844_2775293581: string;
-		EFC_6844_3789132940: string;
-		FPS_BROWSER_APP_PROFILE_STRING: string;
-		FPS_BROWSER_USER_PROFILE_STRING: string;
+		EFC_7916_1592913036: string;
 		GIT_ASKPASS: string;
 		GIT_PAGER: string;
 		HOME: string;
 		HOMEDRIVE: string;
 		HOMEPATH: string;
 		INIT_CWD: string;
-		JAVA_HOME: string;
 		LANG: string;
 		LOCALAPPDATA: string;
 		LOGONSERVER: string;
@@ -204,16 +181,12 @@ declare module '$env/dynamic/private' {
 		npm_package_name: string;
 		npm_package_version: string;
 		NUMBER_OF_PROCESSORS: string;
-		NVM_HOME: string;
-		NVM_SYMLINK: string;
 		OneDrive: string;
-		OnlineServices: string;
+		OneDriveConsumer: string;
 		ORIGINAL_XDG_CURRENT_DESKTOP: string;
 		OS: string;
 		Path: string;
 		PATHEXT: string;
-		platformcode: string;
-		POWERSHELL_TELEMETRY_OPTOUT: string;
 		PROCESSOR_ARCHITECTURE: string;
 		PROCESSOR_IDENTIFIER: string;
 		PROCESSOR_LEVEL: string;
@@ -224,7 +197,6 @@ declare module '$env/dynamic/private' {
 		PROMPT: string;
 		PSModulePath: string;
 		PUBLIC: string;
-		RegionCode: string;
 		SESSIONNAME: string;
 		SystemDrive: string;
 		SystemRoot: string;
@@ -236,12 +208,12 @@ declare module '$env/dynamic/private' {
 		USERDOMAIN_ROAMINGPROFILE: string;
 		USERNAME: string;
 		USERPROFILE: string;
-		VBOX_HWVIRTEX_IGNORE_SVM_IN_USE: string;
 		VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 		VSCODE_GIT_ASKPASS_MAIN: string;
 		VSCODE_GIT_ASKPASS_NODE: string;
 		VSCODE_GIT_IPC_HANDLE: string;
 		VSCODE_INJECTION: string;
+		VSCODE_PYTHON_AUTOACTIVATE_GUARD: string;
 		windir: string;
 		[key: `PUBLIC_${string}`]: undefined;
 		[key: `${string}`]: string | undefined;

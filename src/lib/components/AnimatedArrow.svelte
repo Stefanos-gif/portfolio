@@ -24,7 +24,7 @@
 }
 
 .arrow::after {
-  /* arrowhead */
+  
   content: "";
   position: absolute;
   right: -calc(var(--len) / 6);

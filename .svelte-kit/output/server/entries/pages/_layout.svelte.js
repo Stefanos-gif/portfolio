@@ -31,11 +31,13 @@ const page = {
 function Header($$payload, $$props) {
   push();
   let opened = fallback($$props["opened"], false);
+  page.subscribe(() => {
+  });
   head($$payload, ($$payload2) => {
     $$payload2.title = `<title>Stefanos Siathas</title>`;
-    $$payload2.out.push(`<meta charset="UTF-8"/> <meta name="viewport" content="width=device-width, initial-scale=1"/>`);
+    $$payload2.out.push(`<meta charset="UTF-8" class="svelte-homnas"/> <meta name="viewport" content="width=device-width, initial-scale=1" class="svelte-homnas"/>`);
   });
-  $$payload.out.push(`<header class="svelte-amhpom">`);
+  $$payload.out.push(`<header class="svelte-homnas">`);
   {
     $$payload.out.push("<!--[!-->");
   }
@@ -132,9 +134,9 @@ function _layout($$payload, $$props) {
   let $$settled = true;
   let $$inner_payload;
   function $$render_inner($$payload2) {
-    $$payload2.out.push(`<div class="app svelte-1ebsv34"><!---->`);
+    $$payload2.out.push(`<div class="app svelte-8rqcn6"><!---->`);
     {
-      $$payload2.out.push(`<div id="sketch" class="svelte-1ebsv34">`);
+      $$payload2.out.push(`<div id="sketch" class="svelte-8rqcn6">`);
       Sketch($$payload2);
       $$payload2.out.push(`<!----></div>`);
     }
@@ -148,7 +150,7 @@ function _layout($$payload, $$props) {
         $$settled = false;
       }
     });
-    $$payload2.out.push(`<!----> <main class="svelte-1ebsv34"><!---->`);
+    $$payload2.out.push(`<!----> <main class="svelte-8rqcn6"><!---->`);
     {
       $$payload2.out.push(`<div><!---->`);
       slot($$payload2, $$props, "default", {});

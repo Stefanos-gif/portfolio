@@ -142,7 +142,7 @@
       "_stores.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.DrWqxiUc.css",
+      "_app/immutable/assets/_layout.Sg4I32Jj.css",
       "_app/immutable/assets/fa-layers-text.BoC3Ogm6.css",
       "_app/immutable/assets/TripleImage.CZ1hpq6R.css"
     ]
@@ -157,7 +157,7 @@
       "_index-server.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.CNNvp7hs.css"
+      "_app/immutable/assets/_page.BJ_OAMJY.css"
     ]
   },
   "src/routes/about/+page.svelte": {
@@ -169,7 +169,7 @@
       "_index2.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.CI6GtaXw.css",
+      "_app/immutable/assets/_page.Ci2Xm8fl.css",
       "_app/immutable/assets/fa-layers-text.BoC3Ogm6.css"
     ]
   },
@@ -195,7 +195,7 @@
       "_index2.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.BPgkGszH.css"
+      "_app/immutable/assets/_page.BA-KKyPD.css"
     ]
   },
   "src/routes/projects/barbershop-website/+page.svelte": {
@@ -208,7 +208,7 @@
       "_TripleImage.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.Bq5Zk77L.css"
+      "_app/immutable/assets/_page.DjdWRyxF.css"
     ]
   },
   "src/routes/projects/cpp-games/+page.svelte": {
@@ -221,7 +221,7 @@
       "_TripleImage.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.BTbDLbH5.css"
+      "_app/immutable/assets/_page.B_bFphhO.css"
     ]
   },
   "src/routes/projects/cpp-lvl3/+page.svelte": {
@@ -234,7 +234,7 @@
       "_TripleImage.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.DWEDAueA.css"
+      "_app/immutable/assets/_page.C-5DVkTU.css"
     ]
   },
   "src/routes/projects/data-analysis-with-pandas/+page.svelte": {
@@ -247,7 +247,19 @@
       "_TripleImage.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.D43pToMV.css"
+      "_app/immutable/assets/_page.CjChhKIk.css"
+    ]
+  },
+  "src/routes/projects/edu-bridge-ltd/+page.svelte": {
+    "file": "entries/pages/projects/edu-bridge-ltd/_page.svelte.js",
+    "name": "entries/pages/projects/edu-bridge-ltd/_page.svelte",
+    "src": "src/routes/projects/edu-bridge-ltd/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index2.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.DFJP2bSB.css"
     ]
   },
   "src/routes/projects/flask-web-app/+page.svelte": {
@@ -260,7 +272,7 @@
       "_TripleImage.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.D43pToMV.css"
+      "_app/immutable/assets/_page.Ber14TtC.css"
     ]
   },
   "src/routes/projects/meteor/+page.svelte": {
@@ -285,7 +297,7 @@
       "_TripleImage.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.D43pToMV.css"
+      "_app/immutable/assets/_page.CjChhKIk.css"
     ]
   },
   "src/routes/projects/satfire/+page.svelte": {
@@ -297,7 +309,19 @@
       "_index2.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.UrF5lYDs.css"
+      "_app/immutable/assets/_page.BHHUKvJx.css"
+    ]
+  },
+  "src/routes/projects/solar-system/+page.svelte": {
+    "file": "entries/pages/projects/solar-system/_page.svelte.js",
+    "name": "entries/pages/projects/solar-system/_page.svelte",
+    "src": "src/routes/projects/solar-system/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index2.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.CvZCmaAV.css"
     ]
   },
   "src/routes/projects/taskmanager/+page.svelte": {
@@ -321,7 +345,7 @@
       "_index2.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.TFy_9NN8.css"
+      "_app/immutable/assets/_page.Ck121V_2.css"
     ]
   },
   "src/routes/projects/watchlist-app/+page.svelte": {

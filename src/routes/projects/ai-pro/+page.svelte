@@ -118,10 +118,8 @@
   </section>
 </div>
 
-
-
 <style>
-    /* container  */
+    
     #container{
         display: flex;
         flex-direction: column;
@@ -157,7 +155,7 @@
         background-color: rgb(97, 20, 128, 0.7);
         color: var(--color-secondary);
     }
-    /* download */
+    
     #download{
         display: flex;
         flex-direction: column;
@@ -231,7 +229,6 @@
         font-size: clamp(0.9rem, 2.2vw, 1rem);
     }
 
-    /* Media queries for larger screens */
     @media (min-width: 768px) {
         #container p {
             width: 80%;

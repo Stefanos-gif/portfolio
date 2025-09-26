@@ -4,7 +4,6 @@
     source: "https://github.com/Stefanos-gif/Task-Manager"
   };
 
-  // Fullscreen logic for screenshots
   let showFullscreen = false;
   let fullscreenImg = '';
 

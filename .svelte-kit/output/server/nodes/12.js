@@ -2,7 +2,7 @@
 
 export const index = 12;
 let component_cache;
-export const component = async () => component_cache ??= (await import('../entries/pages/projects/python-web-scraper/_page.svelte.js')).default;
-export const imports = ["_app/immutable/nodes/12.DKIm7tsl.js","_app/immutable/chunks/Bzak7iHL.js","_app/immutable/chunks/BDPL5Q3B.js","_app/immutable/chunks/CS5-6PdF.js","_app/immutable/chunks/C8S9u8Dj.js","_app/immutable/chunks/B9QI8j-U.js","_app/immutable/chunks/C0SlDKHh.js","_app/immutable/chunks/Dfc5OmDN.js","_app/immutable/chunks/ZiHXnxHh.js","_app/immutable/chunks/C9YQVKU_.js","_app/immutable/chunks/BMxWwDbN.js","_app/immutable/chunks/DkPbIObf.js","_app/immutable/chunks/F3bnNvC7.js","_app/immutable/chunks/Dkx5CTLy.js","_app/immutable/chunks/Ba1BFahH.js"];
-export const stylesheets = ["_app/immutable/assets/TripleImage.CZ1hpq6R.css","_app/immutable/assets/9.D43pToMV.css"];
+export const component = async () => component_cache ??= (await import('../entries/pages/projects/meteor/_page.svelte.js')).default;
+export const imports = ["_app/immutable/nodes/12.BXlooYTm.js","_app/immutable/chunks/Bzak7iHL.js","_app/immutable/chunks/CMQcD2UY.js","_app/immutable/chunks/XzvCHHrQ.js","_app/immutable/chunks/BoJ5Hi5g.js","_app/immutable/chunks/B9QI8j-U.js"];
+export const stylesheets = ["_app/immutable/assets/12.ChbgPuH2.css"];
 export const fonts = [];

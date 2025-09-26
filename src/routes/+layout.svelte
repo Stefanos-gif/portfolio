@@ -19,7 +19,6 @@
 		opened = false;
 	});
 
-	// clean up if this component ever unmounts
 	onDestroy(unsubscribe);
 </script>
 
@@ -80,7 +79,6 @@
 		}
 	}
 
-	/* Mobile responsiveness */
 	@media (max-width: 768px) {
 		main {
 			padding: 0.5rem;

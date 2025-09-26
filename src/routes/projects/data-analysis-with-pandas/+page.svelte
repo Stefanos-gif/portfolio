@@ -156,7 +156,6 @@
         height: auto;
     }
 
-    /* Media queries for better responsiveness */
     @media (min-width: 768px) {
         #img-container {
             margin: 3rem auto;

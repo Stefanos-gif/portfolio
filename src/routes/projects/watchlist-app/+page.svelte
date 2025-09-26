@@ -4,7 +4,6 @@
     source: "https://github.com/Stefanos-gif/Watchlist-app"
   };
 
-  // Fullscreen logic for screenshots
   let showFullscreen = false;
   let fullscreenImg = '';
 
@@ -30,7 +29,6 @@
   <meta property="og:image" content="/watchlist-preview.png" />
 </svelte:head>
 
-<!-- Title OUTSIDE the main box -->
 <h1 class="project-title">Watchlist App</h1>
 
 <div id="container">

@@ -24,6 +24,9 @@
 	"/projects/data-analysis-with-pandas": [
 		"src/routes/+layout.js"
 	],
+	"/projects/edu-bridge-ltd": [
+		"src/routes/+layout.js"
+	],
 	"/projects/flask-web-app": [
 		"src/routes/+layout.js"
 	],
@@ -34,6 +37,9 @@
 		"src/routes/+layout.js"
 	],
 	"/projects/satfire": [
+		"src/routes/+layout.js"
+	],
+	"/projects/solar-system": [
 		"src/routes/+layout.js"
 	],
 	"/projects/taskmanager": [

@@ -12,7 +12,7 @@ type EnsureDefined<T> = T extends null | undefined ? {} : T;
 type OptionalUnion<U extends Record<string, any>, A extends keyof U = U extends U ? keyof U : never> = U extends unknown ? { [P in Exclude<A, keyof U>]?: never } & U : never;
 export type Snapshot<T = any> = Kit.Snapshot<T>;
 type PageParentData = EnsureDefined<LayoutData>;
-type LayoutRouteId = RouteId | "/" | "/about" | "/background" | "/projects/ai-pro" | "/projects/barbershop-website" | "/projects/cpp-games" | "/projects/cpp-lvl3" | "/projects/data-analysis-with-pandas" | "/projects/flask-web-app" | "/projects/meteor" | "/projects/python-web-scraper" | "/projects/satfire" | "/projects/taskmanager" | "/projects/thalasat" | "/projects/watchlist-app" | null
+type LayoutRouteId = RouteId | "/" | "/about" | "/background" | "/projects/ai-pro" | "/projects/barbershop-website" | "/projects/cpp-games" | "/projects/cpp-lvl3" | "/projects/data-analysis-with-pandas" | "/projects/edu-bridge-ltd" | "/projects/flask-web-app" | "/projects/meteor" | "/projects/python-web-scraper" | "/projects/satfire" | "/projects/solar-system" | "/projects/taskmanager" | "/projects/thalasat" | "/projects/watchlist-app" | null
 type LayoutParams = RouteParams & {  }
 type LayoutParentData = EnsureDefined<{}>;
 

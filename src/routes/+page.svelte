@@ -10,7 +10,7 @@
 <script>
   import { onDestroy, onMount } from 'svelte';
 
-  const words = ['software engineer', 'student', 'developer','upcoming STEM ambassador'];
+  const words = ['software engineer', 'student', 'developer', 'STEM ambassador'];
   const baseText = ['Hi, my name is', 'Stefanos Siathas', "I'm a", words[0]];
   const text = ['', '', '', ''];
   const cycleIdx = baseText.length - 1;
@@ -88,6 +88,7 @@
   </p>
 
   <div id="img-hover" aria-hidden="true">
+    
     <img src="/stefs_profesionaly_photographed_picture_by_michalis_chhatzittofi.jpg" id="portrait-dark2" alt="" />
     <img src="/stefs_profesionaly_photographed_picture_by_michalis_chhatzittofi.jpg" id="portrait-dark"  alt="" />
     <img src="/stefs_profesionaly_photographed_picture_by_michalis_chhatzittofi.jpg" id="portrait"       alt="Portrait of Stefanos Siathas" />
@@ -95,7 +96,7 @@
 </div>
 
 <style>
-  /* ===== Desktop / Default ===== */
+  
   #title-block {
     text-align: left;
     position: fixed;
@@ -144,12 +145,10 @@
     transition: all 0.08s ease-in-out;
   }
 
-  /* Desktop hover effects */
   #img-hover:hover #portrait      { transform: scale(1.05) rotate(10deg); }
   #img-hover:hover #portrait-dark { transform: scale(1.05); filter: brightness(0.5); }
   #img-hover:hover #portrait-dark2{ transform: scale(1.05) rotate(-10deg); filter: brightness(0.25); }
 
-  /* ===== Tablet tweaks ===== */
   @media (max-width: 1100px){
     #name-text { font-size: clamp(3rem, 7vw, 4.2rem); }
     #sub-name-text { font-size: clamp(1.6rem, 3.6vw, 2.2rem); }
@@ -159,64 +158,60 @@
     }
   }
 
-  /* ===== Phone: stacked, centered text; image under text with layered cards ===== */
   @media (max-width: 820px){
-    /* Title area becomes normal-flow, centered */
+    
     #title-block{
-      position: static; /* cancel desktop fixed */
+      position: static;                
       text-align: center;
       margin: 0 auto;
-      padding: clamp(40px, 8vh, 72px) clamp(12px, 4vw, 24px) 0;
-      max-inline-size: 28ch;
-      text-wrap: balance;
+      padding: clamp(96px, 14vh, 140px) 20px 48px;
+      max-inline-size: 32ch;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+      max-width: 100vw;
+      box-sizing: border-box;
     }
 
-    /* Friendlier fluid type on phones */
-    #hi-text       { font-size: clamp(1rem, 4.5vw, 1.25rem); }
-    #name-text     { font-size: clamp(2rem, 10vw, 2.75rem); line-height: 1.08; letter-spacing: -0.01em; }
-    #sub-name-text { font-size: clamp(1rem, 5.5vw, 1.5rem); line-height: 1.22; }
-    .cursor { width: 2px; }
-
-    /* Image stack container under text */
     #img-hover{
-      position: relative;
-      margin: clamp(10px, 4vw, 20px) auto 0;
-      width: min(68vw, 280px);
-      aspect-ratio: 4/5;
+      position: static;
+      width: auto;
+      max-width: calc(100vw - 32px);
+      margin: 12px auto 0;
+      display: block;
     }
 
-    /* Override desktop fixed positioning for images and stack them */
-    #img-hover img{
-      position: absolute; inset: 0;
-      width: 100%; height: 100%; object-fit: cover;
-      border-radius: 12px;
-      border: 5px solid var(--color-primary);
-      box-shadow: 0 0 18px #7b2ff244;
-      transition: transform .25s ease, filter .25s ease, box-shadow .25s ease;
-      left: auto; top: auto; /* ensure desktop coords are canceled */
+    #portrait-dark, #portrait-dark2 { display: none !important; }
+
+    #portrait{
+      position: static !important;     
+      display: block;
+      width: min(92vw, 380px) !important;
+      height: auto !important;         
+      margin: 0 auto;
+      border-radius: 16px;
+      border: 4px solid var(--color-primary);
+      box-shadow: 0 0 20px #7b2ff255;
+      transform: none !important;      
+      filter: none !important;
     }
 
-    /* Layering/brightness for the “stacked cards” look */
-    #portrait-dark2 { transform: rotate(-5deg) translate(-3%, -2%); filter: brightness(.5);   z-index: 1; }
-    #portrait-dark  { transform: translate(0, 0);                       filter: brightness(.85); z-index: 2; }
-    #portrait       { transform: rotate(5deg) translate(3%, 2%);                              z-index: 3; }
-
-    /* Hover polish on devices that support hover */
-    @media (hover:hover){
-      #img-hover:hover img             { transform: scale(1.03); }
-      #img-hover:hover #portrait-dark2 { transform: scale(1.03) rotate(-7deg) translate(-5%, -3%); }
-      #img-hover:hover #portrait-dark  { transform: scale(1.05); filter: brightness(1); box-shadow: 0 0 24px #ff00ff66; }
-      #img-hover:hover #portrait       { transform: scale(1.03) rotate(7deg) translate(5%, 3%); }
-    }
+    #hi-text       { font-size: clamp(1.05rem, 5vw, 1.35rem); margin: 0; }
+    #name-text     { font-size: clamp(2.3rem, 12vw, 3.4rem);  line-height: 1.1; margin: 0; }
+    #sub-name-text { font-size: clamp(1.1rem, 6vw, 1.7rem);   line-height: 1.3; margin: 0; }
+    .cursor { width: 2px; }
   }
 
-  /* Extra-small phones */
   @media (max-width: 420px){
-    #title-block { max-inline-size: 25ch; }
-    #img-hover   { width: min(76vw, 240px); }
+    #title-block { max-inline-size: 28ch; padding: clamp(84px, 12vh, 120px) 14px 40px; }
+    #portrait    { width: min(94vw, 320px) !important; }
+    #hi-text       { font-size: clamp(1rem, 4.5vw, 1.2rem); }
+    #name-text     { font-size: clamp(2.2rem, 11vw, 3rem); }
+    #sub-name-text { font-size: clamp(1.1rem, 5.5vw, 1.6rem); }
   }
 
-  /* Accessibility: respect reduced motion */
   @media (prefers-reduced-motion: reduce){
     *{ animation: none !important; transition: none !important; }
   }

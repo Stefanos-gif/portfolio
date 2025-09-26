@@ -1,1 +1,1 @@
-export { default as component } from "../../../../src/routes/projects/watchlist-app/+page.svelte";
+export { default as component } from "../../../../src/routes/projects/taskmanager/+page.svelte";

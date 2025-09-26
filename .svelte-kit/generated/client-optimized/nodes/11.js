@@ -1,1 +1,1 @@
-export { default as component } from "../../../../src/routes/projects/meteor/+page.svelte";
+export { default as component } from "../../../../src/routes/projects/flask-web-app/+page.svelte";

@@ -9,7 +9,7 @@
     <h2>Achievements</h2>
     <img src="/paint.jpg" alt="Creative project collage" />
     <ul>
-      <li><b>Completed 46 Programming Projects:</b> 26 public GitHub repositories and 20+ small apps/scripts across multiple stacks.</li>
+      <li><b>Completed 50 Programming Projects:</b> 33 public GitHub repositories and 20+ small apps/scripts across multiple stacks.</li>
       <li><b>Hackathon Winner — Cassini Camp (Cyprus):</b> Core member of <em>SSATfire</em>, 1st place for an innovative space-data solution.</li>
       <li><b>Champion — Venetostars 2025:</b> With <em>Team Thalassat</em>, delivered rapid prototyping and seamless teamwork.</li>
       <li><b>STEM & Robotics Mentor:</b> Tutored C++ and robotics fundamentals through hands-on projects.</li>
@@ -115,7 +115,6 @@
    width: 1em;
   height: 1em;
 }
-
 
   @media (max-width: 800px) {
     #achivment-container {

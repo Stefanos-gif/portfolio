@@ -10,10 +10,9 @@
     { src: '/pres6.png', alt: 'Presentation page 6' }
   ];
 
-  // ArrowDown props (kept same vibe)
   const arrowColor = '#fa43f1';
   const arrowDuration = 1;
-  const arrowSize = 200; // scaled down on phones via CSS wrapper
+  const arrowSize = 200; 
 </script>
 
 <svelte:head>
@@ -25,12 +24,10 @@
   <title>Satfire</title>
 </svelte:head>
 
-<!-- Title -->
 <section id="tit" class="container">
   <h1>Satfire</h1>
 </section>
 
-<!-- Intro box (centered, same neon vibe) -->
 <section id="boxes" class="container">
   <p>
     1st place winner in the Cassini Camp Hackathon was a project me and the Satfire team are working on that
@@ -39,7 +36,6 @@
   </p>
 </section>
 
-<!-- Slides: Arrow then Image, repeated; fully responsive -->
 <section class="slides container">
   {#each slides as s, i}
     <div class="arrow-wrap" aria-hidden="true">
@@ -56,7 +52,7 @@
 
 <style>
   :root{
-    --color-primary: #7b2ff2;      /* used in your theme */
+    --color-primary: #7b2ff2;      
     --color-secondary: #e9d8ff;
     --bg: #0b0710;
 
@@ -64,14 +60,12 @@
     --arrow-color: #fa43f1;
   }
 
-  /* Layout helper */
   .container{
     width: min(100%, 1100px);
     margin-inline: auto;
     padding-inline: clamp(12px, 4vw, 24px);
   }
 
-  /* Title */
   #tit{
     display:flex; flex-direction:column; align-items:center; text-align:center;
   }
@@ -86,7 +80,6 @@
     text-shadow: 4px 4px 2px var(--color-primary);
   }
 
-  /* Intro box */
   #boxes{
     display:flex; flex-direction:column; align-items:center; text-align:center;
   }
@@ -107,7 +100,6 @@
     box-shadow: 0 0 24px #ff00ff55;
   }
 
-  /* Slides list */
   .slides{
     display:flex;
     flex-direction:column;
@@ -119,7 +111,6 @@
     display:flex; justify-content:center; align-items:center;
   }
 
-  /* Scale the big arrow down on phones without changing your component props */
   .arrow-scale{
     transform-origin: center;
     transform: scale(1);
@@ -133,7 +124,6 @@
     .arrow-scale{ transform: scale(0.6); }
   }
 
-  /* Image card with your neon hover look */
   .img-card{
     margin: 0;
     display:flex;
@@ -154,7 +144,6 @@
     border-color: var(--neon-pink);
   }
 
-  /* Respect reduced motion */
   @media (prefers-reduced-motion: reduce){
     *{ animation: none !important; transition: none !important; }
   }

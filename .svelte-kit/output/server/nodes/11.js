@@ -2,7 +2,7 @@
 
 export const index = 11;
 let component_cache;
-export const component = async () => component_cache ??= (await import('../entries/pages/projects/meteor/_page.svelte.js')).default;
-export const imports = ["_app/immutable/nodes/11.BMovSFvX.js","_app/immutable/chunks/Bzak7iHL.js","_app/immutable/chunks/BDPL5Q3B.js","_app/immutable/chunks/CS5-6PdF.js","_app/immutable/chunks/C9YQVKU_.js","_app/immutable/chunks/B9QI8j-U.js"];
-export const stylesheets = ["_app/immutable/assets/11.ChbgPuH2.css"];
+export const component = async () => component_cache ??= (await import('../entries/pages/projects/flask-web-app/_page.svelte.js')).default;
+export const imports = ["_app/immutable/nodes/11.WXgYkk4D.js","_app/immutable/chunks/Bzak7iHL.js","_app/immutable/chunks/CMQcD2UY.js","_app/immutable/chunks/XzvCHHrQ.js","_app/immutable/chunks/DEvj3O7V.js","_app/immutable/chunks/B9QI8j-U.js","_app/immutable/chunks/DNlooKOq.js","_app/immutable/chunks/Dfc5OmDN.js","_app/immutable/chunks/WHmIjTs4.js","_app/immutable/chunks/BoJ5Hi5g.js","_app/immutable/chunks/x2QR7-QF.js","_app/immutable/chunks/DkPbIObf.js","_app/immutable/chunks/CCobE8Zg.js","_app/immutable/chunks/DRfAVzAu.js","_app/immutable/chunks/CA9q0GpE.js"];
+export const stylesheets = ["_app/immutable/assets/TripleImage.CZ1hpq6R.css","_app/immutable/assets/11.Ber14TtC.css"];
 export const fonts = [];

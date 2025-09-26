@@ -22,7 +22,6 @@
             <br>Feel free to tinker with the settings below or click to <span class="refresh-button" on:click={() => sketchKey.set(Date.now())}>refresh</span> the animation.
         </p>
 
-
         <div class="sliders">
             <label> Particle Count
                 <input

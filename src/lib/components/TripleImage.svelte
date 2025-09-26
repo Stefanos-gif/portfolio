@@ -1,4 +1,4 @@
-<!-- TripleImage.svelte -->
+
 <script lang="ts">
     export let img_url1;
     export let img_url2;

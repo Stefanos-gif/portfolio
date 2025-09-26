@@ -79,6 +79,17 @@
 			}
 		},
 		{
+			"src": "/projects/edu-bridge-ltd",
+			"dest": "/projects/edu-bridge-ltd/"
+		},
+		{
+			"src": "/projects/edu-bridge-ltd/",
+			"status": 308,
+			"headers": {
+				"Location": "/projects/edu-bridge-ltd"
+			}
+		},
+		{
 			"src": "/projects/flask-web-app",
 			"dest": "/projects/flask-web-app/"
 		},
@@ -120,6 +131,17 @@
 			"status": 308,
 			"headers": {
 				"Location": "/projects/satfire"
+			}
+		},
+		{
+			"src": "/projects/solar-system",
+			"dest": "/projects/solar-system/"
+		},
+		{
+			"src": "/projects/solar-system/",
+			"status": 308,
+			"headers": {
+				"Location": "/projects/solar-system"
 			}
 		},
 		{
@@ -194,6 +216,9 @@
 		"projects/data-analysis-with-pandas.html": {
 			"path": "projects/data-analysis-with-pandas"
 		},
+		"projects/edu-bridge-ltd.html": {
+			"path": "projects/edu-bridge-ltd"
+		},
 		"projects/flask-web-app.html": {
 			"path": "projects/flask-web-app"
 		},
@@ -205,6 +230,9 @@
 		},
 		"projects/satfire.html": {
 			"path": "projects/satfire"
+		},
+		"projects/solar-system.html": {
+			"path": "projects/solar-system"
 		},
 		"projects/taskmanager.html": {
 			"path": "projects/taskmanager"

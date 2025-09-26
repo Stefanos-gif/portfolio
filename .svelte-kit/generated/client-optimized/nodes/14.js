@@ -1,1 +1,1 @@
-export { default as component } from "../../../../src/routes/projects/taskmanager/+page.svelte";
+export { default as component } from "../../../../src/routes/projects/satfire/+page.svelte";

@@ -19,7 +19,7 @@
   class="arrow"
   style="animation-duration: {duration}s;"
 >
-  <!-- simple downward-pointing triangle -->
+  
   <path d="M7 10l5 5 5-5H7z" />
 </svg>
 
@@ -31,7 +31,7 @@
 
   .arrow {
     display: inline-block;
-    /* infinite up-and-down */
+    
     animation-name: bounce;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;

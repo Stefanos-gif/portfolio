@@ -344,6 +344,42 @@
   }
   .close-btn:hover{ background:#ff47f0; color:#fff; }
   @keyframes fadeIn{ from{opacity:0} to{opacity:1} }
+  @media (max-width: 820px){
+  
+  .wrap.media{ padding-inline: 0; }
+  .img-card{
+    width: 100%;
+    display: grid;
+    place-items: center;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .img-card :global(img:nth-of-type(n+2)),
+  .img-card :global(picture:nth-of-type(n+2)),
+  .img-card :global(.ti-layer:nth-child(n+2)) {
+    display: none !important;
+  }
+
+  .img-card :global(img),
+  .img-card :global(picture),
+  .img-card :global(canvas),
+  .img-card :global(.triple-image),
+  .img-card :global(.ti-wrap),
+  .img-card :global(.ti-frame),
+  .img-card :global(.ti-inner),
+  .img-card :global(.ti-layer:first-child){
+    position: static !important;
+    transform: none !important;
+    left: auto !important; right: auto !important;
+    margin: 0 auto !important;
+    width: min(96vw, 700px) !important;
+    height: auto !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+  }
+}
+
   @media (prefers-reduced-motion: reduce){
     *{ animation:none !important; transition:none !important; }
   }

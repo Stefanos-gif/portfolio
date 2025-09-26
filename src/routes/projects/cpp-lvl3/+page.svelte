@@ -1,6 +1,8 @@
 <script>
   import TripleImage from "../../../lib/components/TripleImage.svelte";
+
   const IMG_H = "clamp(220px, 50vh, 560px)";
+
   let overlaySrc = null;
   function openFullscreen(src) { overlaySrc = src; document.body.style.overflow = "hidden"; }
   function closeFullscreen() { overlaySrc = null; document.body.style.overflow = ""; }
@@ -50,7 +52,7 @@
 </section>
 
 <section class="wrap media">
-  <figure class="img-card" on:click={() => openFullscreen('/Prog1.png')}>
+  <figure class="img-card" aria-label="C++ Level 3 Preview" on:click={() => openFullscreen('/Prog1.png')}>
     <TripleImage
       img_url1={"/Prog1.png"}
       img_url2={"/Prog1.png"}
@@ -86,7 +88,7 @@
 </section>
 
 <section class="wrap media">
-  <figure class="img-card wide" on:click={() => openFullscreen('/prog2.png')}>
+  <figure class="img-card wide" aria-label="Keywords Overview" on:click={() => openFullscreen('/prog2.png')}>
     <TripleImage
       img_url1={"/prog2.png"}
       img_url2={"/prog2.png"}
@@ -152,6 +154,7 @@
     box-shadow:0 0 24px #ff00ff55;
   }
   .intro a{ color:#2eff23; text-decoration:underline; }
+
   .arrows{
     display:flex;
     justify-content:center;
@@ -224,6 +227,7 @@
     60%{ transform:scaleY(.95) scaleX(.95); opacity:.8; }
     100%{ transform:scaleY(1.05) scaleX(1.1); opacity:.85; }
   }
+
   .media{ display:flex; justify-content:center; padding-block:clamp(8px,3vw,16px); }
   .img-card{ margin:0; display:flex; justify-content:center; width:100%; }
   .img-card :global(img){
@@ -241,6 +245,7 @@
     border-color:var(--neon-pink);
   }
   .img-card.wide{ width:100%; }
+
   .keywords{
     display:flex;
     flex-direction:column;
@@ -276,6 +281,7 @@
     border-radius:6px;
     filter:drop-shadow(0 0 12px #c77dff);
   }
+
   .note{ display:flex; justify-content:center; }
   .note p{
     background-color:rgba(97,20,128,.5);
@@ -286,6 +292,7 @@
     width:min(900px,100%);
     text-align:center;
   }
+
   .fullscreen-overlay{
     position:fixed;
     inset:0;
@@ -322,6 +329,42 @@
   }
   .close-btn:hover{ background:#ff47f0; color:#fff; }
   @keyframes fadeIn{ from{opacity:0} to{opacity:1} }
+
+  @media (max-width: 820px){
+  .wrap.media{ padding-inline: 0; }
+  .img-card{
+    width: 100%;
+    display: grid;
+    place-items: center;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .img-card :global(img:nth-of-type(n+2)),
+  .img-card :global(picture:nth-of-type(n+2)),
+  .img-card :global(.ti-layer:nth-child(n+2)) {
+    display: none !important;
+  }
+
+  .img-card :global(img),
+  .img-card :global(picture),
+  .img-card :global(canvas),
+  .img-card :global(.triple-image),
+  .img-card :global(.ti-wrap),
+  .img-card :global(.ti-frame),
+  .img-card :global(.ti-inner),
+  .img-card :global(.ti-layer:first-child){
+    position: static !important;
+    transform: none !important;
+    left: auto !important; right: auto !important;
+    margin: 0 auto !important;
+    width: min(96vw, 700px) !important;
+    height: auto !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+  }
+}
+
   @media (prefers-reduced-motion: reduce){
     *{ animation:none !important; transition:none !important; }
   }

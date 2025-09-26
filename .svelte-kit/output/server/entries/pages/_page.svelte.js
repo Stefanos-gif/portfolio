@@ -7,18 +7,18 @@ function _page($$payload, $$props) {
   onDestroy(() => clearTimeout(timeout));
   head($$payload, ($$payload2) => {
     $$payload2.title = `<title>Stefanos Siathas</title>`;
-    $$payload2.out.push(`<meta property="og:title" content="Stefanos Siathas" class="svelte-l7qk6e"/> <meta property="og:description" content="My portfolio!!!" class="svelte-l7qk6e"/> <meta property="og:type" content="website" class="svelte-l7qk6e"/> <meta property="og:url" content="https://stefanossiathas.com" class="svelte-l7qk6e"/> <meta property="og:image" content="/favicon.ico" class="svelte-l7qk6e"/>`);
+    $$payload2.out.push(`<meta property="og:title" content="Stefanos Siathas" class="svelte-1kp6k2x"/> <meta property="og:description" content="My portfolio!!!" class="svelte-1kp6k2x"/> <meta property="og:type" content="website" class="svelte-1kp6k2x"/> <meta property="og:url" content="https://stefanossiathas.com" class="svelte-1kp6k2x"/> <meta property="og:image" content="/favicon.ico" class="svelte-1kp6k2x"/>`);
   });
-  $$payload.out.push(`<div id="title-block" class="svelte-l7qk6e"><p id="hi-text" class="svelte-l7qk6e">${escape_html(text[0])} `);
+  $$payload.out.push(`<div id="title-block" class="svelte-1kp6k2x"><p id="hi-text" class="svelte-1kp6k2x">${escape_html(text[0])} `);
   {
     $$payload.out.push("<!--[-->");
-    $$payload.out.push(`<span id="colored-cursor" class="cursor svelte-l7qk6e"> </span>`);
+    $$payload.out.push(`<span id="colored-cursor" class="cursor svelte-1kp6k2x"> </span>`);
   }
-  $$payload.out.push(`<!--]--></p> <p id="name-text" class="svelte-l7qk6e">${escape_html(text[1])} `);
+  $$payload.out.push(`<!--]--></p> <p id="name-text" class="svelte-1kp6k2x">${escape_html(text[1])} `);
   {
     $$payload.out.push("<!--[!-->");
   }
-  $$payload.out.push(`<!--]--></p> <p id="sub-name-text" class="svelte-l7qk6e">${escape_html(text[2])} <span id="type-text" class="svelte-l7qk6e">${escape_html(text[3])}</span> `);
+  $$payload.out.push(`<!--]--></p> <p id="sub-name-text" class="svelte-1kp6k2x">${escape_html(text[2])} <span id="type-text" class="svelte-1kp6k2x">${escape_html(text[3])}</span> `);
   {
     $$payload.out.push("<!--[!-->");
     {
@@ -26,7 +26,7 @@ function _page($$payload, $$props) {
     }
     $$payload.out.push(`<!--]-->`);
   }
-  $$payload.out.push(`<!--]--></p> <div id="img-hover" aria-hidden="true" class="svelte-l7qk6e"><img src="/stefs_profesionaly_photographed_picture_by_michalis_chhatzittofi.jpg" id="portrait-dark2" alt="" class="svelte-l7qk6e"/> <img src="/stefs_profesionaly_photographed_picture_by_michalis_chhatzittofi.jpg" id="portrait-dark" alt="" class="svelte-l7qk6e"/> <img src="/stefs_profesionaly_photographed_picture_by_michalis_chhatzittofi.jpg" id="portrait" alt="Portrait of Stefanos Siathas" class="svelte-l7qk6e"/></div></div>`);
+  $$payload.out.push(`<!--]--></p> <div id="img-hover" aria-hidden="true" class="svelte-1kp6k2x"><img src="/stefs_profesionaly_photographed_picture_by_michalis_chhatzittofi.jpg" id="portrait-dark2" alt="" class="svelte-1kp6k2x"/> <img src="/stefs_profesionaly_photographed_picture_by_michalis_chhatzittofi.jpg" id="portrait-dark" alt="" class="svelte-1kp6k2x"/> <img src="/stefs_profesionaly_photographed_picture_by_michalis_chhatzittofi.jpg" id="portrait" alt="Portrait of Stefanos Siathas" class="svelte-1kp6k2x"/></div></div>`);
   pop();
 }
 export {

@@ -2,7 +2,6 @@
   import TripleImage from "./TripleImage.svelte";
   import { goto } from '$app/navigation';
 
-  // Single place to control image height; works inside inline styles too
   const IMG_H = 'clamp(200px, 45vh, 360px)';
 
   const projects = [
@@ -11,6 +10,7 @@
     { title: "Barbershop Website", img1: "/prog3.png", img2: "/prog3.png", img3: "/barbw.png", imgHeight: IMG_H, category: "industry", url: "/projects/barbershop-website" },
     { title: "Stemfreak Taskmanager", img1: "/prog3.png", img2: "/prog3.png", img3: "/taskmanager20.png", imgHeight: IMG_H, category: "industry", url: "/projects/taskmanager" },
     { title: "Watchlist app", img1: "/prog3.png", img2: "/prog3.png", img3: "/watchlistss.png", imgHeight: IMG_H, category: "industry", url: "/projects/watchlist-app" },
+    { title: "Edu Bridge LTD", img1: "/prog3.png", img2: "/prog3.png", img3: "/edu-bridge-preview.png", imgHeight: IMG_H, category: "industry", url: "/projects/coming-soon" },
 
     { title: "C++ Level 3", img1: "/prog3.png", img2: "/prog3.png", img3: "/cpplvl3.png", imgHeight: IMG_H, category: "cpp", url: "/projects/cpp-lvl3" },
     { title: "C++ Games", img1: "/prog3.png", img2: "/prog3.png", img3: "/cppGames.png", imgHeight: IMG_H, category: "cpp", url: "/projects/cpp-games" },
@@ -21,19 +21,18 @@
 
     { title: "AI(pro)", img1: "/prog3.png", img2: "/prog3.png", img3: "/ai.png", imgHeight: IMG_H, category: "debates", url: "/projects/ai-pro" },
     { title: "Meteor Counter", img1: "/prog3.png", img2: "/prog3.png", img3: "/meteor.png", imgHeight: IMG_H, category: "svelte", url: "/projects/meteor" },
+    { title: "Solar System", img1: "/prog3.png", img2: "/prog3.png", img3: "/solar-system-preview.png", imgHeight: IMG_H, category: "svelte", url: "/projects/solar-system" },
 
-    
   ];
 </script>
 
 <style>
-  /* Outer horizontal scroller of categories (kept) */
   .categories-viewport {
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
     gap: 2rem;
-    padding: 0 1rem 5vh;
+    padding: 1rem 1rem 0.5rem;
     margin: 0;
 
     scroll-snap-type: x proximity;
@@ -43,13 +42,32 @@
   .categories-viewport::-webkit-scrollbar { height: 8px; }
   .categories-viewport::-webkit-scrollbar-thumb { background:#ffffff33; border-radius: 10px; }
 
+  @media (max-width: 768px) {
+    .categories-viewport {
+      flex-direction: column;
+      overflow-x: visible;
+      overflow-y: visible;
+      gap: 2rem;
+      padding: 1rem 0.5rem 2rem;
+    }
+  }
+
   .category-block {
     flex: 0 0 auto;
     box-sizing: border-box;
     position: relative;
     scroll-snap-align: start;
-    min-width: fit-content; /* Adjust to content width instead of fixed minimum */
+    min-width: fit-content;
     max-width: min(92vw, 1200px);
+  }
+
+  @media (max-width: 768px) {
+    .category-block {
+      flex: 1 1 100%;
+      min-width: 100%;
+      max-width: 100%;
+      margin-bottom: 1rem;
+    }
   }
 
   .category-title {
@@ -62,7 +80,6 @@
     white-space: nowrap;
   }
 
-  /* keep your vertical divider between sections, but hide on small screens */
   .category-title:not(:last-child)::after {
     content: "";
     position: absolute;
@@ -90,12 +107,36 @@
     gap: 2rem;
     padding: 0 0.6rem 0.6rem;
     position: relative;
-    width: fit-content; /* Fit to content width */
-    min-width: 100%; /* Ensure it fills the viewport when needed */
+    width: fit-content;
+    min-width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .projects-viewport {
+      overflow-x: visible;
+      overflow-y: visible;
+      padding: 1rem 0;
+    }
+
+    .projects-track {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      padding: 0;
+      width: 100%;
+      min-width: auto;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .projects-track {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
   }
 
   .project {
-    flex: 0 0 clamp(220px, 25vw, 360px); /* same 25vw on desktop, friendly on phone */
+    flex: 0 0 clamp(220px, 25vw, 360px);
     box-sizing: border-box;
     margin: 0;
     position: relative;
@@ -113,23 +154,40 @@
     text-overflow: ellipsis;
   }
 
-  /* Mobile polish */
-  @media (max-width: 900px){
-    .categories-viewport{ gap: 1.5rem; }
-    .projects-track{ gap: 1rem; }
-    .category-block {
-      min-width: min(92vw, 1200px); /* On mobile, ensure full width for better UX */
+  @media (max-width: 768px) {
+    .category-title:not(:last-child)::after { display: none; }
+    
+    .project {
+      flex-basis: auto;
+      width: 100%;
+      background: rgba(123, 47, 242, 0.1);
+      border: 2px solid rgba(123, 47, 242, 0.3);
+      border-radius: 16px;
+      padding: 1rem;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
     }
-  }
 
-  @media (max-width: 768px){
-    .category-title:not(:last-child)::after{ display: none; } /* divider off on phones */
-    .project{ flex-basis: clamp(220px, 72vw, 360px); } /* bigger cards on phones */
+    .project:hover {
+      background: rgba(123, 47, 242, 0.2);
+      border-color: var(--color-primary);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(123, 47, 242, 0.4);
+    }
+
+    .project h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+      color: var(--color-secondary);
+      text-align: center;
+      white-space: normal;
+      overflow: visible;
+      text-overflow: unset;
+    }
   }
 </style>
 
 <div class="categories-viewport">
-  <!-- Industry -->
   <div class="category-block">
     <h2 class="category-title">Industry Projects</h2>
     <div class="projects-viewport">
@@ -149,7 +207,6 @@
     </div>
   </div>
 
-  <!-- C++ -->
   <div class="category-block">
     <h2 class="category-title">C++ Projects</h2>
     <div class="projects-viewport">
@@ -169,7 +226,6 @@
     </div>
   </div>
 
-  <!-- Python -->
   <div class="category-block">
     <h2 class="category-title">Python Projects</h2>
     <div class="projects-viewport">
@@ -189,7 +245,6 @@
     </div>
   </div>
 
-  <!-- Debates -->
   <div class="category-block">
     <h2 class="category-title">Debates</h2>
     <div class="projects-viewport">
@@ -209,7 +264,6 @@
     </div>
   </div>
 
-  <!-- Svelte Projects -->
   <div class="category-block">
     <h2 class="category-title">SvelteKit Projects</h2>
     <div class="projects-viewport">

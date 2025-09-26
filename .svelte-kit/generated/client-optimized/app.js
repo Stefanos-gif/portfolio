@@ -17,7 +17,9 @@ export const nodes = [
 	() => import('./nodes/13'),
 	() => import('./nodes/14'),
 	() => import('./nodes/15'),
-	() => import('./nodes/16')
+	() => import('./nodes/16'),
+	() => import('./nodes/17'),
+	() => import('./nodes/18')
 ];
 
 export const server_loads = [];
@@ -31,13 +33,15 @@ export const dictionary = {
 		"/projects/cpp-games": [7],
 		"/projects/cpp-lvl3": [8],
 		"/projects/data-analysis-with-pandas": [9],
-		"/projects/flask-web-app": [10],
-		"/projects/meteor": [11],
-		"/projects/python-web-scraper": [12],
-		"/projects/satfire": [13],
-		"/projects/taskmanager": [14],
-		"/projects/thalasat": [15],
-		"/projects/watchlist-app": [16]
+		"/projects/edu-bridge-ltd": [10],
+		"/projects/flask-web-app": [11],
+		"/projects/meteor": [12],
+		"/projects/python-web-scraper": [13],
+		"/projects/satfire": [14],
+		"/projects/solar-system": [15],
+		"/projects/taskmanager": [16],
+		"/projects/thalasat": [17],
+		"/projects/watchlist-app": [18]
 	};
 
 export const hooks = {
