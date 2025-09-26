@@ -221,7 +221,7 @@
     top: 0;
     left: 0;
     width: 100vw;
-    height: 50vh;
+    height: 60vh;
     background-color: var(--color-primary);
     z-index: 9998;
     transform-origin: top center;
@@ -245,7 +245,7 @@
     }
 
   .desktop-nav.opened { 
-    top: 50vh; 
+    top: 60vh; 
   }
 
   .wing,
