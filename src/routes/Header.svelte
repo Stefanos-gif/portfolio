@@ -1,5 +1,6 @@
+<!-- Header.svelte -->
 <script>
-  import { onMount, onDestroy } from 'svelte';
+  import { onMount } from 'svelte';
   import { slide, fade } from 'svelte/transition';
   import { cubicOut } from 'svelte/easing';
   import { page } from '$app/stores';
@@ -9,84 +10,92 @@
   import Fa from 'svelte-fa';
   import Projects from '../lib/components/Projects.svelte';
 
+  // Routes shown in nav
   const routes = ['/', '/about', '/background'];
+
+  // State
   let pageIdx = 0;
-
-  export let opened = false;
+  export let opened = false;          // projects panel
   let mobileMenuOpen = false;
-
-  const navTransition = { duration: 1000, axis: 'y' };
-  let y = 0;
   let ready = false;
   let isMobile = false;
+  let y = 0;
 
-  const unsubscribePage = page.subscribe(() => {
-    mobileMenuOpen = false;
-    if (browser) {
-      document.body.style.overflow = '';
-      document.body.style.overflowX = 'hidden';
-    }
-  });
-
-  function navigate(newPageIdx) {
-    pageIdx = newPageIdx;
+  // Helpers
+  function navigate(newIdx) {
+    pageIdx = newIdx;
     goto(routes[pageIdx]);
-    mobileMenuOpen = false;
+    closeMobileMenu();
+  }
+
+  function checkIfMobile() {
+    if (!browser) return;
+    isMobile = window.innerWidth <= 768;
+  }
+
+  function openMobileMenu() {
+    mobileMenuOpen = true;
     if (browser) {
-      document.body.style.overflow = '';
-      document.body.style.overflowX = 'hidden';
+      document.body.style.overflow = 'hidden';
     }
   }
 
-  function handleArrowNavigation(event) {
-    if (!isMobile) {
-      switch (event.key) {
-        case 'ArrowRight':
-          navigate((pageIdx + 1) % routes.length);
-          break;
-        case 'ArrowLeft':
-          navigate(pageIdx === 0 ? routes.length - 1 : pageIdx - 1);
-          break;
-      }
+  function closeMobileMenu() {
+    mobileMenuOpen = false;
+    if (browser) {
+      document.body.style.overflow = '';
+      document.body.style.overflowX = 'hidden';
     }
   }
 
   function toggleMobileMenu() {
-    mobileMenuOpen = !mobileMenuOpen;
-    if (browser) {
-      if (mobileMenuOpen) {
-        document.body.style.overflow = 'hidden';
-      } else {
-        document.body.style.overflow = '';
-        document.body.style.overflowX = 'hidden';
+    mobileMenuOpen ? closeMobileMenu() : openMobileMenu();
+  }
+
+  function handleArrowNavigation(event) {
+    // Left/Right for desktop, Esc to close things on mobile
+    if (event.key === 'Escape') {
+      if (mobileMenuOpen) closeMobileMenu();
+      if (opened) opened = false;
+      return;
+    }
+    if (!isMobile) {
+      if (event.key === 'ArrowRight') {
+        navigate((pageIdx + 1) % routes.length);
+      } else if (event.key === 'ArrowLeft') {
+        navigate(pageIdx === 0 ? routes.length - 1 : pageIdx - 1);
       }
     }
   }
 
-  function checkIfMobile() {
-    if (browser) {
-      isMobile = window.innerWidth <= 768;
-    }
-  }
-
+  // Init
   onMount(() => {
     ready = true;
-    pageIdx = routes.indexOf($page.url.pathname);
-    if (pageIdx < 0) pageIdx = 0;
-    
-    checkIfMobile();
-    window.addEventListener('resize', checkIfMobile);
-    
-    document.body.style.overflow = '';
-    document.body.style.overflowX = 'hidden';
-    
+    if (browser) {
+      pageIdx = routes.indexOf($page.url.pathname);
+      if (pageIdx < 0) pageIdx = 0;
+
+      checkIfMobile();
+      window.addEventListener('resize', checkIfMobile);
+
+      // keep horizontal scroll disabled
+      document.body.style.overflowX = 'hidden';
+    }
+
+    const unsub = page.subscribe(() => {
+      // close overlays on route change
+      closeMobileMenu();
+    });
+
     return () => {
-      window.removeEventListener('resize', checkIfMobile);
+      if (browser) window.removeEventListener('resize', checkIfMobile);
+      unsub();
       document.body.style.overflow = '';
       document.body.style.overflowX = 'hidden';
-      unsubscribePage();
     };
   });
+
+  const navTransition = { duration: 220, easing: cubicOut, axis: 'y' };
 </script>
 
 <svelte:window on:keydown={handleArrowNavigation} bind:scrollY={y} />
@@ -99,25 +108,20 @@
 
 <header>
   {#if ready && y < 50}
+    <!-- Projects Drop (shared desktop/mobile) -->
     {#if opened}
-      <div
-        transition:slide={{ duration: 300, easing: cubicOut, axis: 'y' }}
-        id="project-screen"
-      >
+      <div id="project-screen" transition:slide={{ duration: 260, easing: cubicOut, axis: 'y' }}>
         <Projects />
       </div>
     {/if}
 
+    <!-- DESKTOP NAV -->
     {#if !isMobile}
-      <nav in:slide={navTransition} class:opened class="desktop-nav">
-        <svg class="wing" viewBox="0 0 2 5" aria-hidden="true">
-          <path d="M0,0 L1,4 C1.5,5 1.5,5 2,5 L2,0 Z" />
-        </svg>
-
-        <div class="links-container">
-          <ul>
+      <nav class="desktop-nav" in:slide={navTransition} class:opened={opened}>
+        <div class="bar">
+          <ul class="links">
             {#each routes as route, i}
-              <li class:current-section={pageIdx === i}>
+              <li class:current={pageIdx === i}>
                 <button on:click={() => navigate(i)}>
                   {route === '/' ? 'home' : route.slice(1)}
                 </button>
@@ -125,82 +129,58 @@
             {/each}
           </ul>
 
-          <div
-            id="arrow-container"
-            on:click={() => { opened = !opened; }}
-            role="button"
+          <button
+            class="projects-toggle"
+            on:click={() => (opened = !opened)}
             aria-label={opened ? 'Hide projects' : 'Show projects'}
             aria-expanded={opened}
-            tabindex="0"
           >
-            {#if opened}
-              <Fa icon={faCaretUp} class="arrow" />
-            {:else}
-              <Fa icon={faCaretDown} class="arrow" />
-            {/if}
-          </div>
+            <Fa icon={opened ? faCaretUp : faCaretDown} />
+          </button>
         </div>
-
-        <svg class="wing" viewBox="0 0 2 5" aria-hidden="true">
-          <path d="M0,0 L0,5 C0.5,5 0.5,5 1,4 L2,0 Z" />
-        </svg>
       </nav>
     {:else}
-      
-      <div class="mobile-nav">
-        
-        <div class="nav-instructions" in:fade={{ duration: 200 }}>
-          <p>Tap menu to navigate • Swipe up for projects</p>
-        </div>
-
-        <button 
-          class="mobile-menu-btn" 
-          on:click={toggleMobileMenu}
-          aria-label="Toggle navigation menu"
-        >
+      <!-- MOBILE TOP BAR -->
+      <div class="mobile-top">
+        <button class="icon-btn" on:click={toggleMobileMenu} aria-label="Toggle navigation menu">
           <Fa icon={mobileMenuOpen ? faTimes : faBars} />
         </button>
 
-        <button 
-          class="mobile-projects-btn"
-          on:click={() => { opened = !opened; }}
+        <div class="hint" in:fade={{ duration: 150 }}>
+          Tap menu • Swipe up for projects
+        </div>
+
+        <button
+          class="icon-btn"
+          on:click={() => (opened = !opened)}
           aria-label={opened ? 'Hide projects' : 'Show projects'}
         >
           <Fa icon={opened ? faCaretUp : faCaretDown} />
         </button>
       </div>
 
+      <!-- MOBILE OVERLAY -->
       {#if mobileMenuOpen}
-        <div 
-          class="mobile-menu-overlay" 
-          transition:fade={{ duration: 200 }}
-          on:click={toggleMobileMenu}
-        >
-          <div class="mobile-menu" on:click|stopPropagation>
-            <div class="mobile-menu-header">
+        <div class="overlay" transition:fade={{ duration: 120 }} on:click={closeMobileMenu}>
+          <div class="sheet" on:click|stopPropagation>
+            <div class="sheet-header">
               <h3>Navigation</h3>
-              <button on:click={toggleMobileMenu} aria-label="Close menu">
+              <button class="close-x" on:click={closeMobileMenu} aria-label="Close menu">
                 <Fa icon={faTimes} />
               </button>
             </div>
-            <ul class="mobile-menu-list">
-              <li class:current-section={pageIdx === 0}>
-                <button on:click={() => navigate(0)}>
-                  Home
-                </button>
+
+            <ul class="sheet-list">
+              <li class:current={pageIdx === 0}>
+                <button on:click={() => navigate(0)}>Home</button>
               </li>
-              <li class:current-section={pageIdx === 1}>
-                <button on:click={() => navigate(1)}>
-                  About
-                </button>
+              <li class:current={pageIdx === 1}>
+                <button on:click={() => navigate(1)}>About</button>
               </li>
-              <li class:current-section={pageIdx === 2}>
-                <button on:click={() => navigate(2)}>
-                  Background
-                </button>
+              <li class:current={pageIdx === 2}>
+                <button on:click={() => navigate(2)}>Background</button>
               </li>
             </ul>
-            
           </div>
         </div>
       {/if}
@@ -210,410 +190,249 @@
 
 <style>
   :root{
-    --color-primary: #7b2ff2;
-    --color-secondary: #e9d8ff;
-    --background-color: #0b0710;
+    --bg: #0b0710;
+    --primary: #7b2ff2;
+    --primary-2: #8b3ff7;
+    --accent: #ff47f0;
+    --text: #e9d8ff;
+    --card: #1a0f28;
   }
 
+  /* --- Layout anchors --- */
   header {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    inset: 0 0 auto 0;
     display: contents;
     z-index: 9999;
   }
 
+  /* Projects area */
+  :global(html, body){
+  margin: 0;
+  padding: 0;
+}
+
+#project-screen {
+  position: fixed;
+  top: 0;                 /* flush with viewport top on desktop */
+  left: 0;
+  right: 0;
+  height: 60vh;
+  background-color: var(--primary);
+  z-index: 9998;
+  transform-origin: top center;
+  overflow-y: auto;
+  overflow-x: hidden;     /* optional: remove inner horizontal bar */
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+/* keep an offset only on mobile, so the top bar isn’t covered */
+@media (max-width: 768px) {
   #project-screen {
+    top: 60px;            /* matches your mobile header height */
+    height: 72vh;
+  }
+}
+
+  /* ================= DESKTOP ================= */
+  .desktop-nav{
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100vw;
-    height: 60vh;
-    background-color: var(--color-primary);
-    z-index: 9998;
-    transform-origin: top center;
-    overflow: auto;
-  }
-
-    .desktop-nav {
-       position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    
+    left: 0; right: 0;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    width: 100vw;
-
-    transition: top 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
-    pointer-events: auto;
     z-index: 9999;
-    }
-
-  .desktop-nav.opened { 
-    top: 60vh; 
-  }
-
-  .wing,
-  svg {
-    width: 2em;
-    height: 5em;
-    display: block;
-    transition: all 0.3s;
-  }
-  path { fill: var(--color-primary); }
-
-  .links-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 100%;
-  }
-
-  ul {
-    position: relative;
-    padding: 0;
-    margin: 0;
-    height: 3em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    background: var(--color-primary);
-    background-size: contain;
-    gap: 0.25rem;
-  }
-
-  li {
-    position: relative;
-    height: 100%;
-    flex: 0 0 auto;
-  }
-
-  .desktop-nav button {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    padding: 0 0.5rem;
-    color: var(--color-secondary);
-    font-weight: 700;
-    font-size: clamp(0.7rem, 2vw, 0.8rem);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    text-decoration: none;
-    transition: color 0.2s linear;
-    cursor: pointer;
-    border: none;
-    background-color: transparent;
-    min-width: 2.75rem;
-  }
-
-  .current-section button { color: var(--background-color); }
-  .desktop-nav button:hover { color: var(--background-color); }
-
-  :global(.arrow) { margin-top: 0.25rem; }
-
-  #arrow-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: calc(100% + 0.5rem);
-    background-color: var(--color-primary);
-    padding-bottom: 0.75rem;
-    cursor: pointer;
-    user-select: none;
-  }
-
-  .mobile-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 9999;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.75rem 1rem;
-    background: rgba(11, 7, 16, 0.98);
-    backdrop-filter: blur(15px);
-    border-bottom: 2px solid var(--color-primary);
-    box-shadow: 0 2px 30px rgba(123, 47, 242, 0.4);
-    width: 100vw;
-    box-sizing: border-box;
-    overflow: hidden;
-  }
-
-  .nav-instructions {
-    flex: 1;
-    text-align: center;
-  }
-
-  .nav-instructions p {
-    margin: 0;
-    font-size: 0.75rem;
-    color: var(--color-secondary);
-    opacity: 0.8;
-    font-weight: 500;
-  }
-
-  .mobile-menu-btn,
-  .mobile-projects-btn {
-    background: var(--color-primary);
-    border: none;
-    border-radius: 8px;
-    width: 44px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-secondary);
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0 2px 8px rgba(123, 47, 242, 0.4);
-  }
-
-  .mobile-menu-btn:hover,
-  .mobile-projects-btn:hover {
-    background: #8b3ff7;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(123, 47, 242, 0.6);
-  }
-
-  .mobile-projects-btn {
-    margin-left: 1rem;
-  }
-
-  .mobile-menu-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(11, 7, 16, 0.95);
-    z-index: 10000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(15px);
-  }
-
-  .mobile-menu {
-    background: linear-gradient(135deg, rgba(11, 7, 16, 0.95) 0%, rgba(25, 15, 35, 0.95) 100%);
-    border: 3px solid var(--color-primary);
-    border-radius: 24px;
-    width: 95%;
-    max-width: 420px;
-    min-height: 400px;
-    max-height: 90vh;
-    box-shadow: 
-      0 25px 80px rgba(123, 47, 242, 0.6),
-      0 0 60px rgba(255, 71, 240, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(25px);
-    position: relative;
-    overflow: visible;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .mobile-menu::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, transparent 30%, rgba(123, 47, 242, 0.1) 50%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .mobile-menu-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 1.5rem 1rem;
-    border-bottom: 2px solid rgba(123, 47, 242, 0.5);
-    background: linear-gradient(90deg, transparent, rgba(123, 47, 242, 0.1), transparent);
-    flex-shrink: 0;
-  }
-
-  .mobile-menu-header h3 {
-    margin: 0;
-    color: var(--color-secondary);
-    font-size: 1.6rem;
-    font-weight: 700;
-    text-shadow: 0 0 10px rgba(123, 47, 242, 0.8);
-    background: linear-gradient(45deg, var(--color-secondary), var(--color-primary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .mobile-menu-header button {
-    background: none;
-    border: none;
-    color: var(--color-secondary);
-    font-size: 1.25rem;
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 8px;
-    transition: background 0.2s ease;
-  }
-
-  .mobile-menu-header button:hover {
-    background: rgba(123, 47, 242, 0.2);
-  }
-
-  .mobile-menu-list {
-    list-style: none;
-    padding: 2rem 2rem 2.5rem;
-    margin: 0;
-    flex: 1;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .mobile-menu-list li {
-    margin: 0;
-    width: 100%;
-    flex-shrink: 0;
-    display: block;
-  }
-
-  .mobile-menu-list button {
-    width: 100%;
-    background: rgba(11, 7, 16, 0.6);
-    border: 2px solid rgba(123, 47, 242, 0.4);
-    color: var(--color-secondary);
-    font-size: 1.2rem;
-    font-weight: 600;
-    padding: 1.4rem 1.5rem;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: capitalize;
-    letter-spacing: 0.05em;
-    border-radius: 12px;
-    position: relative;
-    overflow: hidden;
     backdrop-filter: blur(10px);
-    flex-shrink: 0;
-    min-height: 58px;
   }
 
-  .mobile-menu-list button::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    background: radial-gradient(circle, rgba(123, 47, 242, 0.4) 0%, transparent 70%);
-    transition: all 0.4s ease;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
+  .desktop-nav .bar{
+    margin: .5rem auto;
+    height: 48px;                         /* slimmer desktop height */
+    display: flex;
+    align-items: stretch;
+    gap: .5rem;
+    background: var(--primary);
+    border-radius: 14px;
+    padding: 0 .5rem 0 .75rem;
+    box-shadow: 0 6px 22px rgba(123,47,242,.35);
   }
 
-  .mobile-menu-list button:hover::before {
-    width: 300px;
-    height: 300px;
+  .desktop-nav.opened { transform: translateY(60vh); transition: transform .24s cubic-bezier(.2,.7,.2,1); }
+
+  .links{
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+    list-style: none;
+    padding: 0; margin: 0;
   }
 
-  .mobile-menu-list button:hover {
-    background: rgba(123, 47, 242, 0.2);
-    border-color: var(--color-primary);
-    color: #fff;
-    text-shadow: 0 0 8px rgba(123, 47, 242, 0.6);
-    transform: translateY(-1px) scale(1.02);
-    box-shadow: 0 8px 20px rgba(123, 47, 242, 0.3);
-  }
+  .links li { height: 100%; display: flex; }
+  .links li.current button{ color: #0b0710; background: rgba(233,216,255,.85); }
 
-  .mobile-menu-list .current-section button {
-    background: linear-gradient(135deg, var(--color-primary) 0%, #8b3ff7 100%);
-    border-color: var(--color-primary);
-    color: #ffffff;
-    font-weight: 700;
-    text-shadow: 0 0 10px rgba(11, 7, 16, 0.8);
-    box-shadow: 0 0 25px rgba(123, 47, 242, 0.5);
+  .links button{
+    height: 100%;
+    border: 0;
+    background: transparent;
+    color: var(--text);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    padding: 0 .75rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background .15s ease, color .15s ease, transform .08s ease;
+    font-size: clamp(.72rem, 1.6vw, .82rem);
   }
+  .links button:hover{ background: rgba(233,216,255,.18); transform: translateY(-1px); }
 
-  .mobile-menu-list .current-section button:hover {
-    background: linear-gradient(135deg, #8b3ff7 0%, #ff47f0 100%);
-    transform: translateY(-2px) scale(1.03);
-    box-shadow: 0 10px 30px rgba(123, 47, 242, 0.6);
+  .projects-toggle{
+    border: 0;
+    background: #2a1740;
+    color: var(--text);
+    width: 48px;
+    height: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    transition: transform .08s ease, background .15s ease;
   }
+  .projects-toggle:hover{ background:#3a2158; transform: translateY(-1px); }
 
-  .mobile-menu-footer {
-    padding: 1rem 2rem 1.5rem;
+  /* ================= MOBILE ================= */
+  .mobile-top{
+    position: fixed; inset: 0 0 auto 0;
+    display: grid;
+    grid-template-columns: 44px 1fr 44px;
+    align-items: center;
+    gap: .5rem;
+    padding: .6rem .8rem;
+    background: rgba(11,7,16,.96);
+    border-bottom: 2px solid var(--primary);
+    box-shadow: 0 2px 30px rgba(123,47,242,.35);
+    z-index: 9999;
+  }
+  .hint{
     text-align: center;
-    border-top: 1px solid rgba(123, 47, 242, 0.3);
+    font-size: .78rem;
+    color: var(--text);
+    opacity: .8;
+    user-select: none;
+    white-space: nowrap;
+  }
+  .icon-btn{
+    width: 44px; height: 44px;
+    display: grid; place-items: center;
+    border: 0; border-radius: 10px;
+    background: var(--primary);
+    color: var(--text);
+    box-shadow: 0 2px 10px rgba(123,47,242,.45);
+    cursor: pointer;
+    transition: transform .08s ease, background .15s ease;
+  }
+  .icon-btn:hover{ transform: translateY(-1px); background: var(--primary-2); }
+
+  /* Overlay */
+  .overlay{
+    position: fixed; inset: 0;
+    background: radial-gradient(70% 70% at 50% 50%, rgba(123,47,242,.12), rgba(11,7,16,.95) 60%);
+    backdrop-filter: blur(16px);
+    display: grid; place-items: center;
+    z-index: 10000;
   }
 
-  .mobile-menu-footer p {
+  /* Neon card */
+  .sheet{
+    width: min(420px, 90vw);
+    border-radius: 22px;
+    background: linear-gradient(140deg, rgba(26,15,40,.98), rgba(20,12,32,.98));
+    border: 3px solid var(--primary);
+    box-shadow:
+      0 0 80px rgba(123,47,242,.55),
+      0 20px 60px rgba(0,0,0,.55),
+      inset 0 1px 0 rgba(255,255,255,.06);
+    overflow: hidden;
+  }
+
+  /* Title bar like in screenshot */
+  .sheet-header{
+    display: flex; align-items: center; justify-content: space-between;
+    padding: .9rem 1rem;
+    background: linear-gradient(90deg, rgba(123,47,242,.18), rgba(123,47,242,.06) 60%, transparent);
+    border-bottom: 2px solid rgba(123,47,242,.5);
+  }
+  .sheet-header h3{
     margin: 0;
-    font-size: 0.75rem;
-    color: var(--color-secondary);
-    opacity: 0.7;
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: .02em;
+    color: var(--text);
+    text-shadow: 0 0 10px rgba(123,47,242,.7);
+  }
+  .close-x{
+    border: 0; background: transparent; color: var(--text);
+    width: 40px; height: 40px; border-radius: 10px; cursor: pointer;
+  }
+  .close-x:hover{ background: rgba(123,47,242,.18); }
+
+  /* Buttons list */
+  .sheet-list{
+    list-style: none; padding: 1.25rem; margin: 0;
+    display: grid; gap: .85rem;
+  }
+  .sheet-list li { width: 100%; }
+
+  .sheet-list button{
+    width: 100%;
+    border: 2px solid rgba(123,47,242,.45);
+    background: #140c20;
+    color: var(--text);
+    padding: 1rem 1.25rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow:
+      0 8px 20px rgba(123,47,242,.25),
+      inset 0 0 0 0 rgba(123,47,242,.0);
+    transition: transform .09s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+  }
+  .sheet-list button:hover{
+    transform: translateY(-1px) scale(1.01);
+    border-color: var(--primary);
+    background: #1b112b;
+    box-shadow:
+      0 12px 28px rgba(123,47,242,.35),
+      inset 0 0 18px rgba(123,47,242,.18);
   }
 
-  @media (max-width: 768px) {
-    #project-screen { 
-      height: 75vh; 
-      top: 70px; 
-      width: 100vw;
-      box-sizing: border-box;
-      overflow-x: hidden;
-      overflow-y: auto;
-      padding: 0 0.5rem;
-    }
-    
-    .mobile-nav.projects-open {
-      top: 75vh;
-    }
-
-    body {
-      overflow-x: hidden !important;
-      width: 100vw;
-      max-width: 100vw;
-    }
-
-    * {
-      max-width: 100vw;
-      box-sizing: border-box;
-    }
+  /* Active/current page style (bright pill like screenshot) */
+  .sheet-list li.current button{
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 100%);
+    border-color: var(--primary);
+    color: #fff;
+    text-shadow: 0 1px 12px rgba(11,7,16,.75);
+    box-shadow:
+      0 0 28px rgba(123,47,242,.55),
+      0 14px 30px rgba(123,47,242,.40);
   }
 
-  @media (max-width: 480px) {
-    .nav-instructions p {
-      font-size: 0.65rem;
-    }
+  /* ================= SMALL SCREENS TWEAKS ================= */
+  @media (max-width: 768px){
+    #project-screen{ top: 60px; height: 72vh; }
+    .sheet{ width: min(380px, 92vw); }
+  }
 
-    .mobile-menu {
-      width: 96%;
-      max-width: 360px;
-      min-height: 450px;
-    }
+  @media (max-width: 420px){
+    .hint{ font-size: .68rem; }
+    .sheet{ width: 94vw; }
+    .sheet-list{ padding: 1rem; gap: .8rem; }
+    .sheet-list button{ font-size: 1.06rem; padding: 1rem 1.1rem; }
+  }
 
-    .mobile-menu-header {
-      padding: 2rem 2rem 1.5rem;
-    }
-
-    .mobile-menu-header h3 {
-      font-size: 1.8rem;
-    }
-
-    .mobile-menu-list {
-      padding: 2.5rem 2rem 3rem;
-      gap: 1.2rem;
-    }
-
-    .mobile-menu-list button {
-      font-size: 1.3rem;
-      padding: 1.6rem 1.8rem;
-      min-height: 64px;
-    }
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce){
+    *{ transition: none !important; animation: none !important; }
   }
 </style>

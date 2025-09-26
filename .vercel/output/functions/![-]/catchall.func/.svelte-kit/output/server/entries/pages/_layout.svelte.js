@@ -30,14 +30,16 @@ const page = {
 };
 function Header($$payload, $$props) {
   push();
-  let opened = fallback($$props["opened"], false);
-  page.subscribe(() => {
-  });
+  let opened = fallback(
+    $$props["opened"],
+    false
+    // projects panel
+  );
   head($$payload, ($$payload2) => {
     $$payload2.title = `<title>Stefanos Siathas</title>`;
-    $$payload2.out.push(`<meta charset="UTF-8" class="svelte-jvjsd0"/> <meta name="viewport" content="width=device-width, initial-scale=1" class="svelte-jvjsd0"/>`);
+    $$payload2.out.push(`<meta charset="UTF-8" class="svelte-jib8gs"/> <meta name="viewport" content="width=device-width, initial-scale=1" class="svelte-jib8gs"/>`);
   });
-  $$payload.out.push(`<header class="svelte-jvjsd0">`);
+  $$payload.out.push(`<header class="svelte-jib8gs">`);
   {
     $$payload.out.push("<!--[!-->");
   }
