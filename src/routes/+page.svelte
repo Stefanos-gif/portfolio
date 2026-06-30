@@ -92,6 +92,7 @@
     <img src="/stefs_profesionaly_photographed_picture_by_michalis_chhatzittofi.jpg" id="portrait-dark2" alt="" />
     <img src="/stefs_profesionaly_photographed_picture_by_michalis_chhatzittofi.jpg" id="portrait-dark"  alt="" />
     <img src="/stefs_profesionaly_photographed_picture_by_michalis_chhatzittofi.jpg" id="portrait"       alt="Portrait of Stefanos Siathas" />
+    
   </div>
 </div>
 
