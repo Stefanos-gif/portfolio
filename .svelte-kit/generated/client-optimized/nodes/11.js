@@ -1,1 +1,0 @@
-export { default as component } from "../../../../src/routes/projects/flask-web-app/+page.svelte";
