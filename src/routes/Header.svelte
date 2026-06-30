@@ -82,7 +82,9 @@
       document.body.style.overflowX = 'hidden';
     }
 
-    const unsub = page.subscribe(() => {
+    const unsub = page.subscribe(($page) => {
+      pageIdx = routes.indexOf($page.url.pathname);
+      if (pageIdx < 0) pageIdx = 0;
       // close overlays on route change
       closeMobileMenu();
     });
@@ -122,9 +124,9 @@
           <ul class="links">
             {#each routes as route, i}
               <li class:current={pageIdx === i}>
-                <button on:click={() => navigate(i)}>
+                <a href={route}>
                   {route === '/' ? 'home' : route.slice(1)}
-                </button>
+                </a>
               </li>
             {/each}
           </ul>
@@ -172,13 +174,13 @@
 
             <ul class="sheet-list">
               <li class:current={pageIdx === 0}>
-                <button on:click={() => navigate(0)}>Home</button>
+                <a href="/" on:click={closeMobileMenu}>Home</a>
               </li>
               <li class:current={pageIdx === 1}>
-                <button on:click={() => navigate(1)}>About</button>
+                <a href="/about" on:click={closeMobileMenu}>About</a>
               </li>
               <li class:current={pageIdx === 2}>
-                <button on:click={() => navigate(2)}>Background</button>
+                <a href="/background" on:click={closeMobileMenu}>Background</a>
               </li>
             </ul>
           </div>
@@ -249,17 +251,19 @@
 
   .links{ display:flex; align-items:center; gap:.25rem; list-style:none; padding:0; margin:0; }
   .links li{ height:100%; display:flex; }
-  .links li.current button{ color:#0b0710; background:rgba(233,216,255,.85); }
+    .links li.current a{ color:#0b0710; background:rgba(233,216,255,.85); }
 
-  .links button{
+  .links a{
+    display:flex; align-items:center; justify-content:center;
     height:100%;
     border:0; background:transparent;
     color:var(--text); font-weight:800; text-transform:uppercase; letter-spacing:.1em;
+    text-decoration:none;
     padding:0 .75rem; border-radius:10px; cursor:pointer;
     transition:background .15s ease, color .15s ease, transform .08s ease;
     font-size:clamp(.72rem,1.6vw,.82rem);
   }
-  .links button:hover{ background:rgba(233,216,255,.18); transform:translateY(-1px); }
+  .links a:hover{ background:rgba(233,216,255,.18); transform:translateY(-1px); }
 
   .projects-toggle{
     border:0; background:#2a1740; color:var(--text);
@@ -314,18 +318,20 @@
 
   .sheet-list{ list-style:none; padding:1.25rem; margin:0; display:grid; gap:.85rem; }
   .sheet-list li{ width:100%; }
-  .sheet-list button{
+  .sheet-list a{
+    display:flex; align-items:center; justify-content:center;
     width:100%; border:2px solid rgba(123,47,242,.45); background:#140c20; color:var(--text);
     padding:1rem 1.25rem; font-size:1.05rem; font-weight:700; border-radius:12px; cursor:pointer;
+    text-decoration:none;
     box-shadow:0 8px 20px rgba(123,47,242,.25), inset 0 0 0 0 rgba(123,47,242,0);
     transition:transform .09s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
   }
-  .sheet-list button:hover{
+  .sheet-list a:hover{
     transform:translateY(-1px) scale(1.01);
     border-color:var(--primary); background:#1b112b;
     box-shadow:0 12px 28px rgba(123,47,242,.35), inset 0 0 18px rgba(123,47,242,.18);
   }
-  .sheet-list li.current button{
+  .sheet-list li.current a{
     background:linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 100%);
     border-color:var(--primary); color:#fff; text-shadow:0 1px 12px rgba(11,7,16,.75);
     box-shadow:0 0 28px rgba(123,47,242,.55), 0 14px 30px rgba(123,47,242,.40);

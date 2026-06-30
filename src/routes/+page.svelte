@@ -4,6 +4,7 @@
   <meta property="og:type"        content="website" />
   <meta property="og:url"         content="https://stefanossiathas.com" />
   <meta property="og:image"       content="/favicon.ico" />
+  <meta name="description" content="Stefanos Siathas is a software engineer, developer, and STEM ambassador specializing in full-stack web apps and IoT systems." />
   <title>Stefanos Siathas</title>
 </svelte:head>
 
@@ -70,12 +71,12 @@
     {/if}
   </p>
 
-  <p id="name-text">
+  <h1 id="name-text">
     {text[1]}
     {#if text[1] !== baseText[1] && text[0] === baseText[0]}
       <span class="cursor">&nbsp;</span>
     {/if}
-  </p>
+  </h1>
 
   <p id="sub-name-text">
     {text[2]}
