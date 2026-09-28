@@ -1,11 +1,25 @@
 <script lang="ts">
   import Accivmnets from "../../lib/components/Accivmnets.svelte";
+  import CertificateCarousel from '../../lib/components/CertificateCarousel.svelte';
   let copied = false;
   function copyEmail() {
     navigator.clipboard.writeText('stefanossiathas@gmail.com');
     copied = true;
     setTimeout(() => copied = false, 1500);
   }
+
+  // certificate images from static/certificates
+  const certImages = [
+    '/certificates/cassini.jpg',
+    '/certificates/certificate1.jpg',
+    '/certificates/certificate2.jpg',
+    '/certificates/certificate3.jpg',
+    '/certificates/steamAcertificate.jpg',
+    '/certificates/steamACertificate1.jpg',
+    '/certificates/c1.svg',
+    '/certificates/c2.svg',
+    '/certificates/veneto.svg'
+  ];
 </script>
 
 <svelte:head>
@@ -57,28 +71,12 @@
   </div>
 
   <Accivmnets />
-</section>
 
-<script lang="ts">
-  import CertificateCarousel from '../../lib/components/CertificateCarousel.svelte';
-  // certificate images from static/certificates
-  const certImages = [
-    '/certificates/cassini.jpg',
-    '/certificates/certificate1.jpg',
-    '/certificates/certificate2.jpg',
-    '/certificates/certificate3.jpg',
-    '/certificates/steamAcertificate.jpg',
-    '/certificates/steamACertificate1.jpg',
-    '/certificates/c1.svg',
-    '/certificates/c2.svg',
-    '/certificates/veneto.svg'
-  ];
-</script>
+  <section id="certificates">
+    <h2 style="margin-top:12px">Certificates</h2>
+    <CertificateCarousel images={certImages} />
+  </section>
 
-<section id="certificates">
-  <h2 style="margin-top:12px">Certificates</h2>
-  <CertificateCarousel images={certImages} />
-</section>
 </section>
 
 <style>
