@@ -113,17 +113,25 @@
 <div id="screenshots">
   <h2 class="screenshots-title">Screenshots</h2>
   <div class="screenshots-row">
-    <img src="/taskmanager1.png" alt="Task Manager Screenshot 1" class="screenshot-img" on:click={() => openFullscreen('/taskmanager1.png')} tabindex="0" role="button" aria-label="Open screenshot 1 fullscreen"/>
-    <img src="/taskmanager2.png" alt="Task Manager Screenshot 2" class="screenshot-img" on:click={() => openFullscreen('/taskmanager2.png')} tabindex="0" role="button" aria-label="Open screenshot 2 fullscreen"/>
+    <button type="button" class="screenshot-button" on:click={() => openFullscreen('/taskmanager1.png')} aria-label="Open screenshot 1 fullscreen">
+      <img src="/taskmanager1.png" alt="Task Manager Screenshot 1" class="screenshot-img" />
+    </button>
+    <button type="button" class="screenshot-button" on:click={() => openFullscreen('/taskmanager2.png')} aria-label="Open screenshot 2 fullscreen">
+      <img src="/taskmanager2.png" alt="Task Manager Screenshot 2" class="screenshot-img" />
+    </button>
   </div>
   <div class="screenshots-row">
-    <img src="/taskmanager3.png" alt="Task Manager Screenshot 3" class="screenshot-img" on:click={() => openFullscreen('/taskmanager3.png')} tabindex="0" role="button" aria-label="Open screenshot 3 fullscreen"/>
-    <img src="/taskmanager4.png" alt="Task Manager Screenshot 4" class="screenshot-img" on:click={() => openFullscreen('/taskmanager4.png')} tabindex="0" role="button" aria-label="Open screenshot 4 fullscreen"/>
+    <button type="button" class="screenshot-button" on:click={() => openFullscreen('/taskmanager3.png')} aria-label="Open screenshot 3 fullscreen">
+      <img src="/taskmanager3.png" alt="Task Manager Screenshot 3" class="screenshot-img" />
+    </button>
+    <button type="button" class="screenshot-button" on:click={() => openFullscreen('/taskmanager4.png')} aria-label="Open screenshot 4 fullscreen">
+      <img src="/taskmanager4.png" alt="Task Manager Screenshot 4" class="screenshot-img" />
+    </button>
   </div>
 </div>
 
 {#if showFullscreen}
-  <div class="fullscreen-overlay" on:click={closeFullscreen} tabindex="0">
+  <div class="fullscreen-overlay" on:click={closeFullscreen} on:keydown={(event) => { if (event.key === 'Escape' || event.key === 'Enter' || event.key === ' ') { event.preventDefault(); closeFullscreen(); } }} tabindex="0" role="button" aria-label="Close fullscreen image viewer">
     <img src={fullscreenImg} alt="Fullscreen Screenshot" class="fullscreen-img" />
     <button class="close-fullscreen" on:click|stopPropagation={closeFullscreen} aria-label="Close fullscreen">&times;</button>
   </div>

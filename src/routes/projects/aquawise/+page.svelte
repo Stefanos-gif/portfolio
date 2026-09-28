@@ -12,6 +12,13 @@
     showFullscreen = false;
     if (typeof document !== 'undefined') document.body.style.overflow = '';
   }
+
+  function handleOverlayKeydown(event) {
+    if (event.key === 'Escape' || event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      closeFullscreen();
+    }
+  }
 </script>
 
 <svelte:head>
@@ -52,12 +59,20 @@
   <div id="screenshots">
     <h2 class="screenshots-title">Images & Media</h2>
     <div class="screenshots-row">
-      <img src="/aquawise/aq1.jpg" alt="AquaWise field" class="screenshot-img" on:click={() => openFullscreen('/aquawise/aq1.jpg')} tabindex="0" role="button"/>
-      <img src="/aquawise/aq2.jpg" alt="AquaWise facility" class="screenshot-img" on:click={() => openFullscreen('/aquawise/aq2.jpg')} tabindex="0" role="button"/>
+      <button type="button" class="screenshot-button" on:click={() => openFullscreen('/aquawise/aq1.jpg')} aria-label="Open AquaWise field image in fullscreen">
+        <img src="/aquawise/aq1.jpg" alt="AquaWise field" class="screenshot-img" />
+      </button>
+      <button type="button" class="screenshot-button" on:click={() => openFullscreen('/aquawise/aq2.jpg')} aria-label="Open AquaWise facility image in fullscreen">
+        <img src="/aquawise/aq2.jpg" alt="AquaWise facility" class="screenshot-img" />
+      </button>
     </div>
     <div class="screenshots-row">
-      <img src="/aquawise/aq3.jpg" alt="AquaWise sensors" class="screenshot-img" on:click={() => openFullscreen('/aquawise/aq3.jpg')} tabindex="0" role="button"/>
-      <img src="/aquawise/aq4.jpg" alt="AquaWise deployment" class="screenshot-img" on:click={() => openFullscreen('/aquawise/aq4.jpg')} tabindex="0" role="button"/>
+      <button type="button" class="screenshot-button" on:click={() => openFullscreen('/aquawise/aq3.jpg')} aria-label="Open AquaWise sensors image in fullscreen">
+        <img src="/aquawise/aq3.jpg" alt="AquaWise sensors" class="screenshot-img" />
+      </button>
+      <button type="button" class="screenshot-button" on:click={() => openFullscreen('/aquawise/aq4.jpg')} aria-label="Open AquaWise deployment image in fullscreen">
+        <img src="/aquawise/aq4.jpg" alt="AquaWise deployment" class="screenshot-img" />
+      </button>
     </div>
   </div>
 
@@ -69,7 +84,7 @@
   </div>
 
   {#if showFullscreen}
-    <div class="fullscreen-overlay" on:click={closeFullscreen} tabindex="0">
+    <div class="fullscreen-overlay" on:click={closeFullscreen} on:keydown={handleOverlayKeydown} tabindex="0" role="button" aria-label="Close fullscreen image viewer">
       <img src={fullscreenImg} alt="Fullscreen" class="fullscreen-img" />
       <button class="close-fullscreen" on:click|stopPropagation={closeFullscreen} aria-label="Close fullscreen">&times;</button>
     </div>
@@ -196,18 +211,28 @@
     justify-content: center;
   }
 
-  .screenshot-img {
+  .screenshot-button {
     width: 48%;
+    padding: 0;
+    background: none;
+    border: 0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .screenshot-img {
+    width: 100%;
     height: auto;
     border-radius: 12px;
     border: 3px solid var(--color-primary, #c77dff);
     box-shadow: 0 0 20px #c77dff33;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    display: block;
     object-fit: cover;
   }
 
-  .screenshot-img:hover {
+  .screenshot-button:hover .screenshot-img,
+  .screenshot-button:focus-visible .screenshot-img {
     transform: scale(1.05);
     box-shadow: 0 0 30px #c77dff66;
   }

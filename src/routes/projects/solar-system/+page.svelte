@@ -76,17 +76,25 @@
   <div id="screenshots">
     <h2 class="screenshots-title">Screenshots</h2>
     <div class="screenshots-row">
-      <img src="/solar-system-main.png" alt="Solar System Main View" class="screenshot-img" on:click={() => openFullscreen('/solar-system-main.png')} tabindex="0" role="button" aria-label="Open main view fullscreen"/>
-      <img src="/solar-system-planets.png" alt="Solar System Planet Selection" class="screenshot-img" on:click={() => openFullscreen('/solar-system-planets.png')} tabindex="0" role="button" aria-label="Open planet selection fullscreen"/>
+      <button type="button" class="screenshot-button" on:click={() => openFullscreen('/solar-system-main.png')} aria-label="Open main view fullscreen">
+        <img src="/solar-system-main.png" alt="Solar System Main View" class="screenshot-img" />
+      </button>
+      <button type="button" class="screenshot-button" on:click={() => openFullscreen('/solar-system-planets.png')} aria-label="Open planet selection fullscreen">
+        <img src="/solar-system-planets.png" alt="Solar System Planet Selection" class="screenshot-img" />
+      </button>
     </div>
     <div class="screenshots-row">
-      <img src="/planet-api-docs.png" alt="Planet API Documentation" class="screenshot-img" on:click={() => openFullscreen('/planet-api-docs.png')} tabindex="0" role="button" aria-label="Open API docs fullscreen"/>
-      <img src="/solar-system-mobile.png" alt="Solar System Mobile View" class="screenshot-img" on:click={() => openFullscreen('/solar-system-mobile.png')} tabindex="0" role="button" aria-label="Open mobile view fullscreen"/>
+      <button type="button" class="screenshot-button" on:click={() => openFullscreen('/planet-api-docs.png')} aria-label="Open API docs fullscreen">
+        <img src="/planet-api-docs.png" alt="Planet API Documentation" class="screenshot-img" />
+      </button>
+      <button type="button" class="screenshot-button" on:click={() => openFullscreen('/solar-system-mobile.png')} aria-label="Open mobile view fullscreen">
+        <img src="/solar-system-mobile.png" alt="Solar System Mobile View" class="screenshot-img" />
+      </button>
     </div>
   </div>
 
   {#if showFullscreen}
-    <div class="fullscreen-overlay" on:click={closeFullscreen} tabindex="0">
+    <div class="fullscreen-overlay" on:click={closeFullscreen} on:keydown={(event) => { if (event.key === 'Escape' || event.key === 'Enter' || event.key === ' ') { event.preventDefault(); closeFullscreen(); } }} tabindex="0" role="button" aria-label="Close fullscreen image viewer">
       <img src={fullscreenImg} alt="Fullscreen Screenshot" class="fullscreen-img" />
       <button class="close-fullscreen" on:click|stopPropagation={closeFullscreen} aria-label="Close fullscreen">&times;</button>
     </div>

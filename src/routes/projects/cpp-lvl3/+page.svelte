@@ -52,7 +52,7 @@
 </section>
 
 <section class="wrap media">
-  <figure class="img-card" aria-label="C++ Level 3 Preview" on:click={() => openFullscreen('/Prog1.png')}>
+  <button type="button" class="img-card" aria-label="C++ Level 3 Preview" on:click={() => openFullscreen('/Prog1.png')}>
     <TripleImage
       img_url1={"/Prog1.png"}
       img_url2={"/Prog1.png"}
@@ -61,7 +61,7 @@
       aspect_ratio={"17/11"}
       alt={"C++ Level 3 Preview"}
     />
-  </figure>
+  </button>
 </section>
 
 <section class="wrap keywords">
@@ -88,7 +88,7 @@
 </section>
 
 <section class="wrap media">
-  <figure class="img-card wide" aria-label="Keywords Overview" on:click={() => openFullscreen('/prog2.png')}>
+  <button type="button" class="img-card wide" aria-label="Keywords Overview" on:click={() => openFullscreen('/prog2.png')}>
     <TripleImage
       img_url1={"/prog2.png"}
       img_url2={"/prog2.png"}
@@ -97,11 +97,11 @@
       aspect_ratio={"17/11"}
       alt={"Keywords Overview"}
     />
-  </figure>
+  </button>
 </section>
 
 {#if overlaySrc}
-  <div class="fullscreen-overlay" on:click|self={closeFullscreen}>
+  <div class="fullscreen-overlay" on:click|self={closeFullscreen} on:keydown={(event) => { if (event.key === 'Escape' || event.key === 'Enter' || event.key === ' ') { event.preventDefault(); closeFullscreen(); } }} tabindex="0" role="button" aria-label="Close fullscreen image viewer">
     <img src={overlaySrc} alt="Fullscreen" class="fullscreen-img" />
     <button class="close-btn" on:click={closeFullscreen} aria-label="Close fullscreen">&times;</button>
   </div>

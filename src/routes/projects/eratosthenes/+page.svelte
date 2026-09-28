@@ -42,7 +42,9 @@
 
   <div id="gallery" class="card gallery">
     {#each galleryImages as img}
-      <img src={img} alt="Project photo" class="screenshot-img" on:click={() => openFullscreen(img)} />
+      <button type="button" class="screenshot-button" on:click={() => openFullscreen(img)} aria-label="Open project photo fullscreen">
+        <img src={img} alt="Project photo" class="screenshot-img" />
+      </button>
     {/each}
   </div>
 
@@ -64,9 +66,9 @@
 </section>
 
 {#if showFullscreen}
-  <div class="fullscreen-overlay" on:click={closeFullscreen}>
-    <img src={fullscreenImg} class="fullscreen-img" />
-    <button class="close-fullscreen" on:click|stopPropagation={closeFullscreen}>&times;</button>
+  <div class="fullscreen-overlay" on:click={closeFullscreen} on:keydown={(event) => { if (event.key === 'Escape' || event.key === 'Enter' || event.key === ' ') { event.preventDefault(); closeFullscreen(); } }} tabindex="0" role="button" aria-label="Close fullscreen image viewer">
+    <img src={fullscreenImg} alt="Fullscreen project photo" class="fullscreen-img" />
+    <button class="close-fullscreen" on:click|stopPropagation={closeFullscreen} aria-label="Close fullscreen">&times;</button>
   </div>
 {/if}
 

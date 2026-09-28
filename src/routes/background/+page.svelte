@@ -19,7 +19,7 @@
             I love building all sorts of things,
         </p>
         <p>
-            <br>Feel free to tinker with the settings below or click to <span class="refresh-button" on:click={() => sketchKey.set(Date.now())}>refresh</span> the animation.
+            <br>Feel free to tinker with the settings below or click <button type="button" class="refresh-button" on:click={() => sketchKey.set(Date.now())}>refresh</button> the animation.
         </p>
 
         <div class="sliders">

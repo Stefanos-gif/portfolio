@@ -187,15 +187,13 @@ Cyprus  <meta property="og:description" content="From  — we use space technolo
 
   <div class="problems-gallery">
     {#each galleryImages as img, i}
-      <img
-        src={img}
-        alt={`Problem slide ${i+1}`}
-        class="gallery-img-3d {i === currentGalleryIndex ? 'active' : ''}"
-        on:click={() => openGalleryFullscreen(img)}
-        tabindex="0"
-        role="button"
-        aria-label="Open image fullscreen"
-      />
+      <button type="button" class="gallery-image-button {i === currentGalleryIndex ? 'active' : ''}" on:click={() => openGalleryFullscreen(img)} aria-label="Open problem slide ${i + 1} fullscreen">
+        <img
+          src={img}
+          alt={`Problem slide ${i+1}`}
+          class="gallery-img-3d {i === currentGalleryIndex ? 'active' : ''}"
+        />
+      </button>
     {/each}
     <button class="gallery-arrow-btn left" on:click={prevGalleryImage} aria-label="Previous image" disabled={currentGalleryIndex === 0}>&larr;</button>
     <button class="gallery-arrow-btn right" on:click={nextGalleryImage} aria-label="Next image" disabled={currentGalleryIndex === galleryImages.length - 1}>&rarr;</button>
@@ -203,7 +201,7 @@ Cyprus  <meta property="og:description" content="From  — we use space technolo
 </section>
 
 {#if showGalleryFullscreen}
-  <div class="fullscreen-overlay" on:click={closeGalleryFullscreen} tabindex="0" role="dialog" aria-label="Fullscreen image viewer">
+  <div class="fullscreen-overlay" on:click={closeGalleryFullscreen} on:keydown={(event) => { if (event.key === 'Escape' || event.key === 'Enter' || event.key === ' ') { event.preventDefault(); closeGalleryFullscreen(); } }} tabindex="0" role="dialog" aria-label="Fullscreen image viewer">
     <img src={fullscreenImg} alt="Fullscreen slide" class="fullscreen-img" />
     <button class="close-fullscreen" on:click|stopPropagation={closeGalleryFullscreen} aria-label="Close fullscreen">&times;</button>
     <button class="fullscreen-arrow-btn left" on:click|stopPropagation={() => {
@@ -238,22 +236,20 @@ Cyprus  <meta property="og:description" content="From  — we use space technolo
   </div>
 
   <div class="solution-gallery solution-3d-anim {solutionTransitioning ? (solutionDirection === 'right' ? 'slide-out-left' : 'slide-out-right') : ''}">
-    <img
-      src={solutionImages[currentSolutionIndex]}
-      alt={`Solution image ${currentSolutionIndex+1}`}
-      class="solution-img"
-      on:click={openSolutionFullscreen}
-      tabindex="0"
-      role="button"
-      aria-label="Open solution image fullscreen"
-    />
+    <button type="button" class="solution-image-button" on:click={openSolutionFullscreen} aria-label="Open solution image fullscreen">
+      <img
+        src={solutionImages[currentSolutionIndex]}
+        alt={`Solution image ${currentSolutionIndex+1}`}
+        class="solution-img"
+      />
+    </button>
     <button class="solution-arrow-btn left" on:click={goToPrevSolution} aria-label="Previous solution" disabled={currentSolutionIndex === 0 || solutionTransitioning}>&larr;</button>
     <button class="solution-arrow-btn right" on:click={goToNextSolution} aria-label="Next solution" disabled={currentSolutionIndex === solutionImages.length - 1 || solutionTransitioning}>&rarr;</button>
   </div>
 </section>
 
 {#if showSolutionFullscreen}
-  <div class="fullscreen-overlay" on:click={closeSolutionFullscreen} tabindex="0" role="dialog" aria-label="Fullscreen solution viewer">
+  <div class="fullscreen-overlay" on:click={closeSolutionFullscreen} on:keydown={(event) => { if (event.key === 'Escape' || event.key === 'Enter' || event.key === ' ') { event.preventDefault(); closeSolutionFullscreen(); } }} tabindex="0" role="dialog" aria-label="Fullscreen solution viewer">
     <div class="solution-fullscreen-content" on:click|stopPropagation>
       <div class="solution-fullscreen-box">
         <h2>{solutionBoxes[currentSolutionIndex].title}</h2>
@@ -281,15 +277,13 @@ Cyprus  <meta property="og:description" content="From  — we use space technolo
   <h2 class="veneto-title">VeneToStars Gallery</h2>
   <div class="veneto-gallery-3d">
     {#each venetoImages as img, i}
-      <img
-        src={img}
-        alt={`VeneToStars photo ${i+1}`}
-        class="veneto-img-3d {i === venetoIndex ? 'active' : ''} {i < venetoIndex ? 'left' : ''} {i > venetoIndex ? 'right' : ''}"
-        on:click={openVenetoGalleryFullscreen}
-        tabindex="0"
-        role="button"
-        aria-label="Open Veneto photo fullscreen"
-      />
+      <button type="button" class="veneto-image-button {i === venetoIndex ? 'active' : ''} {i < venetoIndex ? 'left' : ''} {i > venetoIndex ? 'right' : ''}" on:click={openVenetoGalleryFullscreen} aria-label="Open Veneto photo fullscreen">
+        <img
+          src={img}
+          alt={`VeneToStars photo ${i+1}`}
+          class="veneto-img-3d {i === venetoIndex ? 'active' : ''} {i < venetoIndex ? 'left' : ''} {i > venetoIndex ? 'right' : ''}"
+        />
+      </button>
     {/each}
     <button class="veneto-arrow-btn left" on:click={prevVeneto} aria-label="Previous photo" disabled={venetoIndex === 0}>&larr;</button>
     <button class="veneto-arrow-btn right" on:click={nextVeneto} aria-label="Next photo" disabled={venetoIndex === venetoImages.length - 1}>&rarr;</button>
@@ -298,7 +292,7 @@ Cyprus  <meta property="og:description" content="From  — we use space technolo
 </section>
 
 {#if showVenetoGalleryFullscreen}
-  <div class="fullscreen-overlay" on:click={closeVenetoGalleryFullscreen} tabindex="0" role="dialog" aria-label="Fullscreen Veneto gallery">
+  <div class="fullscreen-overlay" on:click={closeVenetoGalleryFullscreen} on:keydown={(event) => { if (event.key === 'Escape' || event.key === 'Enter' || event.key === ' ') { event.preventDefault(); closeVenetoGalleryFullscreen(); } }} tabindex="0" role="dialog" aria-label="Fullscreen Veneto gallery">
     <div class="veneto-fullscreen-content" on:click|stopPropagation>
       <img src={venetoImages[venetoIndex]} alt="Fullscreen Veneto photo" class="veneto-fullscreen-img" />
       <button class="close-fullscreen" on:click={closeVenetoGalleryFullscreen} aria-label="Close fullscreen">&times;</button>

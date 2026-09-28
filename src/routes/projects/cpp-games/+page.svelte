@@ -56,7 +56,7 @@
     This project highlights dynamic data structures, control flow, and basic game-loop architecture in C++. Find
     <a href="https://github.com/Stefanos-gif/tic-tac-toe-game/tree/main" target="_blank" rel="noopener noreferrer">Here</a>!
   </p>
-  <figure class="img-card" on:click={() => openFullscreen('/tic.png')}>
+  <button type="button" class="img-card" on:click={() => openFullscreen('/tic.png')} aria-label="Open Tic Tac Toe screenshot fullscreen">
     <TripleImage
       img_url1={"/tic.png"}
       img_url2={"/tic.png"}
@@ -65,7 +65,7 @@
       aspect_ratio={"994/859"}
       alt={"Tic Tac Toe"}
     />
-  </figure>
+  </button>
 </section>
 
 <section class="wrap game">
@@ -98,7 +98,7 @@
     This project showcases procedural design, input validation, and user interaction in C++. Find
     <a href="https://github.com/Stefanos-gif/simple-console-game" target="_blank" rel="noopener noreferrer">Here</a>!
   </p>
-  <figure class="img-card" on:click={() => openFullscreen('/scgame.png')}>
+  <button type="button" class="img-card" on:click={() => openFullscreen('/scgame.png')} aria-label="Open console game screenshot fullscreen">
     <TripleImage
       img_url1={"/scgame.png"}
       img_url2={"/scgame.png"}
@@ -107,11 +107,11 @@
       aspect_ratio={"988/910"}
       alt={"Simple Console Game"}
     />
-  </figure>
+  </button>
 </section>
 
 {#if overlaySrc}
-  <div class="fullscreen-overlay" on:click|self={closeFullscreen}>
+  <div class="fullscreen-overlay" on:click|self={closeFullscreen} on:keydown={(event) => { if (event.key === 'Escape' || event.key === 'Enter' || event.key === ' ') { event.preventDefault(); closeFullscreen(); } }} tabindex="0" role="button" aria-label="Close fullscreen image viewer">
     <img src={overlaySrc} alt="Fullscreen" class="fullscreen-img" />
     <button class="close-btn" on:click={closeFullscreen} aria-label="Close fullscreen">&times;</button>
   </div>

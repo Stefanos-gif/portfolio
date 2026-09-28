@@ -39,7 +39,7 @@
   </ul>
 </div>
 
-<div id="img-container" on:click={openFullscreen} style="cursor: pointer;">
+<button type="button" class="img-container" on:click={openFullscreen} aria-label="Open Python web scraper screenshot fullscreen">
     <TripleImage
     img_url1={"/web.png"}
     img_url2={"/web.png"}
@@ -47,10 +47,10 @@
     img_height={"53vh"}
     aspect_ratio={"1202/908"}
     />
-</div>
+</button>
 
 {#if showFullscreen}
-    <div class="fullscreen-overlay" on:click|self={closeFullscreen}>
+    <div class="fullscreen-overlay" on:click|self={closeFullscreen} on:keydown={(event) => { if (event.key === 'Escape' || event.key === 'Enter' || event.key === ' ') { event.preventDefault(); closeFullscreen(); } }} tabindex="0" role="button" aria-label="Close fullscreen image viewer">
         <img src="/web.png" alt="web" class="fullscreen-img" />
         <button class="close-btn" on:click={closeFullscreen} aria-label="Close fullscreen">&times;</button>
     </div>

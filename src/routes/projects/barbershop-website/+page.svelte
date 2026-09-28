@@ -42,7 +42,7 @@
   </p>
 </div>
 
-<div id="img-container" on:click={openBarbFullscreen} style="cursor: pointer;">
+<button type="button" class="img-container" on:click={openBarbFullscreen} aria-label="Open barbershop website screenshot fullscreen">
     <TripleImage
     img_url1={"/barbs.png"}
     img_url2={"/barbs.png"}
@@ -50,10 +50,10 @@
     img_height={"51vh"}
     aspect_ratio={"1502/914"}
     />
-</div>
+</button>
 
 {#if showBarbFullscreen}
-    <div class="fullscreen-overlay" on:click|self={closeBarbFullscreen}>
+    <div class="fullscreen-overlay" on:click|self={closeBarbFullscreen} on:keydown={(event) => { if (event.key === 'Escape' || event.key === 'Enter' || event.key === ' ') { event.preventDefault(); closeBarbFullscreen(); } }} tabindex="0" role="button" aria-label="Close fullscreen image viewer">
         <img src="/barbs.png" alt="barbs" class="fullscreen-img" />
         <button class="close-btn" on:click={closeBarbFullscreen} aria-label="Close fullscreen">&times;</button>
     </div>
