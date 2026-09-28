@@ -11,7 +11,7 @@
 <script>
   import { onDestroy, onMount } from 'svelte';
 
-  const words = ['software engineer', 'student', 'developer', 'STEM ambassador'];
+  const words = ['software engineer', 'Student', 'Developer', 'STEM Ambassador'];
   const baseText = ['Hi, my name is', 'Stefanos Siathas', "I'm a", words[0]];
   const text = ['', '', '', ''];
   const cycleIdx = baseText.length - 1;
