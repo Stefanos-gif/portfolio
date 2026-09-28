@@ -249,14 +249,27 @@ Cyprus  <meta property="og:description" content="From  — we use space technolo
 </section>
 
 {#if showSolutionFullscreen}
-  <div class="fullscreen-overlay" on:click={closeSolutionFullscreen} on:keydown={(event) => { if (event.key === 'Escape' || event.key === 'Enter' || event.key === ' ') { event.preventDefault(); closeSolutionFullscreen(); } }} tabindex="0" role="dialog" aria-label="Fullscreen solution viewer">
-    <div class="solution-fullscreen-content" on:click|stopPropagation>
+  <div
+    class="fullscreen-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Fullscreen solution viewer"
+    tabindex="0"
+    on:click={closeSolutionFullscreen}
+    on:keydown={(event) => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        closeSolutionFullscreen();
+      }
+    }}
+  >
+    <div class="solution-fullscreen-content">
       <div class="solution-fullscreen-box">
         <h2>{solutionBoxes[currentSolutionIndex].title}</h2>
         <p>{solutionBoxes[currentSolutionIndex].p}</p>
       </div>
-      <img src={solutionImages[currentSolutionIndex]} alt="Fullscreen solution" class="fullscreen-img" />
-      <button class="close-fullscreen" on:click={closeSolutionFullscreen} aria-label="Close fullscreen">&times;</button>
+      <img src={solutionImages[currentSolutionIndex]} alt="" aria-hidden="true" class="fullscreen-img" />
+      <button class="close-fullscreen" type="button" on:click={closeSolutionFullscreen} aria-label="Close fullscreen">&times;</button>
     </div>
   </div>
 {/if}
@@ -292,12 +305,25 @@ Cyprus  <meta property="og:description" content="From  — we use space technolo
 </section>
 
 {#if showVenetoGalleryFullscreen}
-  <div class="fullscreen-overlay" on:click={closeVenetoGalleryFullscreen} on:keydown={(event) => { if (event.key === 'Escape' || event.key === 'Enter' || event.key === ' ') { event.preventDefault(); closeVenetoGalleryFullscreen(); } }} tabindex="0" role="dialog" aria-label="Fullscreen Veneto gallery">
-    <div class="veneto-fullscreen-content" on:click|stopPropagation>
-      <img src={venetoImages[venetoIndex]} alt="Fullscreen Veneto photo" class="veneto-fullscreen-img" />
-      <button class="close-fullscreen" on:click={closeVenetoGalleryFullscreen} aria-label="Close fullscreen">&times;</button>
-      <button class="fullscreen-arrow-btn left" on:click|stopPropagation={() => { if (venetoIndex > 0) venetoIndex -= 1; }} aria-label="Previous photo" disabled={venetoIndex === 0}>&larr;</button>
-      <button class="fullscreen-arrow-btn right" on:click|stopPropagation={() => { if (venetoIndex < venetoImages.length - 1) venetoIndex += 1; }} aria-label="Next photo" disabled={venetoIndex === venetoImages.length - 1}>&rarr;</button>
+  <div
+    class="fullscreen-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Fullscreen Veneto gallery"
+    tabindex="0"
+    on:click={closeVenetoGalleryFullscreen}
+    on:keydown={(event) => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        closeVenetoGalleryFullscreen();
+      }
+    }}
+  >
+    <div class="veneto-fullscreen-content">
+      <img src={venetoImages[venetoIndex]} alt="" aria-hidden="true" class="veneto-fullscreen-img" />
+      <button class="close-fullscreen" type="button" on:click={closeVenetoGalleryFullscreen} aria-label="Close fullscreen">&times;</button>
+      <button class="fullscreen-arrow-btn left" type="button" on:click|stopPropagation={() => { if (venetoIndex > 0) venetoIndex -= 1; }} aria-label="Previous photo" disabled={venetoIndex === 0}>&larr;</button>
+      <button class="fullscreen-arrow-btn right" type="button" on:click|stopPropagation={() => { if (venetoIndex < venetoImages.length - 1) venetoIndex += 1; }} aria-label="Next photo" disabled={venetoIndex === venetoImages.length - 1}>&rarr;</button>
       <div class="veneto-photo-count fullscreen">Photo {venetoIndex+1} of {venetoImages.length}</div>
     </div>
   </div>
@@ -546,9 +572,4 @@ Cyprus  <meta property="og:description" content="From  — we use space technolo
   .veneto-fullscreen-content{ display:flex; flex-direction:column; align-items:center; justify-content:center; width:100vw; height:100vh; position:relative; }
   .veneto-fullscreen-img{ max-width: 92vw; max-height: 82vh; border-radius: 24px; box-shadow: 0 0 128px #c77dffcc, 0 0 32px #ff47f0cc; background:#222; object-fit:contain; border: 6px solid #ff47f0; animation: pop-in-img .25s; margin-bottom: 1.25rem; }
 
-  #thal{
-    border: 4px solid var(--color-primary); border-radius: 12px; background: var(--card-bg);
-    padding: clamp(14px, 3vw, 22px); box-shadow: 0 0 24px #7b2ff244; text-align:center;
-  }
-  #thal a{ color: #2eff23; text-decoration: underline; }
 </style>

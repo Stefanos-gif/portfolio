@@ -237,7 +237,7 @@
       <h2 class="category-title">{group.label}</h2>
       <div class="projects-track">
         {#each group.items as project (project.url)}
-          <div class="project" on:click={() => goto(project.url)}>
+          <a class="project" href={project.url} on:click|preventDefault={() => goto(project.url)}>
             <h3>{project.title}</h3>
             <TripleImage
               img_url1={project.img1}
@@ -245,7 +245,7 @@
               img_url3={project.img3}
               img_height={project.imgHeight}
             />
-          </div>
+          </a>
         {/each}
       </div>
     </section>

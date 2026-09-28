@@ -146,7 +146,7 @@
         font-size: clamp(0.9rem, 2.2vw, 1rem);
         line-height: 1.5;
     }
-    #img-container {
+    .img-container {
         margin: 2rem auto;
         display: flex;
         justify-content: center;
@@ -156,7 +156,7 @@
     }
 
     @media (min-width: 768px) {
-        #img-container {
+        .img-container {
             margin: 3rem auto;
         }
         #features {

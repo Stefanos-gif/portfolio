@@ -71,6 +71,20 @@
     }
   }
 
+  function handleOverlayKeydown(event) {
+    if (event.key === 'Escape' || event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      closeMobileMenu();
+    }
+  }
+
+  function handleSheetKeydown(event) {
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      closeMobileMenu();
+    }
+  }
+
   onMount(() => {
     ready = true;
     if (browser) {
@@ -165,8 +179,24 @@
     {/if}
 
     {#if mobileMenuOpen && isMobile}
-      <div class="overlay" transition:fade={{ duration: 120 }} on:click={closeMobileMenu}>
-        <div class="sheet" on:click|stopPropagation>
+      <div
+        class="overlay"
+        transition:fade={{ duration: 120 }}
+        on:click={closeMobileMenu}
+        on:keydown={handleOverlayKeydown}
+        tabindex="0"
+        role="button"
+        aria-label="Close navigation menu"
+      >
+        <div
+          class="sheet"
+          on:click|stopPropagation
+          on:keydown={handleSheetKeydown}
+          tabindex="0"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Navigation menu"
+        >
           <div class="sheet-header">
             <h3>Navigation</h3>
             <button class="close-x" on:click={closeMobileMenu} aria-label="Close menu">

@@ -147,19 +147,7 @@
         font-size: clamp(0.9rem, 2.2vw, 1rem);
         line-height: 1.5;
     }
-    #img-container {
-        margin: 2rem auto;
-        display: flex;
-        justify-content: center;
-        width: 90%;
-        max-width: 600px;
-        height: auto;
-    }
-
     @media (min-width: 768px) {
-        #img-container {
-            margin: 3rem auto;
-        }
         #features {
             width: 80%;
             max-width: 800px;

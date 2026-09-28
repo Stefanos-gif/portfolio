@@ -16,6 +16,8 @@
   // simple analysis returning dimension and size (fetched via HEAD)
   let analysis = { width: 0, height: 0, sizeKB: null as number | null, name: '' };
   async function analyzeCurrent() {
+    if (typeof window === 'undefined' || typeof Image === 'undefined') return;
+
     const src = images[index];
     analysis.name = src.split('/').pop() || src;
     // load image to get dimensions
@@ -36,7 +38,7 @@
     analyzeCurrent();
   });
 
-  $: if (images && images.length) analyzeCurrent();
+  $: if (typeof window !== 'undefined' && images && images.length) analyzeCurrent();
 </script>
 
 <div class="carousel" bind:this={container}>

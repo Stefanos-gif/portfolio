@@ -11,7 +11,7 @@
   class="arrow"
   style="--len: {size}; --col: {color}"
   aria-hidden="true"
-/>
+></div>
 
 <style>
 .arrow {

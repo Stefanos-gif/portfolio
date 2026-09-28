@@ -192,74 +192,6 @@
     margin-bottom: 0.5rem;
     font-size: 1.3rem;
   }
-  .screenshots-title {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    color: #fff;
-    text-shadow: 0 0 8px #c77dff;
-    font-size: 2.2rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-  }
-  .screenshots-row {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-  }
-  .screenshot-img {
-    width: 100%;
-    max-width: 380px;
-    aspect-ratio: 16/9;
-    border-radius: 12px;
-    border: 2px solid #c77dff;
-    box-shadow: 0 0 24px #c77dff55;
-    background: #181028;
-    object-fit: cover;
-    transition: transform 0.2s, box-shadow 0.2s;
-    cursor: pointer;
-  }
-  .screenshot-img:hover {
-    transform: scale(1.04);
-    box-shadow: 0 0 48px #ff47f0cc;
-    border-color: #ff47f0;
-  }
-  .fullscreen-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(20, 0, 30, 0.95);
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: fadeIn 0.3s;
-  }
-  .fullscreen-img {
-    max-width: 90vw;
-    max-height: 85vh;
-    border-radius: 18px;
-    border: 4px solid #ff47f0;
-    box-shadow: 0 0 64px #c77dffcc, 0 0 24px #ff47f0cc;
-    background: #181028;
-    object-fit: contain;
-    animation: popIn 0.3s;
-  }
-  .close-fullscreen {
-    position: fixed;
-    top: 2.5rem;
-    right: 3.5rem;
-    font-size: 3rem;
-    color: #fff;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 1100;
-    text-shadow: 0 0 16px #ff47f0, 0 0 8px #c77dff;
-    transition: color 0.2s;
-  }
-  .close-fullscreen:hover {
-    color: #ff47f0;
-  }
   @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -319,18 +251,6 @@
       padding: 1rem 2vw;
       margin: 1.5rem auto;
     }
-    .screenshots-row {
-      flex-direction: column;
-      align-items: center;
-    }
-    .screenshot-img {
-      max-width: 98vw;
-    }
-    .close-fullscreen {
-      top: 1rem;
-      right: 1.5rem;
-      font-size: 2.2rem;
-    }
     .project-title {
       font-size: 2.5rem;
       margin-top: 1.5rem;
@@ -356,11 +276,6 @@
     }
     .pilot-note {
       font-size: 1rem;
-    }
-    .close-fullscreen {
-      top: 0.5rem;
-      right: 1rem;
-      font-size: 2rem;
     }
   }
 </style>

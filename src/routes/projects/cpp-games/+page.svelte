@@ -346,7 +346,6 @@
   @keyframes fadeIn{ from{opacity:0} to{opacity:1} }
   @media (max-width: 820px){
   
-  .wrap.media{ padding-inline: 0; }
   .img-card{
     width: 100%;
     display: grid;

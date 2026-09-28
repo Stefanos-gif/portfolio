@@ -16,9 +16,9 @@
     aspect-ratio: {aspect_ratio};
   "
 >
-    <img style="height: {img_height}; aspect-ratio: {aspect_ratio}" src={img_url1} alt="Image 1" />
-    <img style="height: {img_height}; aspect-ratio: {aspect_ratio}" src={img_url2} alt="Image 2" />
-    <img style="height: {img_height}; aspect-ratio: {aspect_ratio}" src={img_url3} alt="Image 3" />
+    <img style="height: {img_height}; aspect-ratio: {aspect_ratio}" src={img_url1} alt="" aria-hidden="true" />
+    <img style="height: {img_height}; aspect-ratio: {aspect_ratio}" src={img_url2} alt="" aria-hidden="true" />
+    <img style="height: {img_height}; aspect-ratio: {aspect_ratio}" src={img_url3} alt="" aria-hidden="true" />
 </div>
 
 <style>

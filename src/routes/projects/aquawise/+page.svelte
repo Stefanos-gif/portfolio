@@ -164,13 +164,13 @@
     border-radius: 8px;
   }
 
-  #core-features ul, #story ul, #collaborations ul {
+  #core-features ul {
     list-style: none;
     padding: 0;
     margin: 0;
   }
 
-  #core-features li, #story li, #collaborations li {
+  #core-features li {
     padding: 0.8rem 0;
     font-size: 1rem;
     border-bottom: 1px solid rgba(199, 125, 255, 0.2);
@@ -178,11 +178,11 @@
     padding-left: 1.5rem;
   }
 
-  #core-features li:last-child, #story li:last-child, #collaborations li:last-child {
+  #core-features li:last-child {
     border-bottom: none;
   }
 
-  #core-features li::before, #story li::before, #collaborations li::before {
+  #core-features li::before {
     content: '•';
     color: var(--color-primary, #c77dff);
     font-size: 1.2rem;
