@@ -20,7 +20,15 @@
 
   function navigate(newIdx) {
     pageIdx = newIdx;
-    goto(routes[pageIdx]);
+    // smooth client-side navigation: use goto then scroll to top of projects container if present
+    goto(routes[pageIdx]).then(() => {
+      // after navigation, try to scroll projects track into view smoothly
+      requestAnimationFrame(() => {
+        const projectsSection = document.querySelector('.projects-track');
+        if (projectsSection) projectsSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
     closeMobileMenu();
   }
 
@@ -101,7 +109,8 @@
 
 <header class="header-container">
   {#if ready && y < 50}
-    
+
+    <!-- MOBILE TOP BAR (always first) -->
     {#if isMobile}
       <div class="mobile-top">
         <button class="icon-btn" on:click={toggleMobileMenu} aria-label="Toggle navigation menu">
@@ -122,19 +131,14 @@
       </div>
     {/if}
 
-    {#if opened}
-      <div id="project-screen" transition:slide={{ duration: 260, easing: cubicOut, axis: 'y' }}>
-        <Projects />
-      </div>
-    {/if}
-
+    <!-- DESKTOP NAV (always first, sits ABOVE the projects panel) -->
     {#if !isMobile}
       <nav class="desktop-nav" in:slide={navTransition}>
         <div class="bar">
           <ul class="links">
             {#each routes as route, i}
               <li class:current={pageIdx === i}>
-                <a href={route}>
+                <a href={route} on:click|preventDefault={() => navigate(i)}>
                   {route === '/' ? 'home' : route.slice(1)}
                 </a>
               </li>
@@ -153,6 +157,13 @@
       </nav>
     {/if}
 
+    <!-- PROJECTS PANEL (drops down BELOW the nav) -->
+    {#if opened}
+      <div id="project-screen" transition:slide={{ duration: 260, easing: cubicOut, axis: 'y' }}>
+        <Projects />
+      </div>
+    {/if}
+
     {#if mobileMenuOpen && isMobile}
       <div class="overlay" transition:fade={{ duration: 120 }} on:click={closeMobileMenu}>
         <div class="sheet" on:click|stopPropagation>
@@ -165,13 +176,13 @@
 
           <ul class="sheet-list">
             <li class:current={pageIdx === 0}>
-              <a href="/" on:click={closeMobileMenu}>Home</a>
+              <a href="/" on:click|preventDefault={() => navigate(0)}>Home</a>
             </li>
             <li class:current={pageIdx === 1}>
-              <a href="/about" on:click={closeMobileMenu}>About</a>
+              <a href="/about" on:click|preventDefault={() => navigate(1)}>About</a>
             </li>
             <li class:current={pageIdx === 2}>
-              <a href="/background" on:click={closeMobileMenu}>Background</a>
+              <a href="/background" on:click|preventDefault={() => navigate(2)}>Background</a>
             </li>
           </ul>
         </div>
@@ -206,13 +217,16 @@
     flex-shrink: 0;
   }
 
+  /* Projects panel always renders after (below) the nav / mobile bar */
   #project-screen {
+    order: 1;
     width: 100%;
-    max-height: 75vh;
+    max-height: min(75vh, calc(100vh - 80px));
     background-color: var(--primary);
     transform-origin: top center;
     overflow-y: auto;
     overflow-x: hidden;
+    border-radius: 0 0 18px 18px;
     box-shadow: 0 10px 30px rgba(0,0,0,.35);
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -223,6 +237,7 @@
   }
 
   .desktop-nav {
+    order: 0;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -264,7 +279,7 @@
   .projects-toggle:hover{ background:#3a2158; transform:translateY(-1px); }
 
   .mobile-top {
-    order: -1;
+    order: 0;
     width: 100%;
     display: grid;
     grid-template-columns: 44px 1fr 44px; align-items: center; gap: .5rem;

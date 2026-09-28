@@ -10,6 +10,7 @@
 	import { page } from '$app/stores';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit'
 	injectAnalytics();
+	import { getMetaForPath, getStructuredDataForPath } from '$lib/seo';
 
 	export let data;
 
@@ -21,6 +22,31 @@
 
 	onDestroy(unsubscribe);
 </script>
+
+	<svelte:head>
+		<!-- Site-wide defaults for search engines and social previews -->
+		<meta name="robots" content="index, follow" />
+		<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+		<meta name="theme-color" content="#0b0710" />
+		<!-- canonical + og defaults will be set per-page where available; fallback here uses current URL -->
+		{#if $page}
+			<link rel="canonical" href="{$page.url.origin}{$page.url.pathname}" />
+					{#let meta = getMetaForPath($page.url.pathname)}
+					<meta property="og:url" content="{meta.canonical}" />
+					<meta property="og:site_name" content="Stefanos Siathas" />
+					<meta name="twitter:card" content="summary_large_image" />
+					<meta property="og:title" content="{meta.title}" />
+					<meta property="og:description" content="{meta.description}" />
+					<meta property="og:image" content="{meta.image}" />
+					<title>{meta.title}</title>
+					<meta name="description" content="{meta.description}" />
+					<link rel="canonical" href="{meta.canonical}" />
+					{/let}
+					{#if $page}
+						{@html `<script type="application/ld+json">${JSON.stringify(getStructuredDataForPath($page.url.pathname))}</script>`}
+					{/if}
+		{/if}
+	</svelte:head>
 
 <svelte:window  on:scroll={() => opened=false}></svelte:window>	
 

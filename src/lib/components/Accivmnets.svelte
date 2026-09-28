@@ -1,7 +1,7 @@
 <script lang="ts">
   import Fa from 'svelte-fa';
   import { faPython, faJs } from '@fortawesome/free-brands-svg-icons';
-  import { faCode, faHashtag } from '@fortawesome/free-solid-svg-icons';
+  import { faCode, faHashtag, faMicrochip, faSatellite, faChartLine, faUserGraduate, faScrewdriverWrench } from '@fortawesome/free-solid-svg-icons';
 </script>
 
 <div id="achivment-container">
@@ -9,10 +9,12 @@
     <h2>Achievements</h2>
     <img src="/paint.jpg" alt="Creative project collage" />
     <ul>
-      <li><b>Completed 50 Programming Projects:</b> 33 public GitHub repositories and 20+ small apps/scripts across multiple stacks.</li>
-      <li><b>Hackathon Winner — Cassini Camp (Cyprus):</b> Core member of <em>SSATfire</em>, 1st place for an innovative space-data solution.</li>
-      <li><b>Champion — Venetostars 2025:</b> With <em>Team Thalassat</em>, delivered rapid prototyping and seamless teamwork.</li>
-      <li><b>STEM & Robotics Mentor:</b> Tutored C++ and robotics fundamentals through hands-on projects.</li>
+      <li><b>50+ Programming Projects:</b> 33 public GitHub repositories plus multiple demos, utilities, and embedded prototypes across web, data, and IoT.</li>
+      <li><b>First Place — CASSINI Space Camp / Hackathon:</b> Data analyst for <em>SatFire</em> — wildfire-risk mapping using Copernicus & EarthData.</li>
+      <li><b>First Prize — VeneTo Stars Challenge:</b> Head Data Scientist for <em>Thalasat</em> — marine heatwave & biodiversity detection.</li>
+      <li><b>Stockholm Junior Water Prize (Cyprus Final, 2025):</b> AquaWise — smart irrigation showcased in national finals.</li>
+      <li><b>Space Data Analyst Intern — Eratosthenes COE:</b> Big Earth Data department — satellite data processing & analysis.</li>
+      <li><b>STEM & Robotics Mentor:</b> Tutored C++, robotics fundamentals, and project-based engineering workshops.</li>
     </ul>
   </section>
 
@@ -20,10 +22,12 @@
     <h2>Strengths</h2>
     <img src="/write.png" alt="Notes and planning" />
     <ul>
-      <li><b>Polyglot & Full-Stack:</b> <Fa icon={faPython}/> Python, <Fa icon={faJs}/> JavaScript/TypeScript, C++, C# (<Fa icon={faHashtag}/>), Lua; Node.js, React, SvelteKit.</li>
-      <li><b>Ethical Hacking:</b> Practical security mindset: assessment, hardening, best practices.</li>
-      <li><b>Analytical Problem-Solving:</b> Break down complexity, design clean solutions, execute.</li>
-      <li><b>Clear Communication:</b> Teach and explain technical ideas to any audience.</li>
+      <li><b><Fa icon={faCode}/> Polyglot & Full-Stack:</b> <Fa icon={faPython}/> Python, <Fa icon={faJs}/> JavaScript/TypeScript, C++, C# (<Fa icon={faHashtag}/>), Lua; Node.js, React, SvelteKit.</li>
+      <li><b><Fa icon={faSatellite}/> Remote Sensing & Satellite Data:</b> Copernicus / EarthData processing, NDVI/LST analysis, geospatial workflows.</li>
+      <li><b><Fa icon={faMicrochip}/> IoT & Embedded Systems:</b> ESP microcontrollers, sensor integration, real-time telemetry and device management.</li>
+      <li><b><Fa icon={faScrewdriverWrench}/> Hardware Design & PCB:</b> Sensor interfacing, PCB layout and prototyping (EasyEDA).</li>
+      <li><b><Fa icon={faChartLine}/> Data Engineering & Visualization:</b> ETL pipelines, predictive modelling, dashboards and visual reports.</li>
+      <li><b><Fa icon={faUserGraduate}/> Leadership & Teaching:</b> Technical tutoring, mentoring, and project coordination.</li>
       <li><b>Adaptability:</b> Learn tools fast; stay current with modern stacks.</li>
     </ul>
   </section>
@@ -32,8 +36,7 @@
     <h2>Goals</h2>
     <img src="/comp.png" alt="Computing and engineering goals" />
     <ul>
-      <li><b>Advance in Electrical Engineering</b> with hands-on experience.</li>
-      <li><b>Go to MIT</b> to push research and impact.</li>
+      <li><b>Advance in Mechatronics & Electrical Engineering</b> with hands-on experience and applied research.</li>
       <li><b>Contribute to real projects</b> with measurable outcomes.</li>
       <li><b>Expand mentoring</b> for the next generation of builders.</li>
       <li><b>Build innovative robots & software</b> that solve real problems.</li>

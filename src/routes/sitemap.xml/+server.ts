@@ -19,7 +19,8 @@ export async function GET({ url }) {
     'solar-system',
     'taskmanager',
     'thalasat',
-    'watchlist-app'
+    'watchlist-app',
+    'eratosthenes'
   ];
 
   const xml = `

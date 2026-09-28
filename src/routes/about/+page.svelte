@@ -21,7 +21,7 @@
   <div id="about">
     <h1>About Me</h1>
     <p>
-  Hi, I'm Stefanos Siathas—a computer scientist working at EDU Bridge Tech Innovation LTD and tutoring at Stemfreak. I enjoy the gym, martial arts, and helping others grow in tech. I work with Python, C++, JavaScript, C#, Lua, TypeScript, and SvelteKit.
+  Hi, I'm Stefanos Siathas 17 yo—a computer scientist and IoT engineer. I work and tutor at Stemfreak (2023 – Present) and build full-stack applications and embedded systems. I enjoy the gym, martial arts, and helping others grow in tech. I work with Python, C++, JavaScript, C#, Lua, TypeScript, and SvelteKit. 
   <br><br>
   <b>Check me out:</b>
   <a href="https://github.com/Stefanos-gif" target="_blank" rel="noopener" style="color:#a782ff;">GitHub</a>
@@ -38,10 +38,47 @@
   {#if copied}
     <span class="copied-message" style="margin-left:8px;color:#ffb3ff;font-size:0.95em;">Copied!</span>
   {/if}
+  &nbsp;|&nbsp;
+  <span style="font-weight:600;">Phone:</span> +357 99 557009
+  <br><br>
+  <b>Current & notable roles</b>:<br>
+  • Electrical Engineer & Developer — AquaWise (smart irrigation) (ongoing)<br>
+  • Webmaster — EduBridge Tech Innovation (site maintenance & development)<br>
+  • STEM & Engineering Tutor — Stemfreak (2023 – Present)<br>
+  • Science Department Intern — Cyprus Planetarium (Summer 2024)<br>
+  • Space Data Analyst Intern — Eratosthenes COE (Big Earth Data department - 2026 summer)<br>
+  • Electrical Engineer Intern — Nucleus R&D(2026)
+  <br><br>
+  <b>Certifications</b>: Certified STEAM Ambassador (Eu)
     </p>
+    <div style="width:100%;display:flex;justify-content:center;margin-top:8px;">
+      <!-- Certificate carousel will be mounted below -->
+    </div>
   </div>
 
   <Accivmnets />
+</section>
+
+<script lang="ts">
+  import CertificateCarousel from '../../lib/components/CertificateCarousel.svelte';
+  // certificate images from static/certificates
+  const certImages = [
+    '/certificates/cassini.jpg',
+    '/certificates/certificate1.jpg',
+    '/certificates/certificate2.jpg',
+    '/certificates/certificate3.jpg',
+    '/certificates/steamAcertificate.jpg',
+    '/certificates/steamACertificate1.jpg',
+    '/certificates/c1.svg',
+    '/certificates/c2.svg',
+    '/certificates/veneto.svg'
+  ];
+</script>
+
+<section id="certificates">
+  <h2 style="margin-top:12px">Certificates</h2>
+  <CertificateCarousel images={certImages} />
+</section>
 </section>
 
 <style>

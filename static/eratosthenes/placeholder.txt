@@ -1,0 +1,3 @@
+Add project images here (e.g., front-face.jpg, screen-fit-testing.jpg, logo.svg)
+
+If you want me to add specific images, upload them and I'll place them in this folder and update the page.
