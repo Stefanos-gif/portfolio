@@ -5,16 +5,6 @@
   };
 </script>
 
-<svelte:head>
-  <title>Edu Bridge LTD — Industry Project | Stefanos Siathas</title>
-  <meta name="description" content="Educational technology platform bridging traditional learning and modern digital education" />
-  <meta property="og:title" content="Edu Bridge LTD — Industry Project" />
-  <meta property="og:description" content="Educational technology platform showcasing advanced web development capabilities" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://stefanossiathas.com/projects/edu-bridge-ltd" />
-  <meta property="og:image" content="/edu-bridge-preview.png" />
-</svelte:head>
-
 <h1 class="project-title">Edu Bridge LTD</h1>
 
 <div id="container">

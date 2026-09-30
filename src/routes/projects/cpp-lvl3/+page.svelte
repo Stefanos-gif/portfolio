@@ -8,15 +8,6 @@
   function closeFullscreen() { overlaySrc = null; document.body.style.overflow = ""; }
 </script>
 
-<svelte:head>
-  <meta property="og:title" content="C++ Level 3 Project - Stefanos Siathas" />
-  <meta property="og:description" content="Explore my C++ Level 3 project, featuring advanced code, libraries, and interactive demos. See the code and results!" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://stefanossiathas.com/projects/cpp-lvl3" />
-  <meta property="og:image" content="/Prog1.png" />
-  <title>C++ Level 3</title>
-</svelte:head>
-
 <section class="wrap title">
   <h1>Welcome to my C++ Level 3 Project</h1>
   <p class="intro">

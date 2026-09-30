@@ -19,11 +19,6 @@
   }
 </script>
 
-<svelte:head>
-  <title>Solar System — SvelteKit Project | Stefanos Siathas</title>
-  <meta name="description" content="Interactive Solar System visualization with daily planet facts API built with SvelteKit" />
-</svelte:head>
-
 <main>
   <h1 class="project-title">Solar System — SvelteKit Project</h1>
 

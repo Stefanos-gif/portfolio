@@ -117,16 +117,6 @@
   }
 </script>
 
-<svelte:head>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta property="og:title"       content="Thalasat — Space & AI for the Mediterranean" />
-Cyprus  <meta property="og:description" content="From  — we use space technologies and AI to protect the Mediterranean Sea. Thalasat combines Copernicus satellite data with machine learning to monitor sea surface temperature, chlorophyll-a, turbidity, and coastal erosion, delivering near real-time insights and predictive models for faster response." />
-  <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://stefanossiathas.com/projects/thalasat" />
-  <meta property="og:image"       content="/namet.png" />
-  <title>Thalasat</title>
-</svelte:head>
-
 <div id="animated-background" aria-hidden="true"></div>
 
 <div id="animation" class="container section" aria-label="Thalasat Title">

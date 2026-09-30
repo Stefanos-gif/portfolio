@@ -19,16 +19,6 @@
   }
 </script>
 
-<svelte:head>
-  <title>Stemfreak Task Manager — Industry Project | Stefanos Siathas</title>
-  <meta name="description" content="A student- and teacher-friendly task manager built with SvelteKit + TypeScript, Prisma + PostgreSQL, Lucia auth (Argon2), deployed on Vercel." />
-  <meta property="og:title" content="Stemfreak Task Manager — Industry Project" />
-  <meta property="og:description" content="Simple tasks for classes, clubs, and personal use. Secure auth, fast UI, mobile-ready." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://stefanossiathas.com/projects/taskmanager" />
-  <meta property="og:image" content="/taskmanager-preview.png" />
-</svelte:head>
-
 <h1 class="project-title">Stemfreak Task Manager</h1>
 
 <div id="container">

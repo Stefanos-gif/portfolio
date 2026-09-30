@@ -1,19 +1,10 @@
-<svelte:head>
-  <meta property="og:title"       content="Stefanos Siathas" />
-  <meta property="og:description" content="My portfolio!!!" />
-  <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://stefanossiathas.com" />
-  <meta property="og:image"       content="/favicon.ico" />
-  <meta name="description" content="Stefanos Siathas is a software engineer, developer, and STEM ambassador specializing in full-stack web apps and IoT systems." />
-  <title>Stefanos Siathas</title>
-</svelte:head>
-
 <script>
   import { onDestroy, onMount } from 'svelte';
 
   const words = ['software engineer', 'Student', 'Developer', 'STEM Ambassador'];
+  const staticText = ['Hi, my name is', 'Stefanos Siathas', "I'm a", words[0]];
   const baseText = ['Hi, my name is', 'Stefanos Siathas', "I'm a", words[0]];
-  const text = ['', '', '', ''];
+  let text = ['', '', '', ''];
   const cycleIdx = baseText.length - 1;
   const typeMillis = 100;
   const pauseMillis = 3000;
@@ -25,7 +16,7 @@
 
   function type(lineIdx = 0, charIdx = 0) {
     if (charIdx < baseText[lineIdx].length) {
-      text[lineIdx] += baseText[lineIdx][charIdx];
+      text[lineIdx] = baseText[lineIdx].slice(0, charIdx + 1);
       timeout = setTimeout(() => type(lineIdx, charIdx + 1), typeMillis);
     } else if (lineIdx !== cycleIdx) {
       timeout = setTimeout(() => type(lineIdx + 1), typeMillis);
@@ -59,31 +50,34 @@
     }
   }
 
-  onMount(type);
+  onMount(() => {
+    text = ['', '', '', ''];
+    type();
+  });
   onDestroy(() => clearTimeout(timeout));
 </script>
 
 <div id="title-block">
   <p id="hi-text">
-    {text[0]}
-    {#if text[0] !== baseText[0]}
+    {text[0] || staticText[0]}
+    {#if text[0] !== staticText[0] && text[0]}
       <span id="colored-cursor" class="cursor">&nbsp;</span>
     {/if}
   </p>
 
   <h1 id="name-text">
-    {text[1]}
-    {#if text[1] !== baseText[1] && text[0] === baseText[0]}
+    {text[1] || staticText[1]}
+    {#if text[1] !== staticText[1] && text[0] === baseText[0]}
       <span class="cursor">&nbsp;</span>
     {/if}
   </h1>
 
   <p id="sub-name-text">
-    {text[2]}
-    <span id="type-text">{text[3]}</span>
-    {#if text[1] === baseText[1] && text[2] === baseText[2] && cursorVisible}
+    {text[2] || staticText[2]}
+    <span id="type-text">{text[3] || staticText[3]}</span>
+    {#if text[1] === staticText[1] && text[2] === staticText[2] && cursorVisible}
       <span id="colored-cursor" class="cursor">&nbsp;</span>
-    {:else if text[1] === baseText[1] && cursorVisible}
+    {:else if text[1] === staticText[1] && cursorVisible}
       <span class="cursor">&nbsp;</span>
     {/if}
   </p>

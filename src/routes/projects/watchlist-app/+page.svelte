@@ -19,16 +19,6 @@
   }
 </script>
 
-<svelte:head>
-  <title>Watchlist App — Industry Project | Stefanos Siathas</title>
-  <meta name="description" content="A secure, SvelteKit + TypeScript watchlist manager with Google OAuth and Supabase on Vercel." />
-  <meta property="og:title" content="Watchlist App — Industry Project" />
-  <meta property="og:description" content="Create unlimited lists for movies, shows, books, and more. Secure Google sign-in, Supabase backend, Vercel deploy." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://stefanossiathas.com/projects/watchlist-app" />
-  <meta property="og:image" content="/watchlist-preview.png" />
-</svelte:head>
-
 <h1 class="project-title">Watchlist App</h1>
 
 <div id="container">

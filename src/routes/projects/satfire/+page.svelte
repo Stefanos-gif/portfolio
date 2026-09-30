@@ -15,15 +15,6 @@
   const arrowSize = 200; 
 </script>
 
-<svelte:head>
-  <meta property="og:title"       content="Satfire Project - Stefanos Siathas" />
-  <meta property="og:description" content="Satfire: 1st place winner in the Cassini Camp Hackathon. Learn about our project to protect Cyprus and beyond!" />
-  <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://stefanossiathas.com/projects/satfire" />
-  <meta property="og:image"       content="/pres1.png" />
-  <title>Satfire</title>
-</svelte:head>
-
 <section id="tit" class="container">
   <h1>Satfire</h1>
 </section>

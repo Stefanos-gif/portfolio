@@ -161,6 +161,12 @@
     max-width: 100%;
   }
 
+  .project {
+    color: var(--project-title-color);
+    text-decoration: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
   .project h3 {
     font-size: clamp(0.95rem, 2.2vw, 1.1rem);
     margin: 0 0 0.35rem 0;
@@ -171,6 +177,26 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: var(--project-title-color);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+  }
+
+  .project:hover,
+  .project:focus-visible,
+  .project:hover h3,
+  .project:focus-visible h3 {
+    color: var(--project-title-hover);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.18em;
+  }
+
+  .project:focus-visible {
+    outline: 2px solid var(--project-title-hover);
+    outline-offset: 4px;
+    border-radius: 8px;
   }
 
   /* ---------- Mobile: stacked categories, grid of cards ---------- */

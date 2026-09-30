@@ -1,14 +1,14 @@
 <script>
 	import '../app.css';
-	 import { onDestroy } from 'svelte';
-	 
+	import { onDestroy } from 'svelte';
+	
 	import Header from './Header.svelte';
 	import Sketch from './Sketch.svelte';
 	import { sketchKey } from '$lib/stores';
 	import { fade } from 'svelte/transition';
 	import { cubicIn } from 'svelte/easing';
 	import { page } from '$app/stores';
-	import { injectAnalytics } from '@vercel/analytics/sveltekit'
+	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 	injectAnalytics();
 	import { getMetaForPath, getStructuredDataForPath } from '$lib/seo';
 
@@ -21,29 +21,27 @@
 	});
 
 	onDestroy(unsubscribe);
+
+	$: meta = getMetaForPath($page.url.pathname);
+	$: structuredData = getStructuredDataForPath($page.url.pathname);
 </script>
 
-	<svelte:head>
-		<!-- Site-wide defaults for search engines and social previews -->
-		<meta name="robots" content="index, follow" />
-		<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-		<meta name="theme-color" content="#0b0710" />
-		<!-- canonical + og defaults will be set per-page where available; fallback here uses current URL -->
-		{#if $page}
-			<link rel="canonical" href="{$page.url.origin}{$page.url.pathname}" />
-			{@const meta = getMetaForPath($page.url.pathname)}
-			<meta property="og:url" content="{meta.canonical}" />
-			<meta property="og:site_name" content="Stefanos Siathas" />
-			<meta name="twitter:card" content="summary_large_image" />
-			<meta property="og:title" content="{meta.title}" />
-			<meta property="og:description" content="{meta.description}" />
-			<meta property="og:image" content="{meta.image}" />
-			<title>{meta.title}</title>
-			<meta name="description" content="{meta.description}" />
-			<link rel="canonical" href="{meta.canonical}" />
-			{@html `<script type="application/ld+json">${JSON.stringify(getStructuredDataForPath($page.url.pathname))}</script>`}
-		{/if}
-	</svelte:head>
+<svelte:head>
+	<meta name="robots" content="index, follow" />
+	<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+	<meta name="theme-color" content="#0b0710" />
+	<link rel="canonical" href={meta.canonical} />
+	<meta property="og:url" content={meta.canonical} />
+	<meta property="og:site_name" content="Stefanos Siathas" />
+	<meta property="og:type" content="website" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content={meta.title} />
+	<meta property="og:description" content={meta.description} />
+	<meta property="og:image" content={meta.image} />
+	<title>{meta.title}</title>
+	<meta name="description" content={meta.description} />
+	{@html `<script type="application/ld+json">${JSON.stringify(structuredData)}</script>`}
+</svelte:head>
 
 <svelte:window  on:scroll={() => opened=false}></svelte:window>	
 

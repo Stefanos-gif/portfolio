@@ -7,16 +7,6 @@
   function closeFullscreen() { overlaySrc = null; document.body.style.overflow = ""; }
 </script>
 
-<svelte:head>
-  <title>C++ Games | Stefanos Portfolio</title>
-  <meta property="og:title" content="C++ Games | Stefanos Portfolio" />
-  <meta property="og:description" content="Explore Stefanos' collection of C++ games, including a text-based maze and a two-player Tic-Tac-Toe. Each project demonstrates dynamic data structures, user input, and classic game logic in C++." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://stefanosgif.vercel.app/projects/cpp-games" />
-  <meta property="og:image" content="https://stefanosgif.vercel.app/tic.png" />
-  <meta name="description" content="Explore Stefanos' collection of C++ games, including a text-based maze and a two-player Tic-Tac-Toe. Each project demonstrates dynamic data structures, user input, and classic game logic in C++." />
-</svelte:head>
-
 <section class="wrap title">
   <h1>Welcome to my C++ Games</h1>
   <p class="lead">

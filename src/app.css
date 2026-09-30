@@ -10,6 +10,9 @@
 	--color-primary: #7a239d;
 	--color-secondary: #ffffff;
 	--background-color: #231e32;
+	--project-title-color: #F5F3FF;
+	--project-title-hover: #EDE9FE;
+	--nav-link-color: var(--project-title-color);
 }
 
 * {

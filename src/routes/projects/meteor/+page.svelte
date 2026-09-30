@@ -3,16 +3,6 @@
   const REPO_URL = "https://github.com/Stefanos-gif/Meteor-Counter";
 </script>
 
-<svelte:head>
-  <title>Meteor Counter — Stefanos Siathas</title>
-  <meta name="description" content="Meteor Counter: enter your name, meteors seen, and minutes observed to see meteors/hour and a live leaderboard. Built by Stefanos." />
-  <meta property="og:title" content="Meteor Counter — Stefanos Siathas" />
-  <meta property="og:description" content="Enter meteors and minutes, get meteors/hour, and compare on a live leaderboard." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://stefanossiathas.com/projects/meteor-counter" />
-  <meta property="og:image" content="/meteor-counter-og.png" />
-</svelte:head>
-
 <section class="wrap title">
   <h1>Meteor Counter</h1>
   <p class="lead">

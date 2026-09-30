@@ -10,26 +10,19 @@
 
   // certificate images from static/certificates
   const certImages = [
+    '/certificates/c1.jpg',
+    '/certificates/c2.jpg',
+    '/certificates/c4.jpg',
+    '/certificates/c5.jpg',
     '/certificates/cassini.jpg',
     '/certificates/certificate1.jpg',
     '/certificates/certificate2.jpg',
     '/certificates/certificate3.jpg',
     '/certificates/steamAcertificate.jpg',
-    '/certificates/steamACertificate1.jpg',
-    '/certificates/c1.svg',
-    '/certificates/c2.svg',
-    '/certificates/veneto.svg'
+    '/certificates/steamAcertificate1.jpg',
+    '/certificates/veneto.jpg'
   ];
 </script>
-
-<svelte:head>
-  <meta property="og:title" content="About - Stefanos Siathas" />
-  <meta property="og:description" content="Learn about Stefanos Siathas: STEM ambassador, computer science and physics student, and builder of creative projects." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://stefanossiathas.com/background" />
-  <meta property="og:image" content="/stefs_profesionaly_photographed_picture_by_michalis_chhatzittofi.jpg" />
-  <title>About — Stefanos Siathas</title>
-</svelte:head>
 
 <section id="container">
   <div id="about">

@@ -115,12 +115,6 @@
 
 <svelte:window on:keydown={handleArrowNavigation} bind:scrollY={y} />
 
-<svelte:head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Stefanos Siathas</title>
-</svelte:head>
-
 <header class="header-container">
   {#if ready && y < 50}
 
@@ -293,12 +287,20 @@
   .links a {
     display:flex; align-items:center; justify-content:center;
     height:100%; border:0; background:transparent;
-    color:var(--text); font-weight:800; text-transform:uppercase; letter-spacing:.1em;
+    color:var(--nav-link-color); font-weight:600; text-transform:uppercase; letter-spacing:.1em;
     text-decoration:none; padding:0 .75rem; border-radius:10px; cursor:pointer;
-    transition:background .15s ease, color .15s ease, transform .08s ease;
+    transition:background .15s ease, color .15s ease, text-decoration-color .15s ease, transform .08s ease;
     font-size:clamp(.72rem,1.6vw,.82rem);
   }
-  .links a:hover{ background:rgba(233,216,255,.18); transform:translateY(-1px); }
+  .links a:hover,
+  .links a:focus-visible {
+    background:rgba(233,216,255,.18);
+    color:var(--project-title-hover);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.18em;
+    transform:translateY(-1px);
+  }
 
   .projects-toggle {
     border:0; background:#2a1740; color:var(--text);
@@ -361,16 +363,21 @@
   
   .sheet-list a {
     display:flex; align-items:center; justify-content:center;
-    width:100%; border:2px solid rgba(123,47,242,.45); background:#140c20; color:var(--text);
-    padding:1rem 1.25rem; font-size:1.05rem; font-weight:700;
+    width:100%; border:2px solid rgba(123,47,242,.45); background:#140c20; color:var(--nav-link-color);
+    padding:1rem 1.25rem; font-size:1.05rem; font-weight:600;
     border-radius:12px; cursor:pointer; text-decoration:none;
     box-shadow:0 8px 20px rgba(123,47,242,.25), inset 0 0 0 0 rgba(123,47,242,0);
-    transition:transform .09s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+    transition:transform .09s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
     box-sizing: border-box;
   }
-  .sheet-list a:hover {
+  .sheet-list a:hover,
+  .sheet-list a:focus-visible {
     transform:translateY(-1px) scale(1.01);
     border-color:var(--primary); background:#1b112b;
+    color:var(--project-title-hover);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.18em;
     box-shadow:0 12px 28px rgba(123,47,242,.35), inset 0 0 18px rgba(123,47,242,.18);
   }
   .sheet-list li.current a {

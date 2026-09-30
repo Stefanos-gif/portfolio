@@ -17,12 +17,6 @@
   }
 </script>
 
-<svelte:head>
-  <title>Eratosthenes — Promotional Game Console</title>
-  <meta property="og:title" content="Eratosthenes — Promotional Game Console" />
-  <meta property="og:description" content="Internship project: handheld game console built by interns at the Eratosthenes Centre of Excellence." />
-</svelte:head>
-
 <section class="section container">
   <h1 class="project-title">Promotional Game Console</h1>
   <div class="meta">Completed · July 2026</div>

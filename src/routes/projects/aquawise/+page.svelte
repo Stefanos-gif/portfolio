@@ -21,11 +21,6 @@
   }
 </script>
 
-<svelte:head>
-  <title>AquaWise — Smart Irrigation | Stefanos Siathas</title>
-  <meta name="description" content="AquaWise — AI-powered smart irrigation system for efficient water management." />
-</svelte:head>
-
 <main>
   <h1 class="project-title">AquaWise — SMART WATER. SMART FUTURE.</h1>
 

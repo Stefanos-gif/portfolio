@@ -1,124 +1,199 @@
-export function getMetaForPath(pathname) {
-  const site = 'https://stefanossiathas.com';
+export const SITE_URL = 'https://www.stefanossiathas.com';
+export const OG_IMAGE_URL = `${SITE_URL}/og-default.jpg`;
 
+const projectEntries = [
+  {
+    slug: 'ai-pro',
+    title: 'AI (Pro) Debate',
+    description: 'A debate project exploring leadership, strategy, and AI-focused argumentation.',
+    image: OG_IMAGE_URL
+  },
+  {
+    slug: 'aquawise',
+    title: 'AquaWise — Smart Irrigation',
+    description: 'AI-powered smart irrigation system for efficient water management.',
+    image: OG_IMAGE_URL
+  },
+  {
+    slug: 'barbershop-website',
+    title: 'Barbershop Website',
+    description: 'A premium responsive barbershop website design built with modern frontend tooling.',
+    image: OG_IMAGE_URL
+  },
+  {
+    slug: 'cpp-games',
+    title: 'C++ Games',
+    description: 'Classic C++ games including a maze game and a two-player Tic-Tac-Toe challenge.',
+    image: OG_IMAGE_URL
+  },
+  {
+    slug: 'cpp-lvl3',
+    title: 'C++ Level 3 Project',
+    description: 'A C++ programming project showcasing game loops, interactive logic, and DSA-driven design.',
+    image: OG_IMAGE_URL
+  },
+  {
+    slug: 'data-analysis-with-pandas',
+    title: 'Data Analysis with Pandas',
+    description: 'Python-based exploratory data analysis and visual storytelling with Pandas and Matplotlib.',
+    image: OG_IMAGE_URL
+  },
+  {
+    slug: 'edu-bridge-ltd',
+    title: 'Edu Bridge LTD',
+    description: 'An educational technology concept bridging traditional learning with digital tools.',
+    image: OG_IMAGE_URL
+  },
+  {
+    slug: 'eratosthenes',
+    title: 'Promotional Game Console — Eratosthenes Internship',
+    description: 'A promotional handheld game console built during an internship in satellite and IoT systems.',
+    image: OG_IMAGE_URL
+  },
+  {
+    slug: 'flask-web-app',
+    title: 'Flask Web Application',
+    description: 'A useful Flask task manager that keeps projects organized with a clean Python backend.',
+    image: OG_IMAGE_URL
+  },
+  {
+    slug: 'meteor',
+    title: 'Meteor Counter',
+    description: 'Track meteors per hour with a live leaderboard and quick observational workflow.',
+    image: OG_IMAGE_URL
+  },
+  {
+    slug: 'python-web-scraper',
+    title: 'Python Web Scraper',
+    description: 'A lightweight Python scraper that extracts links and exports structured data to CSV.',
+    image: OG_IMAGE_URL
+  },
+  {
+    slug: 'satfire',
+    title: 'Satfire',
+    description: 'A space-focused project combining mission planning, data storytelling, and engineering ideas.',
+    image: OG_IMAGE_URL
+  },
+  {
+    slug: 'solar-system',
+    title: 'Solar System — interactive demo',
+    description: 'A small interactive solar system project built with Svelte and live planetary data.',
+    image: OG_IMAGE_URL
+  },
+  {
+    slug: 'taskmanager',
+    title: 'Stemfreak Task Manager',
+    description: 'A student-friendly task manager built with SvelteKit, TypeScript, Prisma, and PostgreSQL.',
+    image: OG_IMAGE_URL
+  },
+  {
+    slug: 'thalasat',
+    title: 'Thalasat — Space & AI for the Mediterranean',
+    description: 'Copernicus satellite data + machine learning to monitor sea temperature, chlorophyll, and coastal change.',
+    image: OG_IMAGE_URL
+  },
+  {
+    slug: 'watchlist-app',
+    title: 'Watchlist App',
+    description: 'A modern watchlist app for tracking movies, shows, books, and personal recommendations.',
+    image: OG_IMAGE_URL
+  }
+];
+
+export const getProjectRoutes = () => projectEntries.map(({ slug }) => `/projects/${slug}`);
+
+const projectMeta = Object.fromEntries(
+  projectEntries.map(({ slug, title, description, image }) => [`/projects/${slug}`, { title, description, image }])
+);
+
+export function getMetaForPath(pathname = '/') {
+  const normalizedPath = pathname && pathname !== '/' ? pathname.replace(/\/+$/, '') : '/';
   const defaults = {
     title: 'Stefanos Siathas — Portfolio',
-    description:
-      "Stefanos Siathas — projects and experiments in embedded systems, data, and web development.",
-    image: `${site}/namet.png`,
-    canonical: `${site}${pathname}`
+    description: 'Stefanos Siathas builds software, AI projects, and creative engineering work across full-stack development and STEM.',
+    image: OG_IMAGE_URL,
+    canonical: `${SITE_URL}${normalizedPath === '/' ? '' : normalizedPath}`
   };
 
-  const projectMeta = {
-    '/projects/thalasat': {
-      title: 'Thalasat — Space & AI for the Mediterranean',
-      description: 'Copernicus satellite data + ML to monitor sea surface temperature, chlorophyll, and coastal change.',
-      image: `${site}/namet.png`,
-    },
-    '/projects/solar-system': {
-      title: 'Solar System — interactive demo',
-      description: 'A small interactive solar system demo built with Svelte.',
-      image: `${site}/solar-system-preview.png`,
-    },
-    '/projects/meteor': {
-      title: 'Meteor Counter',
-      description: 'Track meteors/hour with a live leaderboard — Meteor Counter.',
-      image: `${site}/meteor-counter-og.png`,
-    },
-    '/projects/aquawise': {
-      title: 'AquaWise — Smart Irrigation',
-      description: 'AI-powered smart irrigation system for efficient water management.',
-      image: `${site}/aquawise/aq1.jpg`,
-    },
-    '/projects/eratosthenes': {
-      title: 'Promotional Game Console — Eratosthenes Internship',
-      description: 'Intern project: handheld promotional game console introducing satellite telemetry concepts.',
-      image: `${site}/eratosthenes/era1.jpg`,
-    }
-  };
-
-  // root and main pages
-  if (pathname === '/' || pathname === '') {
-    return {
-      title: defaults.title,
-      description: defaults.description,
-      image: defaults.image,
-      canonical: defaults.canonical
-    };
+  if (normalizedPath === '/') {
+    return defaults;
   }
 
-  if (pathname === '/about') {
+  if (normalizedPath === '/about') {
     return {
       title: 'About — Stefanos Siathas',
-      description: 'About Stefanos Siathas — bio, contact, and achievements.',
-      image: `${site}/namet.png`,
-      canonical: `${site}${pathname}`
+      description: 'Learn more about Stefanos Siathas, his software projects, and his work in engineering, STEM, and creative problem solving.',
+      image: OG_IMAGE_URL,
+      canonical: `${SITE_URL}/about`
     };
   }
 
-  if (pathname === '/background') {
+  if (normalizedPath === '/background') {
     return {
       title: 'Background — Stefanos Siathas',
-      description: 'Background, experience, and past roles.',
-      image: `${site}/namet.png`,
-      canonical: `${site}${pathname}`
+      description: 'A look at Stefanos Siathas’s background, experience, and technical interests across software engineering and STEM.',
+      image: OG_IMAGE_URL,
+      canonical: `${SITE_URL}/background`
     };
   }
 
-  if (projectMeta[pathname]) {
+  if (projectMeta[normalizedPath]) {
     return {
-      title: projectMeta[pathname].title,
-      description: projectMeta[pathname].description,
-      image: projectMeta[pathname].image,
-      canonical: `${site}${pathname}`
+      ...projectMeta[normalizedPath],
+      canonical: `${SITE_URL}${normalizedPath}`
     };
   }
 
-  // Fallback
-  return {
-    title: defaults.title,
-    description: defaults.description,
-    image: defaults.image,
-    canonical: defaults.canonical
-  };
+  return defaults;
 }
 
-export function getStructuredDataForPath(pathname) {
+export function getStructuredDataForPath(pathname = '/') {
   const meta = getMetaForPath(pathname);
-  const site = 'https://stefanossiathas.com';
 
-  // Basic WebPage schema for general pages
+  if (pathname === '/' || pathname === '') {
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      name: 'Stefanos Siathas',
+      jobTitle: 'Software Engineer and STEM Ambassador',
+      url: SITE_URL,
+      sameAs: [
+        'https://github.com/Stefanos-gif',
+        SITE_URL
+      ],
+      image: OG_IMAGE_URL
+    };
+  }
+
   const webpage = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "url": meta.canonical,
-    "name": meta.title,
-    "description": meta.description,
-    "publisher": {
-      "@type": "Person",
-      "name": "Stefanos Siathas"
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    url: meta.canonical,
+    name: meta.title,
+    description: meta.description,
+    publisher: {
+      '@type': 'Person',
+      name: 'Stefanos Siathas'
     }
   };
 
-  // For project pages, provide a richer CreativeWork schema
-  const projectPaths = ['/projects/thalasat','/projects/solar-system','/projects/meteor','/projects/aquawise','/projects/eratosthenes'];
-  if (projectPaths.includes(pathname)) {
+  if (projectMeta[pathname] || projectMeta[pathname.replace(/\/+$/, '')]) {
     return {
-      "@context": "https://schema.org",
-      "@type": "CreativeWork",
-      "url": meta.canonical,
-      "headline": meta.title,
-      "description": meta.description,
-      "image": meta.image,
-      "author": {
-        "@type": "Person",
-        "name": "Stefanos Siathas",
-        "url": site
+      '@context': 'https://schema.org',
+      '@type': 'CreativeWork',
+      url: meta.canonical,
+      headline: meta.title,
+      description: meta.description,
+      image: meta.image,
+      author: {
+        '@type': 'Person',
+        name: 'Stefanos Siathas',
+        url: SITE_URL
       },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Stefanos Siathas Portfolio",
-        "url": site
+      publisher: {
+        '@type': 'Organization',
+        name: 'Stefanos Siathas Portfolio',
+        url: SITE_URL
       }
     };
   }
