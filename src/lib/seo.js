@@ -1,5 +1,5 @@
 export const SITE_URL = 'https://www.stefanossiathas.com';
-export const OG_IMAGE_URL = `${SITE_URL}/og-default.jpg`;
+export const OG_IMAGE_URL = `${SITE_URL}/stefanos_goat.JPG`;
 
 const projectEntries = [
   {
@@ -200,4 +200,3 @@ export function getStructuredDataForPath(pathname = '/') {
 
   return webpage;
 }
-
