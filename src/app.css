@@ -3,9 +3,9 @@
 	line-height: 1.5;
 	font-weight: 400;
 
-	color-scheme: dark; /* Force dark color scheme to prevent auto color switching */
+	color-scheme: dark;
 	background-color: #1e1932;
-	color: #ffffff; /* Explicitly set white text as default */
+	color: #ffffff;
 
 	--color-primary: #7a239d;
 	--color-secondary: #ffffff;
@@ -24,9 +24,9 @@ body {
 	margin: 0;
 	background-attachment: fixed;
 	background-size: 100vw 100vh;
-	overflow-x: hidden; /* Prevent horizontal scroll */
-	color: #ffffff !important; /* Force white text in body */
-	scroll-behavior: smooth; /* enable smooth navigation scrolling */
+	overflow-x: hidden;
+	color: #ffffff !important;
+	scroll-behavior: smooth;
 }
 
 #app {
@@ -45,7 +45,6 @@ a:hover {
 	color: var(--color-secondary);
 }
 
-/* Mobile responsiveness for global elements */
 @media (max-width: 768px) {
 	#app {
 		padding: 1rem;
@@ -67,13 +66,11 @@ a:hover {
 	}
 }
 
-/* Ensure images are responsive by default */
 img {
 	max-width: 100%;
 	height: auto;
 }
 
-/* Make sure text doesn't overflow on small screens */
 h1, h2, h3, h4, h5, h6 {
 	word-wrap: break-word;
 	overflow-wrap: break-word;
@@ -83,4 +80,3 @@ p {
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 }
-

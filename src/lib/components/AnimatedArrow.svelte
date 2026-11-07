@@ -1,8 +1,4 @@
 <script>
-  /** 
-   * size: overall length of the arrow (default 2rem)
-   * color: arrow color
-   */
   export let size = "2rem";
   export let color = "var(--color-primary)";
 </script>

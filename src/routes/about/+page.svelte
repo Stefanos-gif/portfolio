@@ -8,7 +8,6 @@
     setTimeout(() => copied = false, 1500);
   }
 
-  // certificate images from static/certificates
   const certImages = [
     '/certificates/c1.jpg',
     '/certificates/c2.jpg',
@@ -59,7 +58,6 @@
   <b>Certifications</b>: Certified STEAM Ambassador (Eu)
     </p>
     <div style="width:100%;display:flex;justify-content:center;margin-top:8px;">
-      <!-- Certificate carousel will be mounted below -->
     </div>
   </div>
 

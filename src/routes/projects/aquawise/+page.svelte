@@ -99,7 +99,7 @@
   .project-title {
     font-size: 3rem;
     font-weight: 800;
-    color: #ffffff; /* higher contrast for readability */
+    color: #ffffff;
     margin-bottom: 0.5rem;
     margin-top: 2.2rem;
     text-align: center;
@@ -108,7 +108,6 @@
     padding-bottom: 0.45rem;
   }
 
-  /* accent underline matching the project's primary color but keeping title white */
   .project-title::after {
     content: '';
     display: block;
@@ -147,7 +146,7 @@
   }
 
   #core-features h2, #story h2, #collaborations h2 {
-    color: #ffffff; /* easier to read */
+    color: #ffffff;
     font-size: 1.8rem;
     margin-bottom: 1rem;
     margin-top: 0;

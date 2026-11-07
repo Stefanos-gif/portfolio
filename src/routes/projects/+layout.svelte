@@ -7,7 +7,6 @@
     --proj-neon: #ff00ff;
   }
 
-  /* Core project page layout borrowed from Meteor Counter (non-anim rules only) */
   :global(.wrap){
     width:min(100%,1100px);
     margin-inline:auto;
@@ -65,7 +64,6 @@
 
   :global(.fallback a){ color:#2eff23; text-decoration:underline; }
 
-  /* Make project headings more readable by default without touching animations */
   :global(.project-title){ color:#fff !important; font-weight:800; text-shadow:0 2px 10px rgba(0,0,0,0.6); }
   :global(.project-title::after){ content:''; display:block; width:6rem; height:6px; margin:0.6rem auto 0 auto; border-radius:4px; background:linear-gradient(90deg,var(--proj-color-primary),#ff47f0); box-shadow:0 6px 24px rgba(199,125,255,0.18); }
 

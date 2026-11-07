@@ -1,10 +1,5 @@
 
 <script lang="ts">
-  /** 
-   * @param size The width/height of the SVG in pixels 
-   * @param color The fill color of the arrow 
-   * @param duration How long one bounce cycle takes (in seconds)
-   */
   export let size: number = 24;
   export let color: string = '#000';
   export let duration: number = 1.5;

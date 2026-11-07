@@ -40,7 +40,6 @@
     items: projects.filter((p) => p.category === c.id)
   }));
 
-  // The ONE horizontal scroller that holds every category.
   let scroller;
 
   onMount(() => {
@@ -48,13 +47,11 @@
     if (!el) return;
     const desktop = window.matchMedia('(min-width: 769px)');
 
-    // Mouse wheel (vertical) -> horizontal scroll. Real horizontal gestures
-    // (trackpads) and mobile layouts are left alone.
     const wheelHandler = (e) => {
       if (!desktop.matches) return;
       if (Math.abs(e.deltaX) >= Math.abs(e.deltaY)) return;
       if (el.scrollWidth <= el.clientWidth) return;
-      const dy = e.deltaMode === 1 ? e.deltaY * 32 : e.deltaY; // Firefox line mode
+      const dy = e.deltaMode === 1 ? e.deltaY * 32 : e.deltaY;
       el.scrollLeft += dy;
       e.preventDefault();
     };
@@ -79,7 +76,6 @@
 </script>
 
 <style>
-  /* ---------- Desktop: one horizontal strip, all categories inline ---------- */
   .categories-viewport {
     --card-w: clamp(220px, 25vw, 360px);
     --block-gap: 3rem;
@@ -105,8 +101,6 @@
     position: relative;
   }
 
-  /* Divider sits in the middle of the gap between two categories,
-     behind the cards, and never intercepts clicks. */
   .category-block:not(:last-child)::after {
     content: "";
     position: absolute;
@@ -132,9 +126,6 @@
     white-space: nowrap;
   }
 
-  /* Fixed-width grid columns: every browser computes the same width for
-     the track (cards x card width + gaps), so a category can never be
-     narrower than its cards and spill into the next one. */
   .projects-track {
     display: grid;
     grid-auto-flow: column;
@@ -150,13 +141,11 @@
     margin: 0;
     position: relative;
     cursor: pointer;
-    /* center title + image in the slot so spacing between cards is even */
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  /* Keep the image component inside its card */
   .project > :global(*) {
     max-width: 100%;
   }
@@ -199,7 +188,6 @@
     border-radius: 8px;
   }
 
-  /* ---------- Mobile: stacked categories, grid of cards ---------- */
   @media (max-width: 768px) {
     .categories-viewport {
       flex-direction: column;

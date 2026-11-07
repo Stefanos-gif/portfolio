@@ -20,9 +20,7 @@
 
   function navigate(newIdx) {
     pageIdx = newIdx;
-    // smooth client-side navigation: use goto then scroll to top of projects container if present
     goto(routes[pageIdx]).then(() => {
-      // after navigation, try to scroll projects track into view smoothly
       requestAnimationFrame(() => {
         const projectsSection = document.querySelector('.projects-track');
         if (projectsSection) projectsSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -118,7 +116,6 @@
 <header class="header-container">
   {#if ready && y < 50}
 
-    <!-- MOBILE TOP BAR (always first) -->
     {#if isMobile}
       <div class="mobile-top">
         <button class="icon-btn" on:click={toggleMobileMenu} aria-label="Toggle navigation menu">
@@ -139,7 +136,6 @@
       </div>
     {/if}
 
-    <!-- DESKTOP NAV (always first, sits ABOVE the projects panel) -->
     {#if !isMobile}
       <nav class="desktop-nav" in:slide={navTransition}>
         <div class="bar">
@@ -165,7 +161,6 @@
       </nav>
     {/if}
 
-    <!-- PROJECTS PANEL (drops down BELOW the nav) -->
     {#if opened}
       <div id="project-screen" transition:slide={{ duration: 260, easing: cubicOut, axis: 'y' }}>
         <Projects />
@@ -241,7 +236,6 @@
     flex-shrink: 0;
   }
 
-  /* Projects panel always renders after (below) the nav / mobile bar */
   #project-screen {
     order: 1;
     width: 100%;

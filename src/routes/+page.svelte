@@ -1,23 +1,20 @@
 <script>
   import { onMount } from 'svelte';
 
-  // Lines typed once, in order. They never change after being typed.
   const lines = ['Hi, my name is', 'Stefanos Siathas', "I'm a"];
-  // Descriptions that cycle forever after the lines above are typed.
   const words = ['software engineer', 'Student', 'Developer', 'STEM Ambassador'];
 
-  const TYPE_MS = 100;     // delay per typed character
-  const ERASE_MS = 50;     // delay per erased character
-  const GAP_MS = 300;      // short pause between lines / words
-  const PAUSE_MS = 3000;   // how long a finished word stays on screen
+  const TYPE_MS = 100;
+  const ERASE_MS = 50;
+  const GAP_MS = 300;
+  const PAUSE_MS = 3000;
 
   let typed = ['', '', ''];
   let word = '';
-  let active = 0;          // 0–2 = typing that line, 3 = cycling words, -1 = no cursor
+  let active = 0;
   let blinking = false;
 
   onMount(() => {
-    // Respect reduced-motion: show everything at once and just swap the word.
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       typed = [...lines];
       word = words[0];
@@ -41,7 +38,6 @@
       });
 
     async function run() {
-      // 1. Type each fixed line once, one after another.
       for (let i = 0; i < lines.length; i++) {
         active = i;
         for (let c = 1; c <= lines[i].length; c++) {
@@ -51,7 +47,6 @@
         await sleep(GAP_MS);
       }
 
-      // 2. Cycle through the descriptions. Only the word changes from here on.
       active = 3;
       for (let w = 0; ; w = (w + 1) % words.length) {
         const target = words[w];
@@ -72,20 +67,17 @@
 
     run();
 
-    // Clearing pending timers stops the loop when the page is left.
     return () => timers.forEach(clearTimeout);
   });
 </script>
 
 <div id="title-block">
-  <!-- Full text for search engines and screen readers (always in the server HTML) -->
   <div class="sr-only">
     <p>Hi, my name is</p>
     <h1>Stefanos Siathas</h1>
     <p>I'm a software engineer, student, developer and STEM Ambassador.</p>
   </div>
 
-  <!-- Visual typing animation -->
   <div id="typed" aria-hidden="true">
     <p id="hi-text">{typed[0] || '\u00a0'}{#if active === 0}<span class="cursor primary">&nbsp;</span>{/if}</p>
 
@@ -95,9 +87,9 @@
   </div>
 
   <div id="img-hover" aria-hidden="true">
-    <img src="/stefs_profesionaly_photographed_picture_by_michalis_chhatzittofi.jpg" id="portrait-dark2" alt="" />
-    <img src="/stefs_profesionaly_photographed_picture_by_michalis_chhatzittofi.jpg" id="portrait-dark" alt="" />
-    <img src="/stefs_profesionaly_photographed_picture_by_michalis_chhatzittofi.jpg" id="portrait" alt="Portrait of Stefanos Siathas" />
+    <img src="/stefanos_goat.JPG" id="portrait-dark2" alt="" />
+    <img src="/stefanos_goat.JPG" id="portrait-dark" alt="" />
+    <img src="stefanos_goat.JPG" id="portrait" alt="Portrait of Stefanos Siathas" />
   </div>
 </div>
 
@@ -124,7 +116,7 @@
   #hi-text {
     font-size: 2em;
     font-weight: bold;
-    color: var(--color-primary);
+    color: var(--color-secondary);
     margin: 0;
   }
 
@@ -196,7 +188,6 @@
       box-sizing: border-box;
     }
 
-    /* The lines now sit inside #typed, so give them the same spacing as before */
     #typed {
       display: flex;
       flex-direction: column;
@@ -227,18 +218,18 @@
       filter: none !important;
     }
 
-    #hi-text       { font-size: clamp(1.05rem, 5vw, 1.35rem); margin: 0; }
+    #hi-text       { font-size: clamp(1.3rem, 5.8vw, 1.7rem); margin: 0; }
     #name-text     { font-size: clamp(2.3rem, 12vw, 3.4rem); line-height: 1.1; margin: 0; }
-    #sub-name-text { font-size: clamp(1.1rem, 6vw, 1.7rem); line-height: 1.3; margin: 0; }
+    #sub-name-text { font-size: clamp(1.3rem, 6.2vw, 1.8rem); line-height: 1.3; margin: 0; }
     .cursor { width: 2px; }
   }
 
   @media (max-width: 420px) {
     #title-block { max-inline-size: 28ch; padding: clamp(84px, 12vh, 120px) 14px 40px; }
     #portrait    { width: min(94vw, 320px) !important; }
-    #hi-text       { font-size: clamp(1rem, 4.5vw, 1.2rem); }
+    #hi-text       { font-size: clamp(1.25rem, 5.8vw, 1.5rem); }
     #name-text     { font-size: clamp(2.2rem, 11vw, 3rem); }
-    #sub-name-text { font-size: clamp(1.1rem, 5.5vw, 1.6rem); }
+    #sub-name-text { font-size: clamp(1.25rem, 6vw, 1.55rem); }
   }
 
   @media (prefers-reduced-motion: reduce) {
